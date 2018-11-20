@@ -1,15 +1,16 @@
 # This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-        name = David Ker
-        email = snappy316@gmail.com
+	name = David Ker
+	email = snappy316@gmail.com
 [alias]
 	c = commit -m
 	st = status --short --branch
 	ca = commit --amend --reuse-message=HEAD
 	co = checkout
+	cob = checkout -b
 	br = branch
 	df = diff HEAD
+	po = push origin
 	ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
 	la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
 	ir = !sh -c 'git rebase --interactive ${1-master}' -
@@ -44,4 +45,4 @@
 [credential]
 	helper = osxkeychain
 [core]
-        editor = code --wait
+	editor = code --wait
