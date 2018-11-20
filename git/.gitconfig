@@ -3,5 +3,45 @@
 # Please adapt and uncomment the following lines:
         name = David Ker
         email = snappy316@gmail.com
+[alias]
+	c = commit -m
+	st = status --short --branch
+	ca = commit --amend --reuse-message=HEAD
+	co = checkout
+	br = branch
+	df = diff HEAD
+	ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
+	la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
+	ir = !sh -c 'git rebase --interactive ${1-master}' -
+	dfs = diff --staged
+	ign = ls-files --others --ignored --exclude-standard
+	unc = reset HEAD^
+	who = shortlog --numbered --summary --no-merges
+	done = !sh -c 'git checkout ${2-master} && git merge @{-1} && git push ${1-origin} ${2-master}' -
+	sync = !sh -c 'git checkout ${2-master} && git pull ${1-origin} ${2-master} && git checkout @{-1} && git rebase ${2-master}' -
+	cleanup = !git remote prune ${1-origin} && git gc && git stash clear
+	cherry-pit = !sh -c 'git rebase -p --onto $1^ $1' -
+	unadd = reset HEAD --
+	uncommit = !sh -c 'reset HEAD~${1-1}' -
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+	upstream = cyan
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	func = normal bold
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = cyan bold
+	branch = yellow
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
 [core]
         editor = code --wait
