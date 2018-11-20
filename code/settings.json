@@ -4,6 +4,8 @@
     "workbench.editor.highlightModifiedTabs": true,
 
     "editor.tabSize": 2,
+    
+    "explorer.autoReveal": false,
 
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
