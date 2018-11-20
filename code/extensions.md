@@ -9,6 +9,7 @@ redhat.vscode-yaml
 robinbentley.sass-indented
 RoscoP.ActiveFileInStatusBar
 sianglim.slim
+sleistner.vscode-fileutils
 vortizhe.simple-ruby-erb
 waderyan.gitblame
 ```
