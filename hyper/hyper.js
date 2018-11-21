@@ -128,6 +128,11 @@ module.exports = {
     hypercwd: {
       initialWorkingDirectory: '~/Projects'
     },
+
+    hyperTabsMove: {
+      moveLeft: 'command+[',
+      moveRight: 'command+]'
+    },
   },
 
   // a list of plugins to fetch and install from npm
