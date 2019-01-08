@@ -24,7 +24,7 @@
 	cleanup = !git remote prune ${1-origin} && git gc && git stash clear
 	cherry-pit = !sh -c 'git rebase -p --onto $1^ $1' -
 	unadd = reset HEAD --
-	uncommit = !sh -c 'reset HEAD~${1-1}' -
+	uncommit = reset HEAD^
 [color "branch"]
 	current = yellow reverse
 	local = yellow
