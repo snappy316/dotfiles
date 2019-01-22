@@ -15,3 +15,6 @@ fi
 
 # prompt
 source ~/.config/bash/prompt.sh
+
+# tab titles
+function title() { echo -e "\033]0;${1:?please specify a title}\007" ; }
