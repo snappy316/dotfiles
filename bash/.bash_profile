@@ -7,6 +7,7 @@ export EDITOR='code -w'
 # aliases
 alias be='bundle exec'
 alias rs='bundle exec rspec'
+alias hrc='heroku run rails c -a'
 
 # bash-completion
 if [[ -f /usr/local/etc/bash_completion ]]; then
