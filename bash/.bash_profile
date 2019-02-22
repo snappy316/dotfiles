@@ -8,6 +8,7 @@ export EDITOR='code -w'
 alias be='bundle exec'
 alias rs='bundle exec rspec'
 alias hrc='heroku run rails c -a'
+alias hl='hyperlayout'
 
 # bash-completion
 if [[ -f /usr/local/etc/bash_completion ]]; then
