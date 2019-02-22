@@ -10,8 +10,8 @@
 	cob = checkout -b
 	br = branch
 	df = diff HEAD
-	po = push origin -u HEAD
-	psf = push --force staging HEAD:master
+	pub = push origin -u HEAD
+	pub-sf = push --force staging HEAD:master
 	ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
 	la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
 	ir = !sh -c 'git rebase --interactive ${1-master}' -
