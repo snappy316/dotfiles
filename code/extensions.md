@@ -1,7 +1,8 @@
 ```
-bung87.rails
 bung87.vscode-gemfile
+castwide.solargraph
 dbaeumer.vscode-eslint
+eamodio.gitlens
 ms-mssql.mssql
 PeterJausovec.vscode-docker
 rebornix.ruby
@@ -11,7 +12,6 @@ RoscoP.ActiveFileInStatusBar
 sianglim.slim
 sleistner.vscode-fileutils
 vortizhe.simple-ruby-erb
-waderyan.gitblame
 ```
 
 To retrieve extensions:
