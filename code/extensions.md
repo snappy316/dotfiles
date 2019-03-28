@@ -3,6 +3,7 @@ bung87.vscode-gemfile
 castwide.solargraph
 dbaeumer.vscode-eslint
 eamodio.gitlens
+esbenp.prettier-vscode
 ms-mssql.mssql
 PeterJausovec.vscode-docker
 rebornix.ruby

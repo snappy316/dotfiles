@@ -22,4 +22,5 @@
     "editor.minimap.enabled": false,
     "workbench.statusBar.feedback.visible": false,
     "workbench.quickOpen.closeOnFocusLost": false,
+    "editor.formatOnSave": true,
 }
