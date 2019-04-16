@@ -23,4 +23,6 @@
     "workbench.statusBar.feedback.visible": false,
     "workbench.quickOpen.closeOnFocusLost": false,
     "editor.formatOnSave": true,
+    "explorer.confirmDragAndDrop": false,
+    "editor.foldingStrategy": "indentation",
 }
