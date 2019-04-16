@@ -1,28 +1,29 @@
 {
-    // Core
-    "workbench.colorTheme": "Solarized Light",
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.highlightModifiedTabs": true,
+  // Core
+  "editor.detectIndentation": false,
+  "editor.foldingStrategy": "indentation",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
 
-    "editor.tabSize": 2,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
 
-    "explorer.autoReveal": false,
-    "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Solarized Light",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.quickOpen.closeOnFocusLost": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.feedback.visible": false,
 
-    "files.autoSave": "onFocusChange",
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
+  "window.zoomLevel": 0,
 
-    // Packages
-    "eslint.packageManager": "yarn",
-    "emmet.triggerExpansionOnTab": true,
-    "window.zoomLevel": 0,
-    "editor.detectIndentation": false,
-    "editor.minimap.enabled": false,
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.quickOpen.closeOnFocusLost": false,
-    "editor.formatOnSave": true,
-    "explorer.confirmDragAndDrop": false,
-    "editor.foldingStrategy": "indentation",
+  "explorer.autoReveal": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // Packages
+  "emmet.triggerExpansionOnTab": true,
+  "eslint.packageManager": "yarn"
 }
