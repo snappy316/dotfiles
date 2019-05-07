@@ -7,7 +7,8 @@
       "title 'gitsh' && cd ~/Projects/lexspot && gitsh",
       "title 'puma' && cd ~/Projects/lexspot && be rails s",
       "title 'delayed-job' && cd ~/Projects/lexspot && rake jobs:work",
-      "title 'webpack' && cd ~/Projects/lexspot"
+      "title 'webpack' && cd ~/Projects/lexspot",
+      "title 'hrc' && cd ~/Projects/lexspot"
     ]
   }
 }
