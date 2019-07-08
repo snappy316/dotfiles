@@ -4,7 +4,8 @@ castwide.solargraph
 dbaeumer.vscode-eslint
 eamodio.gitlens
 esbenp.prettier-vscode
-PeterJausovec.vscode-docker
+kamikillerto.vscode-colorize
+ms-azuretools.vscode-docker
 rebornix.ruby
 redhat.vscode-yaml
 robinbentley.sass-indented
