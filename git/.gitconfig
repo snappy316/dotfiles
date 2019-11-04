@@ -5,7 +5,6 @@
 [alias]
 	c = commit -m
 	st = status --short --branch
-	ca = commit --amend --reuse-message=HEAD
 	co = checkout
 	cob = checkout -b
 	br = branch
@@ -25,6 +24,7 @@
 	cherry-pit = !sh -c 'git rebase -p --onto $1^ $1' -
 	unadd = reset HEAD --
 	uncommit = reset HEAD^
+	oops = commit --amend --reuse-message=HEAD
 [color "branch"]
 	current = yellow reverse
 	local = yellow
