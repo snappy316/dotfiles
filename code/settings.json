@@ -2,7 +2,13 @@
   // Core
   "editor.detectIndentation": false,
   "editor.foldingStrategy": "indentation",
+  "editor.fontFamily": "Victor Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "editor.fontWeight": "500",
   "editor.formatOnSave": true,
+  "editor.letterSpacing": 0.75,
+  "editor.lineHeight": 19,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
 
@@ -10,6 +16,8 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
+
+  "git.ignoreMissingGitWarning": true,
 
   "workbench.colorTheme": "Solarized Light",
   "workbench.editor.highlightModifiedTabs": true,
@@ -26,14 +34,8 @@
   // Packages
   "emmet.triggerExpansionOnTab": true,
   "eslint.packageManager": "yarn",
-  "codestream.email": "david@bridge.us",
   "extensions.ignoreRecommendations": false,
-  "editor.fontLigatures": true,
-  "editor.fontSize": 12,
-  "editor.fontFamily": "Victor Mono, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontWeight": "500",
-  "editor.letterSpacing": 0.75,
-  "editor.lineHeight": 19,
+
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
