@@ -21,8 +21,6 @@ module.exports = {
     // font weight for bold characters: 'normal' or 'bold'
     fontWeightBold: "bold",
 
-    lineHeight: 1.25,
-
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: "rgba(248,28,229,0.8)",
 
@@ -135,6 +133,10 @@ module.exports = {
     hyperTabsMove: {
       moveLeft: ["alt+shift+left"],
       moveRight: ["alt+shift+right"]
+    },
+
+    verminal: {
+      fontFamily: "Victor Mono"
     }
   },
 
@@ -145,11 +147,12 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    "hyper-solarized-light",
+    "verminal",
     "hypercwd",
     "hyper-statusline",
     "hyperterm-tabs",
-    "hyperlayout"
+    "hyperlayout",
+    "hyper-font-ligatures"
   ],
 
   // in development, you can create a directory under
