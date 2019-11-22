@@ -68,7 +68,15 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  bundler
+  git
+  heroku
+  mosh
+  osx
+  rails
+  vscode
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,6 +135,10 @@ setopt SHARE_HISTORY        # share history across multiple zsh sessions
 setopt APPEND_HISTORY       # append to history, instead of overwriting
 setopt INC_APPEND_HISTORY   # adds commands as they are typed, not at shell exit
 
+# oh-my-zsh Customizations
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Functions
 ## Tab Titles
 function title() { echo -e "\033]0;${1:?please specify a title}\007" ; }
@@ -142,7 +154,6 @@ eval "$(rbenv init -)"
 export EDITOR='code -w'
 
 ## aliases
-alias be='bundle exec'
 alias rs='bundle exec rspec'
 alias hrc='heroku run rails c -a'
 alias hl='hyperlayout'
