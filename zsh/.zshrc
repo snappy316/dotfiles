@@ -8,7 +8,21 @@ export ZSH="/Users/davidker/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Powerlevel9k - https://github.com/Powerlevel9k/powerlevel9k
+## Font mode
+POWERLEVEL9K_MODE='awesome-patched'
+
+## Prompt Settings
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(rbenv time)
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="❯ "
+
+POWERLEVEL9K_TIME_FORMAT="%D{%F %T}"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

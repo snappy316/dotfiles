@@ -8,19 +8,6 @@ module.exports = {
     // or `'canary'` for less polished but more frequent updates
     updateChannel: "stable",
 
-    // default font size in pixels for all tabs
-    fontSize: 12,
-
-    // font family with optional fallbacks
-    fontFamily:
-      'Victor Mono, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
-
-    // default font weight: 'normal' or 'bold'
-    fontWeight: "400",
-
-    // font weight for bold characters: 'normal' or 'bold'
-    fontWeightBold: "bold",
-
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: "rgba(248,28,229,0.8)",
 
@@ -136,7 +123,9 @@ module.exports = {
     },
 
     verminal: {
-      fontFamily: "Victor Mono"
+      // https://github.com/gabrielelana/awesome-terminal-fonts/blob/c24e7e1e8c2106ef8a136b0861c11ce95b555443/patched/SourceCodePro%2BPowerline%2BAwesome%2BRegular.ttf
+      fontFamily: '"SourceCodePro+Powerline+Awesome Regular"',
+      fontSize: 12
     }
   },
 
