@@ -110,6 +110,9 @@ alias rs='bundle exec rspec'
 alias hrc='heroku run rails c -a'
 alias hl='hyperlayout'
 
+## Relative cd - h/t https://twitter.com/paulredmond/status/1204557648026144768?s=20
+cdpath=(~/Code ~/Projects)
+
 ## PCO-specific
 eval "$($HOME/Code/pco/bin/pco init -)"
 export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
