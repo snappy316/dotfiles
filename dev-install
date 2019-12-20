@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  echo "Running Linux install"
+  ./install/linux
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "MacOS"
+fi

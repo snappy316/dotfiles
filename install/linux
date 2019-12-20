@@ -1,0 +1,63 @@
+#!/bin/bash 
+
+# Zsh
+if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
+  # assume zsh - don't install zsh
+  echo "ZSH already installed"
+else
+  # assume bash - install zsh
+  echo "Installing and configuring ZSH..."
+  sudo apt install zsh
+fi
+
+# Download dotfiles
+if [ ! -d ~/.dotfiles ] ; then
+  echo "Downloading dotfiles"
+  git clone https://gitlab.com/snappy316/dotfiles.git ~/.dotfiles
+else
+  echo "Updating dotfiles"
+  cd ~/.dotfiles
+  git pull origin master
+fi
+
+# Symlink regular dotfiles
+if ! [ -L ~/.gitconfig ]; then
+  echo "Symlinking gitconfig"
+  ln -svf ~/.dotfiles/git/.gitconfig ~
+fi
+
+# Zsh
+# (from above)
+
+# Oh My Zsh
+
+if [ ! -d ~/.oh-my-zsh ] ; then
+  echo "Installing Oh My Zsh"
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# Symlink Zsh dotfiles
+if ! [ -L ~/.zshrc ]; then
+  echo "Symlinking zshrc"
+  ln -svf ~/.dotfiles/zsh/.zshrc ~
+fi
+
+# Vim
+if ! [ -L ~/.zshrc ]; then
+  echo "Symlinking Vim dotfiles"
+  ln -sfv ~/.dotfiles/.vimrc ~
+  ln -sfv ~/.dotfiles/.vim ~
+fi
+
+if [ ! -d ~/.vim/bundle/Vundle.vim ] ; then
+  echo "Installing Vundle"
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
+echo "Updating Vim plugins"
+#vim +PluginInstall +qall
+
+# Restart zsh
+cd ~
+echo "All done! Restarting zsh"
+exec /bin/zsh
