@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# Assumptions:
+# - Clean working tree.
+read -r -p "Are You Sure? [y/n] " input
+case $input in
+    [yY][eE][sS]|[yY])
+ echo ":boom: Nuking staging..."
+ git checkout master
+ git branch -D staging # Delete staging branch locally.
+ git push origin :staging # Delete staging branch from GitHub.
+ git checkout -b staging master
+ git push --set-upstream origin staging
+ echo ":white_check_mark: Done!"
+ ;;
+    [nN][oO]|[nN])
+ echo ":no_entry_sign: Aborted!"
+       ;;
+    *)
+ echo "Invalid input..."
+ exit 1
+ ;;
+esac

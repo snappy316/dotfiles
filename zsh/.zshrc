@@ -102,6 +102,10 @@ export PATH
 export RBENV_ROOT=$HOME/.rbenv
 eval "$(rbenv init -)"
 
+## git
+path=($path "$HOME/.git/scripts")
+export PATH
+
 ## code
 export EDITOR='code -w'
 
