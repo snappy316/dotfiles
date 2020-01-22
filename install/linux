@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 # Zsh
 if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
@@ -21,9 +21,20 @@ else
 fi
 
 # Symlink regular dotfiles
+## git
 if ! [ -L ~/.gitconfig ]; then
   echo "Symlinking gitconfig"
   ln -svf ~/.dotfiles/git/.gitconfig ~
+fi
+
+## hyper
+if ! [ -L ~/.hyper.js ]; then
+  echo "Symlinking hyper.js"
+  ln -svf ~/.dotfiles/hyper/.hyper.js ~
+fi
+if ! [ -L ~/.hyperlayout ]; then
+  echo "Symlinking hyperlayout"
+  ln -svf ~/.dotfiles/hyper/.hyperlayout ~
 fi
 
 # Zsh
