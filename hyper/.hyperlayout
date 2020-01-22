@@ -2,7 +2,7 @@
   "groups": {
     "entry": "tab",
     "layout": [
-      "title 'zsh' && cd groups",
+      "title 'zsh' && cd groups && box up",
       "title 'rails c' && cd groups && yarn install --check-files && be rails c",
       "title 'gitsh' && cd groups && gitsh",
       "title 'log' && cd groups && tail -f log/development.log",
