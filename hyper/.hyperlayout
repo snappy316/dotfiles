@@ -1,15 +1,12 @@
 {
-  "lexspot": {
+  "groups": {
     "entry": "tab",
     "layout": [
-      "title 'bash' && cd ~/Projects/lexspot",
-      "title 'rails c' && cd ~/Projects/lexspot && yarn install --check-files && be rails c",
-      "title 'gitsh' && cd ~/Projects/lexspot && gitsh",
-      "title 'puma' && cd ~/Projects/lexspot && be rails s",
-      "title 'delayed-job' && cd ~/Projects/lexspot && rake jobs:work",
-      "title 'webpack' && cd ~/Projects/lexspot",
-      "title 'guard' && cd ~/Projects/lexspot && be guard",
-      "title 'hrc' && cd ~/Projects/lexspot"
+      "title 'zsh' && cd groups",
+      "title 'rails c' && cd groups && yarn install --check-files && be rails c",
+      "title 'gitsh' && cd groups && gitsh",
+      "title 'log' && cd groups && tail -f log/development.log",
+      "title 'guard' && cd groups && be guard"
     ]
   }
 }
