@@ -26,6 +26,10 @@ if ! [ -L ~/.gitconfig ]; then
   echo "Symlinking gitconfig"
   ln -svf ~/.dotfiles/git/.gitconfig ~
 fi
+if ! [ -L ~/.gitignore_global ]; then
+  echo "Symlinking global gitignore"
+  ln -svf ~/.dotfiles/git/.gitignore_global ~
+fi
 
 ## hyper
 if ! [ -L ~/.hyper.js ]; then

@@ -47,6 +47,7 @@
 	helper = osxkeychain
 [core]
 	editor = code --wait
+	excludesfile = /Users/davidker/.gitignore_global
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
