@@ -55,3 +55,4 @@
 	clean = git-lfs clean -- %f
 [pager]
 	branch = false
+  stash = false
