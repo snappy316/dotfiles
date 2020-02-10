@@ -1,5 +1,6 @@
 {
   // Core
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.detectIndentation": false,
   "editor.foldingStrategy": "indentation",
   "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
@@ -9,7 +10,7 @@
   // "editor.lineHeight": 21,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
-
+  "editor.wordWrap": "on",
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
