@@ -18,7 +18,11 @@
   "files.trimFinalNewlines": true,
 
   "git.ignoreMissingGitWarning": true,
-
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true
+    }
+  },
   "workbench.colorTheme": "Solarized Light",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.quickOpen.closeOnFocusLost": false,
@@ -39,7 +43,7 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[ruby]": {
-    "editor.defaultFormatter": "jnbt.vscode-rufo"
-  }
+  // "[ruby]": {
+  //   "editor.defaultFormatter": "jnbt.vscode-rufo"
+  // },
 }
