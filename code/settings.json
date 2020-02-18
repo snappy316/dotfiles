@@ -9,6 +9,8 @@
   "editor.formatOnSave": true,
   // "editor.lineHeight": 21,
   "editor.minimap.enabled": false,
+  "editor.quickSuggestionsDelay": 750,
+  "editor.suggestOnTriggerCharacters": false,
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "files.autoSave": "onFocusChange",
