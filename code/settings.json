@@ -12,6 +12,7 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "files.autoSave": "onFocusChange",
+  "files.defaultLanguage": "markdown",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
