@@ -56,3 +56,5 @@
 [pager]
 	branch = false
   stash = false
+[commit]
+  verbose = true
