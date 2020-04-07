@@ -6,7 +6,7 @@ module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
-    updateChannel: "stable",
+    updateChannel: "canary",
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: "rgba(248,28,229,0.8)",
@@ -70,7 +70,7 @@ module.exports = {
       lightBlue: "#6A76FB",
       lightMagenta: "#FD7CFC",
       lightCyan: "#68FDFE",
-      lightWhite: "#FFFFFF"
+      lightWhite: "#FFFFFF",
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -114,19 +114,19 @@ module.exports = {
     scrollback: 5000,
 
     hypercwd: {
-      initialWorkingDirectory: "~/Projects"
+      initialWorkingDirectory: "~/Projects",
     },
 
     hyperTabsMove: {
       moveLeft: ["alt+shift+left"],
-      moveRight: ["alt+shift+right"]
+      moveRight: ["alt+shift+right"],
     },
 
     verminal: {
       // https://github.com/gabrielelana/awesome-terminal-fonts/blob/c24e7e1e8c2106ef8a136b0861c11ce95b555443/patched/SourceCodePro%2BPowerline%2BAwesome%2BRegular.ttf
       fontFamily: '"SourceCodePro+Powerline+Awesome Regular"',
-      fontSize: 12
-    }
+      fontSize: 12,
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -141,7 +141,7 @@ module.exports = {
     "hyper-statusline",
     "hyperterm-tabs",
     "hyperlayout",
-    "hyper-font-ligatures"
+    "hyper-font-ligatures",
   ],
 
   // in development, you can create a directory under
@@ -152,5 +152,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  }
+  },
 };
