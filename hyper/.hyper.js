@@ -2,14 +2,34 @@
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
 
+const foregroundColor = "#fff";
+const backgroundColor = "rgba(0, 0, 0, .65)";
+const overlap = "rgba(0, 0, 0, .15)";
+const red = "#FF3B30";
+const green = "#4CD964";
+const yellow = "#FFCC00";
+const blue = "#0095FF";
+const magenta = "#FF2D55";
+const cyan = "#5AC8FA";
+const white = "#FFFFFF";
+
 module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: "canary",
 
+    // default font size in pixels for all tabs
+    fontSize: 13,
+
+    // font family with optional fallbacks
+    fontFamily: "JetBrainsMono Nerd Font",
+
+    // font line height - https://github.com/zeit/hyper/pull/2858
+    lineHeight: 1.2,
+
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: "rgba(248,28,229,0.8)",
+    cursorColor: blue,
 
     // terminal text color under BLOCK cursor
     cursorAccentColor: "#000",
@@ -21,17 +41,17 @@ module.exports = {
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: "#fff",
+    foregroundColor,
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: "#000",
+    backgroundColor,
 
     // terminal selection color
     selectionColor: "rgba(248,28,229,0.3)",
 
     // border color (window, tabs)
-    borderColor: "#333",
+    borderColor: overlap,
 
     // custom CSS to embed in the main window
     css: "",
@@ -55,22 +75,22 @@ module.exports = {
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
     colors: {
-      black: "#000000",
-      red: "#C51E14",
-      green: "#1DC121",
-      yellow: "#C7C329",
-      blue: "#0A2FC4",
-      magenta: "#C839C5",
-      cyan: "#20C5C6",
-      white: "#C7C7C7",
+      black: backgroundColor,
+      red,
+      green,
+      yellow,
+      blue,
+      magenta,
+      cyan,
+      white,
       lightBlack: "#686868",
-      lightRed: "#FD6F6B",
-      lightGreen: "#67F86F",
-      lightYellow: "#FFFA72",
-      lightBlue: "#6A76FB",
-      lightMagenta: "#FD7CFC",
-      lightCyan: "#68FDFE",
-      lightWhite: "#FFFFFF",
+      lightRed: red,
+      lightGreen: green,
+      lightYellow: yellow,
+      lightBlue: blue,
+      lightMagenta: magenta,
+      lightCyan: cyan,
+      lightWhite: foregroundColor,
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -135,7 +155,6 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    "verminal",
     "hypercwd",
     "hyper-statusline",
     "hyperterm-tabs",
