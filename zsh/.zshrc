@@ -16,7 +16,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Powerlevel9k - https://github.com/Powerlevel9k/powerlevel9k
 ## Font mode
-POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 ## Prompt Settings
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true

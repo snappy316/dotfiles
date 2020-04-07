@@ -123,8 +123,7 @@ module.exports = {
     },
 
     verminal: {
-      // https://github.com/gabrielelana/awesome-terminal-fonts/blob/c24e7e1e8c2106ef8a136b0861c11ce95b555443/patched/SourceCodePro%2BPowerline%2BAwesome%2BRegular.ttf
-      fontFamily: '"SourceCodePro+Powerline+Awesome Regular"',
+      fontFamily: '"JetBrainsMono Nerd Font"',
       fontSize: 12,
     },
   },
