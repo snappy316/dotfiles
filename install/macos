@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Homebrew
+which brew
+if [[ $? != 0 ]] ; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+else
+  echo "Updating Homebrew..."
+  brew update
+fi
+
 # Zsh
 if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
   # assume zsh - don't install zsh
