@@ -1,3 +1,8 @@
+# Machine-specific config
+zsh/zshrc.local
+
+
+# Editor
 .vim/.netrwhist
 .vim/bundle/
 .vim/pack/

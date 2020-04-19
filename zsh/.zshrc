@@ -128,9 +128,4 @@ alias hl='hyperlayout'
 ## Relative cd - h/t https://twitter.com/paulredmond/status/1204557648026144768?s=20
 cdpath=(~/Code ~/Projects)
 
-## PCO-specific
-eval "$($HOME/Code/pco/bin/pco init -)"
-export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
-export MYSQL_SLAVE_PORT_3306_TCP_ADDR=127.0.0.1
-export MYSQL_SLAVE_PORT_3306_TCP_PORT=3307
-export PATH=/Users/davidker/pco-box/bin:/usr/local/bin:$PATH
+source ~/.dotfiles/zsh/zshrc.local
