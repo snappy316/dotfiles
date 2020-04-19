@@ -105,10 +105,13 @@ tabtitle_preexec() {
 preexec_functions=($preexec_functions tabtitle_preexec)
 
 ## rbenv
-path=("$HOME/.rbenv/bin" $path)
-export PATH
-export RBENV_ROOT=$HOME/.rbenv
-eval "$(rbenv init -)"
+which rbenv > /dev/null
+if [[ $? = 0 ]] ; then
+  path=("$HOME/.rbenv/bin" $path)
+  export PATH
+  export RBENV_ROOT=$HOME/.rbenv
+  eval "$(rbenv init -)"
+fi
 
 ## git
 path=($path "$HOME/.git/scripts")
