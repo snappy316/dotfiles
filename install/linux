@@ -6,7 +6,7 @@
 
 # Zsh / Oh My Zsh
 ./ubuntu/zsh.sh
-./common/oh-my-zsh.sh
+./common/oh-my-zsh.zsh
 
 # Download dotfiles
 ./common/dotfiles.sh

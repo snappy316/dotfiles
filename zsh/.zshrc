@@ -1,5 +1,13 @@
 # oh-my-zsh defaults
-export ZSH="/Users/davidker/.oh-my-zsh"
+case "$OSTYPE" in
+  darwin*)
+    export ZSH="/Users/davidker/.oh-my-zsh"
+  ;;
+  linux*)
+    export ZSH="/home/david/.oh-my-zsh"
+  ;;
+esac
+
 DISABLE_AUTO_TITLE="true"
 
 plugins=(
@@ -61,8 +69,8 @@ setopt APPEND_HISTORY       # append to history, instead of overwriting
 setopt INC_APPEND_HISTORY   # adds commands as they are typed, not at shell exit
 
 # oh-my-zsh Customizations
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Dev Environment
 ## Tab Titles
