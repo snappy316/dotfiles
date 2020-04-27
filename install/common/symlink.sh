@@ -22,3 +22,9 @@ if ! [ -L ~/.zshrc ]; then
   ln -sfv ~/.dotfiles/.vimrc ~
   ln -sfv ~/.dotfiles/.vim ~
 fi
+
+# tmux
+if ! [ -L ~/.tmux.conf ]; then
+  echo "Symlinking Tmux dotfiles"
+  ln -sfv ~/.dotfiles/.tmux.conf ~
+fi
