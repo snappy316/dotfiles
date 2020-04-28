@@ -46,7 +46,7 @@
 [credential]
 	helper = osxkeychain
 [core]
-	editor = code --wait
+	editor = vim
 	excludesfile = /Users/davidker/.gitignore_global
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
