@@ -1,4 +1,6 @@
 # oh-my-zsh defaults
+export TERM="xterm-256color"
+
 case "$OSTYPE" in
   darwin*)
     export ZSH="/Users/davidker/.oh-my-zsh"
