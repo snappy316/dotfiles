@@ -130,4 +130,8 @@ alias hl='hyperlayout'
 ## Relative cd - h/t https://twitter.com/paulredmond/status/1204557648026144768?s=20
 cdpath=(~/Code ~/Projects)
 
+## Add ~/.dotfiles/bin to path
+path=($path "$HOME/.dotfiles/bin")
+export PATH
+
 source ~/.dotfiles/zsh/zshrc.local
