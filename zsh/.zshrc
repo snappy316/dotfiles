@@ -22,7 +22,7 @@ plugins=(
   vscode
 )
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Powerlevel9k - https://github.com/Powerlevel9k/powerlevel9k
 ## Font mode
