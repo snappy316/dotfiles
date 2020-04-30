@@ -23,3 +23,7 @@ set relativenumber    " show relative line numbers from current line
 set showcmd           " show command in bottom bar
 set splitbelow        " split new buffers below the current
 set splitright        " vsplit new buffers to the right of current
+
+" Git Config
+autocmd FileType gitcommit set textwidth=72
+autocmd FileType gitcommit set colorcolumn=+1
