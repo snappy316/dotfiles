@@ -1,6 +1,8 @@
 # Machine-specific config
 zsh/zshrc.local
 
+# Homebrew
+Brewfile.lock.json
 
 # Editor
 .vim/.netrwhist
