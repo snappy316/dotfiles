@@ -17,10 +17,11 @@ if ! [ -L ~/.zshrc ]; then
 fi
 
 # vim
-if ! [ -L ~/.zshrc ]; then
+if ! [ -L ~/.vimrc ]; then
   echo "Symlinking Vim dotfiles"
   ln -sfv ~/.dotfiles/.vimrc ~
-  ln -sfv ~/.dotfiles/.vim ~
+  ln -sfv ~/.dotfiles/.vim/key_mappings.vim ~/.vim
+  ln -sfv ~/.dotfiles/.vim/plugins.vim ~/.vim
 fi
 
 # tmux
