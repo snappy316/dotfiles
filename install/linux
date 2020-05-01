@@ -15,6 +15,9 @@
 ./ubuntu/vim.zsh
 ./common/vim.sh
 
+# tmux
+./install/common/tmux.zsh
+
 # Symlink regular dotfiles
 ./common/symlink.sh
 

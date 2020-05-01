@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 DOT_VERSION_FILE = ".dot-version".freeze
-CURRENT_VERSION = Gem::Version.new("0.0.1")
+CURRENT_VERSION = Gem::Version.new("0.1.0")
 LOCAL_VERSION =
   if File.exist?(DOT_VERSION_FILE)
     Gem::Version.new(File.read(DOT_VERSION_FILE).chomp)
@@ -16,6 +16,15 @@ CHANGELOG = [
       "./install/common/symlink.sh",
     ],
     notes: [],
+  },
+  {
+    version: Gem::Version.new("0.1.0"),
+    commands: [
+      "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm",
+    ],
+    notes: [
+      "To finish tpm install, source the `.tmux.conf` file, then hit `prefix + I` to fetch and source the plugins",
+    ],
   },
 ].freeze
 
