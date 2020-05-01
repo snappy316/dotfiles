@@ -12,6 +12,7 @@
 ./common/dotfiles.sh
 
 # Vim
+./ubuntu/vim.zsh
 ./common/vim.sh
 
 # Symlink regular dotfiles

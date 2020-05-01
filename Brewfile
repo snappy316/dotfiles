@@ -23,6 +23,7 @@ brew "postgresql", restart_service: true
 brew "rbenv"
 brew "sox"
 brew "tmux"
+brew "vim"
 brew "watchman"
 brew "wget"
 brew "github/gh/gh"
