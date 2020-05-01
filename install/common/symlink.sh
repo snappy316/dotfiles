@@ -29,3 +29,9 @@ if ! [ -L ~/.tmux.conf ]; then
   echo "Symlinking Tmux dotfiles"
   ln -sfv ~/.dotfiles/.tmux.conf ~
 fi
+
+# rubocop
+if ! [ -L ~/.rubocop.yml ]; then
+  echo "Symlinking rubocop"
+  ln -sfv ~/.dotfiles/.rubocop.yml ~
+fi

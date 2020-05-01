@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 DOT_VERSION_FILE = ".dot-version".freeze
-CURRENT_VERSION = Gem::Version.new("0.0.0")
+CURRENT_VERSION = Gem::Version.new("0.0.1")
 LOCAL_VERSION =
   if File.exist?(DOT_VERSION_FILE)
     Gem::Version.new(File.read(DOT_VERSION_FILE).chomp)
@@ -11,8 +11,10 @@ LOCAL_VERSION =
   end
 CHANGELOG = [
   {
-    version: Gem::Version.new("0.0.0"),
-    commands: [],
+    version: Gem::Version.new("0.0.1"),
+    commands: [
+      "./install/common/symlink.sh",
+    ],
     notes: [],
   },
 ].freeze

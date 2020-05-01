@@ -326,9 +326,6 @@ Lint/EmptyEnsure:
 Lint/EmptyInterpolation:
   Description: Checks for empty string interpolation.
   Enabled: true
-Lint/EndInMethod:
-  Description: END blocks should not be placed inside method definitions.
-  Enabled: true
 Lint/EnsureReturn:
   Description: Do not use return in an ensure block.
   Enabled: true
@@ -351,6 +348,9 @@ Lint/ParenthesesAsGroupedExpression:
   Description: Checks for method calls with a space before the opening parenthesis.
   Enabled: true
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#parens-no-spaces"
+Lint/RaiseException:
+  Description: Checks for `raise` or `fail` statements which are raising `Exception` class.
+  Enabled: true
 Lint/RedundantStringCoercion:
   Description: "Checks for Object#to_s usage in string interpolation."
   Enabled: true
@@ -364,6 +364,9 @@ Lint/RescueException:
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#no-blind-rescues"
 Lint/ShadowingOuterLocalVariable:
   Description: Do not use the same name as outer local variable for block arguments or block local variables.
+  Enabled: true
+Lint/StructNewOverride:
+  Description: Disallow overriding the `Struct` built-in methods via `Struct.new`.
   Enabled: true
 Lint/SuppressedException:
   Description: Don't suppress exception.
@@ -598,14 +601,6 @@ Style/BlockDelimiters:
   Description: "Avoid using {...} for multi-line blocks (multiline chaining is always ugly). Prefer {...} over do...end for single-line blocks."
   Enabled: true
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#single-line-blocks"
-Style/BracesAroundHashParameters:
-  Description: Enforce braces style around hash parameters.
-  Enabled: true
-  EnforcedStyle: no_braces
-  SupportedStyles:
-    - braces
-    - no_braces
-    - context_dependent
 Style/CaseEquality:
   Description: Avoid explicit use of the case equality operator(===).
   Enabled: true
@@ -728,6 +723,10 @@ Style/GuardClause:
   Enabled: true
   MinBodyLength: 1
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#no-nested-conditionals"
+Style/HashEachMethods:
+  Description: "Use Hash#each_key and Hash#each_value."
+  StyleGuide: "#hash-each"
+  Enabled: true
 Style/HashSyntax:
   Description: "Prefer Ruby 1.9 hash syntax { a: 1, b: 2 } over 1.8 syntax { :a => 1, :b => 2 }."
   Enabled: true
@@ -736,6 +735,12 @@ Style/HashSyntax:
   SupportedStyles:
     - ruby19
     - hash_rockets
+Style/HashTransformKeys:
+  Description: "Prefer `transform_keys` over `each_with_object` and `map`."
+  Enabled: true
+Style/HashTransformValues:
+  Description: "Prefer `transform_values` over `each_with_object` and `map`."
+  Enabled: true
 Style/IfUnlessModifier:
   Description: Favor modifier if/unless usage when you have a single-line body.
   Enabled: false
