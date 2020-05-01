@@ -13,10 +13,17 @@ Plugin 'VundleVim/Vundle.vim'
 
 """"" Custom Plugins """""
 " tpope
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-obsession'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-sensible'
 
 " Nord
 Plugin 'arcticicestudio/nord-vim'
+
+Plugin 'itchyny/lightline.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'preservim/nerdtree'
 
 """"" Vundle Config """""
 call vundle#end()            " required
