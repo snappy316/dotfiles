@@ -659,7 +659,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 768 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1276 1417 0 0 2560 1417 </string>
+	<string>0 913 650 504 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>343 181 652 506 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
@@ -2182,7 +2182,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>8F4AF0B7-9236-4DD6-8873-598785123A57</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>18</integer>
+	<integer>19</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2931,7 +2931,7 @@
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>598294563.18293095</real>
 	<key>OpenBookmark</key>
-	<true/>
+	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
