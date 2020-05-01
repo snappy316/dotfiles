@@ -2,17 +2,6 @@
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
 
-const foregroundColor = "#fff";
-const backgroundColor = "rgba(0, 0, 0, .65)";
-const overlap = "rgba(0, 0, 0, .15)";
-const red = "#FF3B30";
-const green = "#4CD964";
-const yellow = "#FFCC00";
-const blue = "#0095FF";
-const magenta = "#FF2D55";
-const cyan = "#5AC8FA";
-const white = "#FFFFFF";
-
 module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
@@ -28,30 +17,14 @@ module.exports = {
     // font line height - https://github.com/zeit/hyper/pull/2858
     lineHeight: 1.2,
 
-    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: blue,
-
-    // terminal text color under BLOCK cursor
-    cursorAccentColor: "#000",
-
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
     cursorShape: "BLOCK",
 
     // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: false,
 
-    // color of the text
-    foregroundColor,
-
-    // terminal background color
-    // opacity is only supported on macOS
-    backgroundColor,
-
     // terminal selection color
-    selectionColor: "rgba(248,28,229,0.3)",
-
-    // border color (window, tabs)
-    borderColor: overlap,
+    selectionColor: "rgba(216,222,233,0.3)",
 
     // custom CSS to embed in the main window
     css: "",
@@ -70,28 +43,6 @@ module.exports = {
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: "12px 14px",
-
-    // the full list. if you're going to provide the full color palette,
-    // including the 6 x 6 color cubes and the grayscale map, just provide
-    // an array here instead of a color map object
-    colors: {
-      black: backgroundColor,
-      red,
-      green,
-      yellow,
-      blue,
-      magenta,
-      cyan,
-      white,
-      lightBlack: "#686868",
-      lightRed: red,
-      lightGreen: green,
-      lightYellow: yellow,
-      lightBlue: blue,
-      lightMagenta: magenta,
-      lightCyan: cyan,
-      lightWhite: foregroundColor,
-    },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -115,7 +66,7 @@ module.exports = {
     env: {},
 
     // set to `false` for no bell
-    bell: "SOUND",
+    // bell: "SOUND",
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
@@ -141,25 +92,13 @@ module.exports = {
       moveLeft: ["alt+shift+left"],
       moveRight: ["alt+shift+right"],
     },
-
-    verminal: {
-      fontFamily: '"JetBrainsMono Nerd Font"',
-      fontSize: 12,
-    },
   },
 
   // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
   plugins: [
     "hypercwd",
-    "hyper-statusline",
-    "hyperterm-tabs",
-    "hyperlayout",
     "hyper-font-ligatures",
+    "nord-hyper",
   ],
 
   // in development, you can create a directory under
