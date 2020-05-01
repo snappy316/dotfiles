@@ -26,7 +26,7 @@
       "useBundler": true
     }
   },
-  "workbench.colorTheme": "Solarized Light",
+  "workbench.colorTheme": "Nord",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.quickOpen.closeOnFocusLost": false,
   "workbench.startupEditor": "newUntitledFile",

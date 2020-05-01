@@ -15,8 +15,8 @@ Plugin 'VundleVim/Vundle.vim'
 " tpope
 Plugin 'tpope/vim-sensible'
 
-" Solarized
-Plugin 'lifepillar/vim-solarized8'
+" Nord
+Plugin 'arcticicestudio/nord-vim'
 
 """"" Vundle Config """""
 call vundle#end()            " required
