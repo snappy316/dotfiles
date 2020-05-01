@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-DOT_VERSION_FILE = ".dot-version"
-CURRENT_VERSION = Gem::Version.new("3.0.0")
+DOT_VERSION_FILE = ".dot-version".freeze
+CURRENT_VERSION = Gem::Version.new("0.0.0")
 LOCAL_VERSION =
   if File.exist?(DOT_VERSION_FILE)
     Gem::Version.new(File.read(DOT_VERSION_FILE).chomp)
@@ -11,45 +11,39 @@ LOCAL_VERSION =
   end
 CHANGELOG = [
   {
-    version: Gem::Version.new("1.0.0"),
-    commands: [
-      "echo 'step 1 of v1'",
-      "echo 'step 2 of v1'",
-      "echo 'step 3 of v1'",
-      "echo 'step 4 of v1'",
-    ]
+    version: Gem::Version.new("0.0.0"),
+    commands: [],
+    notes: [],
   },
-  {
-    version: Gem::Version.new("2.0.0"),
-    commands: [
-      "echo 'step 1 of v2'",
-      "echo 'step 2 of v2'",
-      "echo 'step 3 of v2'",
-      "echo 'step 4 of v2'",
-    ]
-  },
-  {
-    version: Gem::Version.new("3.0.0"),
-    commands: [
-      "echo 'step 1 of v3'",
-      "echo 'step 2 of v3'",
-      "echo 'step 3 of v3'",
-      "echo 'step 4 of v3'",
-    ]
-  },
-]
+].freeze
 
 if LOCAL_VERSION == CURRENT_VERSION
-  puts "Up-to-date!"
+  puts "👍 Up-to-date!"
 else
-  puts "Upgrading from #{LOCAL_VERSION} to #{CURRENT_VERSION}..."
-  commands = CHANGELOG.
-    map { |entry| entry[:commands] if entry[:version] > LOCAL_VERSION }.
-    flatten.
-    compact
+  puts "🔧 Upgrading from #{LOCAL_VERSION} to #{CURRENT_VERSION}..."
+  commands = []
+  notes = []
 
-  commands.each { |cmd| system(cmd) }
+  CHANGELOG.each do |entry|
+    if entry[:version] > LOCAL_VERSION
+      commands << entry[:commands]
+      notes << entry[:notes]
+    end
+  end
+
+  commands.flatten!.compact!
+  notes.flatten!.compact!
+
+  commands.each do |cmd|
+    puts "⚡ Running `#{cmd}`"
+    system(cmd)
+  end
 
   File.open(DOT_VERSION_FILE, "w") { |f| f.write CURRENT_VERSION }
-  puts "Upgraded to #{CURRENT_VERSION}!"
+  puts "✅ Upgraded to #{CURRENT_VERSION}!"
+
+  unless notes.empty?
+    puts "🗒  Post-upgrade notes:"
+    notes.flatten.compact.each { |nt| puts "    - #{nt}" }
+  end
 end
