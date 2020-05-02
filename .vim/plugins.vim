@@ -13,17 +13,19 @@ Plugin 'VundleVim/Vundle.vim'
 
 """"" Custom Plugins """""
 " tpope
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-fugitive'         " git wrapper
+Plugin 'tpope/vim-obsession'        " continuously updated session files
+Plugin 'tpope/vim-rails'            " Ruby on Rails power tools
+Plugin 'tpope/vim-sensible'         " defaults everyone can agree on
+Plugin 'tpope/vim-eunuch'           " helpers for Unix
+Plugin 'tpope/vim-surround'         " quoting/parenthesizing made simple
 
-" Nord
-Plugin 'arcticicestudio/nord-vim'
-
-Plugin 'itchyny/lightline.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'preservim/nerdtree'
+Plugin 'arcticicestudio/nord-vim'   " color scheme
+Plugin 'itchyny/lightline.vim'      " status line
+Plugin 'airblade/vim-gitgutter'     " git diff markers in the sign column
+Plugin 'preservim/nerdtree'         " tree explorer
+Plugin 'junegunn/fzf'               " fuzzy file finder
+Plugin 'junegunn/fzf.vim'           " fuzzy file finder
 
 """"" Vundle Config """""
 call vundle#end()            " required

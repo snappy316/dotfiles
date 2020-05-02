@@ -23,7 +23,7 @@ set shortmess+=F      " to get rid of the file name displayed in the command lin
 
 " Keybindings
 map <C-n> :NERDTreeToggle<CR>
-
+map <C-p> :Files<CR>
 " Statusline Config
 let g:lightline = {
   \   'colorscheme': 'nord',

@@ -6,4 +6,4 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ] ; then
 fi
 
 echo "Updating Vim plugins"
-#vim +PluginInstall +qall
+vim +PluginInstall +qall
