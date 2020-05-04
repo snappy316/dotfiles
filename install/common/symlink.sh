@@ -16,6 +16,11 @@ if ! [ -L ~/.zshrc ]; then
   ln -svf ~/.dotfiles/zsh/.zshrc ~
 fi
 
+if ! [ -L ~/.p10k.zsh ]; then
+  echo "Symlinking p10k"
+  ln -svf ~/.dotfiles/zsh/.p10k.zsh ~
+fi
+
 # vim
 if ! [ -L ~/.vimrc ]; then
   echo "Symlinking Vim dotfiles"

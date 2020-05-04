@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.0
+
+- Finish the upgrade to Powerlevel10k
+- Configure p10k, including "transient prompt" that requires a zsh restart (`exec zsh`)
+
 ## v0.1.0
 
 - Add [tpm](https://github.com/tmux-plugins/tpm)
