@@ -6,6 +6,7 @@ colorscheme nord      " note: for solarized8, look at commit history to bring ba
 
 " General
 syntax enable         " enable syntax processing
+let mapleader = "\<Space>"
 
 " Spaces & Tabs
 set tabstop=2         " number of visual spaces per TAB
@@ -20,10 +21,8 @@ set splitbelow        " split new buffers below the current
 set splitright        " vsplit new buffers to the right of current
 set noshowmode        " don't show the mode, since the lightline plugin shows it in status bar
 set shortmess+=F      " to get rid of the file name displayed in the command line bar
+autocmd VimResized * :wincmd =    " automatically rebalance windows on vim resize
 
-" Keybindings
-map <C-n> :NERDTreeToggle<CR>
-map <C-p> :Files<CR>
 " Statusline Config
 let g:lightline = {
   \   'colorscheme': 'nord',
@@ -47,3 +46,9 @@ let g:lightline.enable = {
 autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set colorcolumn=+1
 
+" NERDTree config
+let NERDTreeShowHidden=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" vim-test
+let g:test#strategy = "vtr"
