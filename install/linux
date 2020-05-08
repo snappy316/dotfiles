@@ -3,6 +3,7 @@
 # Homebrew
 ./common/homebrew.sh
 ./ubuntu/homebrew.sh
+./ubuntu/apt.zsh
 
 # Zsh / Oh My Zsh
 ./ubuntu/zsh.sh

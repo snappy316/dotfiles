@@ -13,6 +13,7 @@ brew "git"
 brew "git-lfs"
 brew "go"
 brew "imagemagick@6", link: true
+brew "jq"
 brew "lame"
 brew "libav"
 brew "logrotate", restart_service: true
@@ -31,3 +32,4 @@ brew "heroku/brew/heroku"
 brew "thoughtbot/formulae/gitsh"
 cask "font-hack-nerd-font"
 cask "font-victor-mono"
+cask "iterm2"
