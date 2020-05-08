@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 DOT_VERSION_FILE = ".dot-version".freeze
-CURRENT_VERSION = Gem::Version.new("0.2.0")
+CURRENT_VERSION = Gem::Version.new("0.2.1")
 LOCAL_VERSION =
   if File.exist?(DOT_VERSION_FILE)
     Gem::Version.new(File.read(DOT_VERSION_FILE).chomp)
@@ -33,6 +33,16 @@ CHANGELOG = [
     ],
     notes: [
       "To finish p10k configuration, source `.zshrc`, then run `exec zsh` to fully restart zsh",
+    ],
+  },
+  {
+    version: Gem::Version.new("0.2.1"),
+    commands: [
+      "./install/common/vim.sh",
+      "./install/common/tmux.zsh", 
+    ],
+    notes: [
+      "Make sure to install new packages from Brewfile or `./install/ubuntu/apt.zsh`",
     ],
   },
 ].freeze

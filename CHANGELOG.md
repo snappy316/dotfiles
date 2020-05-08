@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1
+
+- Add tmux plugins: `vim-tmux-navigator`, `tmux-resurrect`, `tmux-continuum`, `tmux-weather`
+- Add vim plugins: `vim-tmux-navigator`, `vim-tmux-runner`, `vim-test`, `vim-tmux-focus-events`, `nerdcommenter`
+- Various vim and tmux config changes
+
 ## v0.2.0
 
 - Finish the upgrade to Powerlevel10k
