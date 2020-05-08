@@ -7,6 +7,8 @@ colorscheme nord      " note: for solarized8, look at commit history to bring ba
 " General
 syntax enable         " enable syntax processing
 let mapleader = "\<Space>"
+set mouse=a
+set updatetime=100
 
 " Spaces & Tabs
 set tabstop=2         " number of visual spaces per TAB
@@ -49,6 +51,10 @@ autocmd FileType gitcommit set colorcolumn=+1
 " NERDTree config
 let NERDTreeShowHidden=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" NERDCommenter config
+let g:NERDSpaceDelims = 1       " Add spaces after comment delimiters by default
+let g:NERDCompactSexyComs = 1   " Use compact syntax for prettified multi-line comments
 
 " vim-test
 let g:test#strategy = "vtr"
