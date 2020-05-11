@@ -9,6 +9,7 @@ syntax enable         " enable syntax processing
 let mapleader = "\<Space>"
 set mouse=a
 set updatetime=100
+set clipboard=unnamedplus,unnamed,autoselect
 
 " Spaces & Tabs
 set tabstop=2         " number of visual spaces per TAB
@@ -23,6 +24,8 @@ set splitbelow        " split new buffers below the current
 set splitright        " vsplit new buffers to the right of current
 set noshowmode        " don't show the mode, since the lightline plugin shows it in status bar
 set shortmess+=F      " to get rid of the file name displayed in the command line bar
+set wildmode=longest,list,full    " tab completion
+set wildmenu                      " tab completion
 autocmd VimResized * :wincmd =    " automatically rebalance windows on vim resize
 
 " Statusline Config
