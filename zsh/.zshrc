@@ -103,14 +103,12 @@ preexec_functions=($preexec_functions tabtitle_preexec)
 which rbenv > /dev/null
 if [[ $? = 0 ]] ; then
   path=("$HOME/.rbenv/bin" $path)
-  export PATH
   export RBENV_ROOT=$HOME/.rbenv
   eval "$(rbenv init -)"
 fi
 
 ## git
-path=($path "$HOME/.git/scripts")
-export PATH
+path+=("$HOME/.git/scripts")
 
 ## code
 export EDITOR='code -w'
@@ -127,10 +125,16 @@ cdpath=(~/Code ~/Projects)
 export FZF_DEFAULT_COMMAND="find -L"
 
 ## Add ~/.dotfiles/bin to path
-path=($path "$HOME/.dotfiles/bin")
-export PATH
+path+=("$HOME/.dotfiles/bin")
 
 source ~/.dotfiles/zsh/zshrc.local
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
+
+# Export path at the very end
+export PATH
