@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0
+
+- Add and configure `fzf` and `fd`
+
 ## v0.2.1
 
 - Add tmux plugins: `vim-tmux-navigator`, `tmux-resurrect`, `tmux-continuum`, `tmux-weather`
