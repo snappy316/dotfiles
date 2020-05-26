@@ -48,6 +48,7 @@
 [core]
 	editor = vim
 	excludesfile = /Users/davidker/.gitignore_global
+  pager = less -FRX
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
