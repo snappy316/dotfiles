@@ -5,6 +5,7 @@ so ~/.vim/key_mappings.vim
 colorscheme nord      " note: for solarized8, look at commit history to bring back other settings
 
 " General
+set nocompatible
 syntax enable         " enable syntax processing
 let mapleader = "\<Space>"
 set mouse=a
