@@ -13,8 +13,10 @@ set updatetime=100
 set clipboard=unnamedplus,unnamed,autoselect
 
 " Spaces & Tabs
+filetype plugin indent on
 set tabstop=2         " number of visual spaces per TAB
 set softtabstop=2     " number of spaces in tab when editing
+set shiftwidth=2      " when indenting with `>`, use two spaces
 set expandtab         " tabs are spaces
 
 " UI Config
