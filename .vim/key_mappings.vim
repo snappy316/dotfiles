@@ -17,3 +17,8 @@ nnoremap <leader>T :TestFile<CR>
 nnoremap <leader>t :TestNearest<CR>
 nnoremap <leader>l :TestLast<CR>
 nnoremap <leader>a :TestSuite<CR>
+
+" VtrRubocop function
+nnoremap <leader>RF :VtrRubocopFile<CR>
+nnoremap <leader>RC :VtrRubocopChanged<CR>
+nnoremap <leader>RP :VtrRubocopProject<CR>
