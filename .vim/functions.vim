@@ -1,3 +1,4 @@
+" VtrRubocop
 function s:vtr_rubocop_file()
   let current_path = expand("%:p")
   let command = "bundle exec rubocop " . current_path
@@ -17,3 +18,11 @@ endfunction
 command VtrRubocopFile call s:vtr_rubocop_file()
 command VtrRubocopChanged call s:vtr_rubocop_changed()
 command VtrRubocopProject call s:vtr_rubocop_project()
+
+" TrimWhitespace - https://vi.stackexchange.com/a/456
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+command! TrimWhitespace call TrimWhitespace()

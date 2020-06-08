@@ -22,3 +22,6 @@ nnoremap <leader>a :TestSuite<CR>
 nnoremap <leader>RF :VtrRubocopFile<CR>
 nnoremap <leader>RC :VtrRubocopChanged<CR>
 nnoremap <leader>RP :VtrRubocopProject<CR>
+
+" TrimWhitespace function
+noremap <Leader>w :TrimWhitespace<CR>
