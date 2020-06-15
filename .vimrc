@@ -19,7 +19,7 @@ set tabstop=2         " number of visual spaces per TAB
 set softtabstop=2     " number of spaces in tab when editing
 set shiftwidth=2      " when indenting with `>`, use two spaces
 set expandtab         " tabs are spaces
-autocmd BufWritePre *.rb :TrimWhitespace    " remove trailing whitespace on *.rb file save
+autocmd BufWritePre *.rb,*.erb :TrimWhitespace    " remove trailing whitespace on *.rb file save
 
 " UI Config
 set number            " show absolute line number for current line
