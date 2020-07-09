@@ -35,6 +35,7 @@ Plugin 'junegunn/fzf'               " fuzzy file finder
 Plugin 'junegunn/fzf.vim'           " fuzzy file finder
 set rtp+=/usr/local/opt/fzf
 Plugin 'janko-m/vim-test'
+Plugin 'dense-analysis/ale'         " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support 
 
 """"" Vundle Config """""
 call vundle#end()            " required

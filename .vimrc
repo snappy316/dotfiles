@@ -52,9 +52,10 @@ let g:lightline.enable = {
   \   'tabline': 1
   \ }
 
-" Git Config
+" Line Length Color Config
 autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set colorcolumn=+1
+autocmd FileType rb set colorcolumn=120
 
 " NERDTree config
 let NERDTreeShowHidden=1
@@ -66,3 +67,28 @@ let g:NERDCompactSexyComs = 1   " Use compact syntax for prettified multi-line c
 
 " vim-test
 let g:test#strategy = "vtr"
+
+" ALE linter config
+let g:ale_linters = {
+  \   'css': ['prettier'],
+  \   'javascript': ['eslint'],
+  \   'javascriptreact': ['eslint'],
+  \   'ruby': ['rubocop'],
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ }
+
+let g:ale_fixers = {
+  \   'css': ['prettier'],
+  \   'javascript': ['eslint'],
+  \   'javascriptreact': ['eslint'],
+  \   'ruby': ['rubocop'],
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ }
+
+let g:ale_ruby_rubocop_executable = 'bundle'  " Use the local/bundle version of rubocop, instead of system
+
+let g:ale_sign_error = '❌'       " Prettify the error sign 
+let g:ale_sign_warning = '⚠️'      " Prettify the warning sign
+
+let g:ale_fix_on_save = 1         " Automatically fix files when saved
+let g:ale_linters_explicit = 1    " Only run linters named in ale_linters settings.
