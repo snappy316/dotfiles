@@ -42,8 +42,8 @@ autoload -Uz compinit && compinit
 setopt AUTO_CD
 
 ## Enable correction of mistyped commands
-setopt CORRECT
-setopt CORRECT_ALL
+# setopt CORRECT
+# setopt CORRECT_ALL
 
 ## Enable case-insensitive globbing
 setopt NO_CASE_GLOB
@@ -62,6 +62,9 @@ HISTSIZE=2000               # override the history buffer defaults
 setopt SHARE_HISTORY        # share history across multiple zsh sessions
 setopt APPEND_HISTORY       # append to history, instead of overwriting
 setopt INC_APPEND_HISTORY   # adds commands as they are typed, not at shell exit
+
+## Disable autocorrect
+unsetopt correct
 
 # oh-my-zsh Customizations
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
