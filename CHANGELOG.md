@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.0
+
+- Add and configure vim plugin `ale`
+
 ## v0.3.0
 
 - Add and configure `fzf` and `fd`
