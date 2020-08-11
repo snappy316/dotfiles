@@ -87,8 +87,14 @@ let g:ale_fixers = {
 
 let g:ale_ruby_rubocop_executable = 'bundle'  " Use the local/bundle version of rubocop, instead of system
 
-let g:ale_sign_error = '❌'       " Prettify the error sign 
+let g:ale_sign_error = '❌'       " Prettify the error sign
 let g:ale_sign_warning = '⚠️'      " Prettify the warning sign
 
 let g:ale_fix_on_save = 1         " Automatically fix files when saved
 let g:ale_linters_explicit = 1    " Only run linters named in ale_linters settings.
+
+" ack.vim config
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+  " let g:ackprg = 'ag --nogroup --nocolor --column'
+endif

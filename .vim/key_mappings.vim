@@ -25,3 +25,6 @@ nnoremap <leader>RP :VtrRubocopProject<CR>
 
 " TrimWhitespace function
 noremap <Leader>w :TrimWhitespace<CR>
+
+" ack.vim
+nnoremap \ :Ack!<space>

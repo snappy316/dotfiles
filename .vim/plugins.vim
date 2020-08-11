@@ -40,6 +40,7 @@ Plugin 'janko-m/vim-test'           " Run your tests at the speed of thought (pa
 Plugin 'dense-analysis/ale'         " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
 Plugin 'yuezk/vim-js'               " The most accurate syntax highlighting plugin for JavaScript and Flow.js
 Plugin 'maxmellon/vim-jsx-pretty'   " JSX and TSX syntax pretty highlighting for vim.
+Plugin 'mileszs/ack.vim'            " Run your favorite search tool from Vim, with an enhanced results list.
 
 """"" Vundle Config """""
 call vundle#end()            " required

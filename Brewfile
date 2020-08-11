@@ -24,6 +24,7 @@ brew "node@10", link: true
 brew "postgresql", restart_service: true
 brew "rbenv"
 brew "sox"
+brew "the_silver_searcher"
 brew "tmux"
 brew "vim"
 brew "watchman"
