@@ -24,18 +24,22 @@ Plugin 'tpope/vim-surround'         " quoting/parenthesizing made simple
 Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
 Plugin 'christoomey/vim-tmux-runner'      " A simple, vimscript only, command runner for sending commands from vim to tmux
 
+" tmux-plugins
 Plugin 'tmux-plugins/vim-tmux-focus-events'   " Make terminal vim and tmux work better together
 
+" others
 Plugin 'arcticicestudio/nord-vim'   " color scheme
 Plugin 'itchyny/lightline.vim'      " status line
 Plugin 'airblade/vim-gitgutter'     " git diff markers in the sign column
 Plugin 'preservim/nerdtree'         " tree explorer
-Plugin 'preservim/nerdcommenter'    " Vim plugin for intensely nerdy commenting powers 
+Plugin 'preservim/nerdcommenter'    " Vim plugin for intensely nerdy commenting powers
 Plugin 'junegunn/fzf'               " fuzzy file finder
 Plugin 'junegunn/fzf.vim'           " fuzzy file finder
 set rtp+=/usr/local/opt/fzf
-Plugin 'janko-m/vim-test'
-Plugin 'dense-analysis/ale'         " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support 
+Plugin 'janko-m/vim-test'           " Run your tests at the speed of thought (paired with vim-tmux-runner)
+Plugin 'dense-analysis/ale'         " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
+Plugin 'yuezk/vim-js'               " The most accurate syntax highlighting plugin for JavaScript and Flow.js
+Plugin 'maxmellon/vim-jsx-pretty'   " JSX and TSX syntax pretty highlighting for vim.
 
 """"" Vundle Config """""
 call vundle#end()            " required
