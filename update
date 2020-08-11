@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 DOT_VERSION_FILE = ".dot-version".freeze
-CURRENT_VERSION = Gem::Version.new("0.4.0")
+CURRENT_VERSION = Gem::Version.new("0.5.0")
 LOCAL_VERSION =
   if File.exist?(DOT_VERSION_FILE)
     Gem::Version.new(File.read(DOT_VERSION_FILE).chomp)
@@ -58,6 +58,14 @@ CHANGELOG = [
   {
     version: Gem::Version.new("0.4.0"),
     commands: [
+      "./install/common/vim.sh",
+    ],
+    notes: [],
+  },
+  {
+    version: Gem::Version.new("0.5.0"),
+    commands: [
+      "brew bundle --no-upgrade",
       "./install/common/vim.sh",
     ],
     notes: [],
