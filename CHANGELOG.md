@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.0
+
+- Swap out nerdcommenter for vim-commentary
+
+## v0.5.0
+
+- Add vim plugins: `vim-js`, `vim-jsx`, `ack`
+- Add `the_silver_searcher` Homebrew package
+
 ## v0.4.0
 
 - Add and configure vim plugin `ale`
