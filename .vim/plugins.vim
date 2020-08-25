@@ -19,6 +19,7 @@ Plugin 'tpope/vim-rails'            " Ruby on Rails power tools
 Plugin 'tpope/vim-sensible'         " defaults everyone can agree on
 Plugin 'tpope/vim-eunuch'           " helpers for Unix
 Plugin 'tpope/vim-surround'         " quoting/parenthesizing made simple
+Plugin 'tpope/vim-commentary'       " comment stuff out
 
 " christoomey
 Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
@@ -32,7 +33,6 @@ Plugin 'arcticicestudio/nord-vim'   " color scheme
 Plugin 'itchyny/lightline.vim'      " status line
 Plugin 'airblade/vim-gitgutter'     " git diff markers in the sign column
 Plugin 'preservim/nerdtree'         " tree explorer
-Plugin 'preservim/nerdcommenter'    " Vim plugin for intensely nerdy commenting powers
 Plugin 'junegunn/fzf'               " fuzzy file finder
 Plugin 'junegunn/fzf.vim'           " fuzzy file finder
 set rtp+=/usr/local/opt/fzf
