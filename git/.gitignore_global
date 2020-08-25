@@ -38,11 +38,12 @@ Thumbs.db
 
 # Vim generated files #
 #######################
+*.swn
 *.swo
 *.swp
+Session.vim
 
 # Misc / Personal files #
 #########################
 scratchpad.md
 .env
-
