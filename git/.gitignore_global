@@ -38,9 +38,7 @@ Thumbs.db
 
 # Vim generated files #
 #######################
-*.swn
-*.swo
-*.swp
+*.sw*
 Session.vim
 
 # Misc / Personal files #
