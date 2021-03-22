@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.7.0
+
+- Add vim plugins `vim-rhubarb` and `colorizer`
+
 ## v0.6.0
 
 - Swap out nerdcommenter for vim-commentary
