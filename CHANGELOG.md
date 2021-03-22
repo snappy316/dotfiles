@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.8.0
+
+- Add installation script for `nvm` and `node`
+
 ## v0.7.0
 
 - Add vim plugins `vim-rhubarb` and `colorizer`

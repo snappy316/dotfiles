@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 DOT_VERSION_FILE = ".dot-version".freeze
-CURRENT_VERSION = Gem::Version.new("0.7.0")
+CURRENT_VERSION = Gem::Version.new("0.8.0")
 LOCAL_VERSION =
   if File.exist?(DOT_VERSION_FILE)
     Gem::Version.new(File.read(DOT_VERSION_FILE).chomp)
@@ -83,6 +83,15 @@ CHANGELOG = [
       "./install/common/vim.sh",
     ],
     notes: [],
+  },
+  {
+    version: Gem::Version.new("0.8.0"),
+    commands: [
+      "./install/common/node.zsh",
+    ],
+    notes: [
+      "To finish nvm and node installation, source `.zshrc`, then run `exec zsh` to fully restart zsh",
+    ],
   },
 ].freeze
 
