@@ -1,5 +1,5 @@
 # oh-my-zsh defaults
-export ZSH="/Users/davidker/.oh-my-zsh"
+export ZSH="/home/david/.oh-my-zsh"
 DISABLE_AUTO_TITLE="true"
 
 plugins=(
@@ -13,10 +13,10 @@ plugins=(
 )
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
-
 # Powerlevel9k - https://github.com/Powerlevel9k/powerlevel9k
 ## Font mode
-POWERLEVEL9K_MODE='awesome-patched'
+#POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 ## Prompt Settings
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -61,8 +61,8 @@ setopt APPEND_HISTORY       # append to history, instead of overwriting
 setopt INC_APPEND_HISTORY   # adds commands as they are typed, not at shell exit
 
 # oh-my-zsh Customizations
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Dev Environment
 ## Tab Titles
@@ -114,8 +114,8 @@ alias hl='hyperlayout'
 cdpath=(~/Code ~/Projects)
 
 ## PCO-specific
-eval "$($HOME/Code/pco/bin/pco init -)"
-export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
-export MYSQL_SLAVE_PORT_3306_TCP_ADDR=127.0.0.1
-export MYSQL_SLAVE_PORT_3306_TCP_PORT=3307
-export PATH=/Users/davidker/pco-box/bin:/usr/local/bin:$PATH
+#eval "$($HOME/Code/pco/bin/pco init -)"
+#export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
+#export MYSQL_SLAVE_PORT_3306_TCP_ADDR=127.0.0.1
+#export MYSQL_SLAVE_PORT_3306_TCP_PORT=3307
+#export PATH=/Users/davidker/pco-box/bin:/usr/local/bin:$PATH

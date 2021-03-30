@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Download dotfiles
+if [ ! -d ~/.dotfiles ] ; then
+  printf "Downloading dotfiles"
+  git clone https://gitlab.com/snappy316/dotfiles.git ~/.dotfiles
+else
+  printf "Updating dotfiles"
+  cd ~/.dotfiles
+  git pull origin master
+fi
+
+# Symlink regular dotfiles
+if ! [ -L ~/.gitconfig ]; then
+  printf "Symlinking gitconfig"
+  ln -svf ~/.dotfiles/git/.gitconfig ~
+fi

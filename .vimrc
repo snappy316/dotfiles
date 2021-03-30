@@ -2,9 +2,9 @@ so ~/.vim/plugins.vim
 so ~/.vim/key_mappings.vim
 
 " set Vim-specific sequences for RGB colors
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
  
 " set background=light
 " colorscheme solarized8
@@ -16,6 +16,9 @@ syntax enable         " enable syntax processing
 set tabstop=2         " number of visual spaces per TAB
 set softtabstop=2     " number of spaces in tab when editing
 set expandtab         " tabs are spaces
+set shiftwidth=2      " makes the tab be 2 white spaces
+set autoindent        " autoindent files
+set smartindent       " smart indent files when vim knows how to
 
 " UI Config
 set number            " show absolute line number for current line

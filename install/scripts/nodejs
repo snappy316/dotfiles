@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Node.js
+if [[ "$(node -v)" != *"13"* ]]; then
+  printf "Installing nodejs"
+  curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+else
+  printf "Node.js already on current major version"
+fi
