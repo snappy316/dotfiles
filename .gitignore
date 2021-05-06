@@ -1,5 +1,7 @@
 # Machine-specific config
 zsh/zshrc.local
+bash/.fzf.bash
+zsh/.fzf.zsh
 .dot-version
 
 # Homebrew
