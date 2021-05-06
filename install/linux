@@ -1,26 +1,26 @@
 #!/bin/bash
 
 # Homebrew
-./common/homebrew.sh
-./ubuntu/homebrew.sh
-./ubuntu/apt.zsh
+./install/common/homebrew.sh
+./install/ubuntu/homebrew.sh
+./install/ubuntu/apt.zsh
 
 # Zsh / Oh My Zsh
-./ubuntu/zsh.sh
-./common/oh-my-zsh.zsh
+./install/ubuntu/zsh.sh
+./install/common/oh-my-zsh.zsh
 
 # Download dotfiles
-./common/dotfiles.sh
+./install/common/dotfiles.sh
 
 # Vim
-./ubuntu/vim.zsh
-./common/vim.sh
+./install/ubuntu/vim.zsh
+./install/common/vim.sh
 
 # tmux
 ./install/common/tmux.zsh
 
 # Symlink regular dotfiles
-./common/symlink.sh
+./install/common/symlink.sh
 
 # Restart zsh
-./common/restart-zsh.sh
+./install/common/restart-zsh.sh
