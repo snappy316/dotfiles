@@ -47,9 +47,9 @@
 	helper = osxkeychain
 [core]
 	editor = vim
-	excludesfile = /Users/davidker/.gitignore_global
+	excludesfile = ~/.gitignore_global
   pager = less -FRX
-	hooksPath = /Users/davidker/.dotfiles/git/hooks
+	hooksPath = ~/.dotfiles/git/hooks
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
