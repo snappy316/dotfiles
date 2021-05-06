@@ -3,10 +3,10 @@ export TERM="xterm-256color"
 
 case "$OSTYPE" in
   darwin*)
-    export ZSH="/Users/davidker/.oh-my-zsh"
+    export ZSH="/Users/$(whoami)/.oh-my-zsh"
   ;;
   linux*)
-    export ZSH="/home/david/.oh-my-zsh"
+    export ZSH="/home/$(whoami)/.oh-my-zsh"
   ;;
 esac
 
