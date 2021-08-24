@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 DOT_VERSION_FILE = ".dot-version".freeze
-CURRENT_VERSION = Gem::Version.new("0.10.0")
+CURRENT_VERSION = Gem::Version.new("0.11.0")
 LOCAL_VERSION =
   if File.exist?(DOT_VERSION_FILE)
     Gem::Version.new(File.read(DOT_VERSION_FILE).chomp)
@@ -107,6 +107,15 @@ CHANGELOG = [
       "./install/common/ruby.zsh",
     ],
     notes: [],
+  },
+  {
+    version: Gem::Version.new("0.11.0"),
+    commands: [
+      "./install/common/tmux.zsh",
+    ],
+    notes: [
+      "Reload the ssh session and tmux config",
+    ],
   },
 ].freeze
 
