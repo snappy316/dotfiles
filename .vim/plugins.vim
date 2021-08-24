@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 """"" Custom Plugins """""
 " tpope
 Plugin 'tpope/vim-fugitive'         " git wrapper
+Plugin 'tpope/vim-rhubarb'          " GitHub extension for fugitive.vim
 Plugin 'tpope/vim-obsession'        " continuously updated session files
 Plugin 'tpope/vim-rails'            " Ruby on Rails power tools
 Plugin 'tpope/vim-sensible'         " defaults everyone can agree on
@@ -41,6 +42,7 @@ Plugin 'dense-analysis/ale'         " Check syntax in Vim asynchronously and fix
 Plugin 'yuezk/vim-js'               " The most accurate syntax highlighting plugin for JavaScript and Flow.js
 Plugin 'maxmellon/vim-jsx-pretty'   " JSX and TSX syntax pretty highlighting for vim.
 Plugin 'mileszs/ack.vim'            " Run your favorite search tool from Vim, with an enhanced results list.
+Plugin 'chrisbra/Colorizer'         " color hex codes and color names
 
 """"" Vundle Config """""
 call vundle#end()            " required

@@ -4,6 +4,8 @@ which brew
 if [[ $? != 0 ]] ; then
   echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  echo "Installing Brewfile..."
+  brew bundle --no-upgrade
 else
   echo "Updating Homebrew..."
   brew update

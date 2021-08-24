@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.8.0
+
+- Add installation script for `nvm` and `node`
+
+## v0.7.0
+
+- Add vim plugins `vim-rhubarb` and `colorizer`
+
 ## v0.6.0
 
 - Swap out nerdcommenter for vim-commentary
