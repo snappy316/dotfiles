@@ -1,5 +1,6 @@
 # Machine-specific config
 zsh/zshrc.local
+.tmux.conf.local
 bash/.fzf.bash
 zsh/.fzf.zsh
 .dot-version
