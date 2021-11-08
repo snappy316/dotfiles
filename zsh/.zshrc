@@ -16,8 +16,8 @@ plugins=(
   bundler
   git
   heroku
+  macos
   mosh
-  osx
   rails
   vscode
 )
