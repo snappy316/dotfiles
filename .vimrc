@@ -1,6 +1,4 @@
 so ~/.vim/plugins.vim
-so ~/.vim/key_mappings.vim
-so ~/.dotfiles/.vim/functions.vim
 
 " Colorscheme
 colorscheme nord      " note: for solarized8, look at commit history to bring back other settings
@@ -94,3 +92,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
   " let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
+
+so ~/.vim/key_mappings.vim
+so ~/.dotfiles/.vim/functions.vim
