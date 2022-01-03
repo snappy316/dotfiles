@@ -1,6 +1,8 @@
 " Esc to normal mode in terminal
 tnoremap <Esc><Esc> <C-\><C-n>
 
+map <leader>sv :source ~/.vimrc<CR>
+
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 map <C-p> :Files<CR>
@@ -28,3 +30,6 @@ noremap <Leader>w :TrimWhitespace<CR>
 
 " ack.vim
 nnoremap \ :Ack!<space>
+
+" emmet
+let g:user_emmet_leader_key='<C-e>'

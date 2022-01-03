@@ -43,7 +43,7 @@ Plugin 'yuezk/vim-js'               " The most accurate syntax highlighting plug
 Plugin 'maxmellon/vim-jsx-pretty'   " JSX and TSX syntax pretty highlighting for vim.
 Plugin 'mileszs/ack.vim'            " Run your favorite search tool from Vim, with an enhanced results list.
 Plugin 'chrisbra/Colorizer'         " color hex codes and color names
-
+Plugin 'mattn/emmet-vim'            " emmet for vim
 """"" Vundle Config """""
 call vundle#end()            " required
 filetype plugin indent on    " required
