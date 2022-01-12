@@ -2,6 +2,7 @@
 [user]
 	name = David Ker
 	email = snappy316@gmail.com
+	signingkey = 7D64752A67823FEA
 [alias]
 	c = commit -m
 	st = status --short --branch
@@ -60,6 +61,7 @@
   stash = false
 [commit]
   verbose = true
+	gpgsign = true
 [pull]
 	rebase = false
 [init]

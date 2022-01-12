@@ -14,6 +14,7 @@ brew "gh"
 brew "git"
 brew "git-lfs"
 brew "go"
+brew "gpg"
 brew "imagemagick@6", link: true
 brew "jq"
 brew "lame"

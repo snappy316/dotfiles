@@ -65,6 +65,7 @@ fi
 if ! [ -L ~/.zshrc ]; then
   echo "Symlinking zshrc"
   ln -svf ~/.dotfiles/zsh/.zshrc ~
+  ln -svf ~/.dotfiles/zsh/.zlogin ~
 fi
 
 # Vim
