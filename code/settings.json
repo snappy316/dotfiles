@@ -8,6 +8,7 @@
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
   // "editor.lineHeight": 21,
+  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestionsDelay": 750,
