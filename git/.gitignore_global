@@ -44,4 +44,5 @@ Session.vim
 # Misc / Personal files #
 #########################
 scratchpad.md
+.scratchpad/*
 .env
