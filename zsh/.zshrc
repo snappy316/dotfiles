@@ -113,6 +113,10 @@ fi
 ## git
 path+=("$HOME/.git/scripts")
 
+## nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 ## code
 export EDITOR='code -w'
 
