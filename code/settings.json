@@ -1,6 +1,9 @@
 {
   // Core
   "diffEditor.ignoreTrimWhitespace": false,
+  "editor.codeActionsONSave": {
+    "source.fixAll": true
+  },
   "editor.detectIndentation": false,
   "editor.foldingStrategy": "indentation",
   "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
@@ -13,8 +16,10 @@
   "editor.parameterHints.enabled": false,
   "editor.quickSuggestionsDelay": 750,
   "editor.suggestOnTriggerCharacters": false,
+  "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
+
   "files.autoSave": "onFocusChange",
   "files.defaultLanguage": "markdown",
   "files.trimTrailingWhitespace": true,
@@ -22,6 +27,7 @@
   "files.trimFinalNewlines": true,
 
   "git.ignoreMissingGitWarning": true,
+
   "workbench.colorTheme": "Nord",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.quickOpen.closeOnFocusLost": false,
@@ -39,11 +45,15 @@
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.lineHeight": 1.2,
+
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
   // Packages
   "emmet.triggerExpansionOnTab": true,
   "eslint.packageManager": "yarn",
   "eslint.format.enable": true,
   "extensions.ignoreRecommendations": false,
+  "gitlens.sortBranchesBy": "name:asc"
 
   // Formatters
   "editor.defaultFormatter": "esbenp.prettier-vscode",
