@@ -11,17 +11,17 @@
 	br = branch
 	df = diff HEAD
 	pub = push origin -u HEAD
-	pub-sf = push --force staging HEAD:master
+	pub-sf = push --force staging HEAD:main
   l = log --oneline --decorate
 	ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
   la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
-	ir = !sh -c 'git rebase --interactive ${1-master}' -
+	ir = !sh -c 'git rebase --interactive ${1-main}' -
 	dfs = diff --staged
 	ign = ls-files --others --ignored --exclude-standard
 	unc = reset HEAD^
 	who = shortlog --numbered --summary --no-merges
-	done = !sh -c 'git checkout ${2-master} && git merge @{-1} && git push ${1-origin} ${2-master}' -
-	sync = !sh -c 'git checkout ${2-master} && git pull ${1-origin} ${2-master} && git checkout @{-1} && git rebase ${2-master}' -
+	done = !sh -c 'git checkout ${2-main} && git merge @{-1} && git push ${1-origin} ${2-main}' -
+	sync = !sh -c 'git checkout ${2-main} && git pull ${1-origin} ${2-main} && git checkout @{-1} && git rebase ${2-main}' -
 	cleanup = !git remote prune ${1-origin} && git gc && git stash clear
 	cherry-pit = !sh -c 'git rebase -p --onto $1^ $1' -
 	unadd = reset HEAD --
