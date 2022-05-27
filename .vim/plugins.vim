@@ -20,6 +20,7 @@ Plugin 'tpope/vim-rails'            " Ruby on Rails power tools
 Plugin 'tpope/vim-sensible'         " defaults everyone can agree on
 Plugin 'tpope/vim-eunuch'           " helpers for Unix
 Plugin 'tpope/vim-surround'         " quoting/parenthesizing made simple
+Plugin 'tpope/vim-repeat'           " enable repeating supported plugin maps with . 
 Plugin 'tpope/vim-commentary'       " comment stuff out
 
 " christoomey
