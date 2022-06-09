@@ -3,7 +3,7 @@
 ## Install
 ```
 $ cd ~
-$ git@github.com:snappy316/dotfiles.git .dotfiles
+$ git clone git@github.com:snappy316/dotfiles.git .dotfiles
 $ cd .dotfiles
 $ ./dev-install
 ```
