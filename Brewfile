@@ -6,8 +6,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "thoughtbot/formulae"
-# brew "cairo"
-brew "cocoapods"
+# brew "cairo" #macos only
+brew "cocoapods" #macos only
 brew "fd"
 brew "fzf"
 brew "gh"
@@ -22,7 +22,7 @@ brew "libav"
 brew "logrotate", restart_service: true
 brew "luajit"
 brew "mysql-client"
-brew "node@10", link: true
+brew "node@10", link: true # do I need this with NVM anymore?
 brew "postgresql", restart_service: true
 brew "rbenv"
 brew "sox"
@@ -33,7 +33,7 @@ brew "watchman"
 brew "wget"
 brew "github/gh/gh"
 brew "heroku/brew/heroku"
-brew "thoughtbot/formulae/gitsh"
-cask "font-hack-nerd-font"
-cask "font-victor-mono"
-cask "iterm2"
+brew "thoughtbot/formulae/gitsh" #macos only
+cask "font-hack-nerd-font" # macos only
+cask "font-victor-mono" # macos only
+cask "iterm2" # macos only
