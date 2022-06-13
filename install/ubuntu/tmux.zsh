@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-sudo apt-install tmux
+sudo apt-get install tmux

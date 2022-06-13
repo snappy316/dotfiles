@@ -5,6 +5,9 @@ if [ ! -d ~/.tmux/plugins/tpm ] ; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
+echo "Reloading tmux"
+tmux source ~/.tmux.conf
+
 echo "Updating tmux plugins"
 ~/.tmux/plugins/tpm/bin/install_plugins
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Homebrew
-./install/common/homebrew.sh
-./install/ubuntu/homebrew.sh
+#./install/common/homebrew.sh
+#./install/ubuntu/homebrew.sh
 ./install/ubuntu/apt.zsh
 
 # Zsh / Oh My Zsh
