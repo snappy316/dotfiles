@@ -28,3 +28,7 @@ noremap <Leader>w :TrimWhitespace<CR>
 
 " ack.vim
 nnoremap \ :Ack!<space>
+
+" vim-oscyank
+vnoremap <leader>c :OSCYank<CR>
+nmap <leader>o <Plug>OSCYank

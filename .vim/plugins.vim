@@ -44,6 +44,7 @@ Plugin 'yuezk/vim-js'               " The most accurate syntax highlighting plug
 Plugin 'maxmellon/vim-jsx-pretty'   " JSX and TSX syntax pretty highlighting for vim.
 Plugin 'mileszs/ack.vim'            " Run your favorite search tool from Vim, with an enhanced results list.
 Plugin 'chrisbra/Colorizer'         " color hex codes and color names
+Plugin 'ojroques/vim-oscyank'       " A Vim plugin to copy text through SSH with OSC52
 
 """"" Vundle Config """""
 call vundle#end()            " required
