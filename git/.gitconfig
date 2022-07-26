@@ -45,6 +45,7 @@
 	branch = yellow
 [push]
 	default = simple
+	autoSetupRemote = true
 [credential]
 	helper = osxkeychain
 [core]
