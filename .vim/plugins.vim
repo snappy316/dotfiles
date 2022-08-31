@@ -36,7 +36,8 @@ Plugin 'airblade/vim-gitgutter'     " git diff markers in the sign column
 Plugin 'preservim/nerdtree'         " tree explorer
 Plugin 'junegunn/fzf'               " fuzzy file finder
 Plugin 'junegunn/fzf.vim'           " fuzzy file finder
-set rtp+=/usr/local/opt/fzf
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+
 Plugin 'janko-m/vim-test'           " Run your tests at the speed of thought (paired with vim-tmux-runner)
 Plugin 'dense-analysis/ale'         " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
 Plugin 'yuezk/vim-js'               " The most accurate syntax highlighting plugin for JavaScript and Flow.js

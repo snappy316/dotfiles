@@ -113,8 +113,9 @@ fi
 ## git
 path+=("$HOME/.git/scripts")
 
-## code
-export EDITOR='code -w'
+## editor
+# export EDITOR='code -w'
+export EDITOR='vim'
 
 ## aliases
 alias rs='bundle exec rspec'
