@@ -22,7 +22,6 @@ brew "libav"
 brew "logrotate", restart_service: true
 brew "luajit"
 brew "mysql-client"
-brew "node@10", link: true
 brew "postgresql", restart_service: true
 brew "rbenv"
 brew "sox"
@@ -33,6 +32,9 @@ brew "watchman"
 brew "wget"
 brew "heroku/brew/heroku"
 brew "thoughtbot/formulae/gitsh" if OS.mac?
+cask "asana" if OS.mac?
 cask "font-hack-nerd-font"
 cask "font-victor-mono"
 cask "iterm2" if OS.mac?
+cask "raycast" if OS.mac?
+cask "warp" if OS.mac?
