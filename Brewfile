@@ -6,8 +6,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "thoughtbot/formulae"
-brew "cairo"
-brew "cocoapods"
+brew "cairo" if OS.mac?
+brew "cocoapods" if OS.mac?
 brew "fd"
 brew "fzf"
 brew "gh"
@@ -31,9 +31,8 @@ brew "tmux"
 brew "vim"
 brew "watchman"
 brew "wget"
-brew "github/gh/gh"
 brew "heroku/brew/heroku"
-brew "thoughtbot/formulae/gitsh"
+brew "thoughtbot/formulae/gitsh" if OS.mac?
 cask "font-hack-nerd-font"
 cask "font-victor-mono"
-cask "iterm2"
+cask "iterm2" if OS.mac?
