@@ -13,7 +13,7 @@ CHANGELOG = [
   {
     version: Gem::Version.new("0.0.1"),
     commands: [
-      "./install/common/symlink.sh",
+      "./dev-install/common/symlink.sh",
     ],
     notes: [],
   },
@@ -29,7 +29,7 @@ CHANGELOG = [
   {
     version: Gem::Version.new("0.2.0"),
     commands: [
-      "./install/common/symlink.sh",
+      "./dev-install/common/symlink.sh",
     ],
     notes: [
       "To finish p10k configuration, source `.zshrc`, then run `exec zsh` to fully restart zsh",
@@ -38,17 +38,17 @@ CHANGELOG = [
   {
     version: Gem::Version.new("0.2.1"),
     commands: [
-      "./install/common/vim.sh",
-      "./install/common/tmux.zsh",
+      "./dev-install/common/vim.sh",
+      "./dev-install/common/tmux.zsh",
     ],
     notes: [
-      "Make sure to install new packages from Brewfile or `./install/ubuntu/apt.zsh`",
+      "Make sure to install new packages from Brewfile or `./dev-install/ubuntu/apt.zsh`",
     ],
   },
   {
     version: Gem::Version.new("0.3.0"),
     commands: [
-      "./install/common/symlink.sh",
+      "./dev-install/common/symlink.sh",
     ],
     notes: [
       "Finish `fzf` installation by running `/usr/local/opt/fzf/install`",
@@ -58,7 +58,7 @@ CHANGELOG = [
   {
     version: Gem::Version.new("0.4.0"),
     commands: [
-      "./install/common/vim.sh",
+      "./dev-install/common/vim.sh",
     ],
     notes: [],
   },
@@ -66,28 +66,28 @@ CHANGELOG = [
     version: Gem::Version.new("0.5.0"),
     commands: [
       "brew bundle --no-upgrade",
-      "./install/common/vim.sh",
+      "./dev-install/common/vim.sh",
     ],
     notes: [],
   },
   {
     version: Gem::Version.new("0.6.0"),
     commands: [
-      "./install/common/vim.sh",
+      "./dev-install/common/vim.sh",
     ],
     notes: [],
   },
   {
     version: Gem::Version.new("0.7.0"),
     commands: [
-      "./install/common/vim.sh",
+      "./dev-install/common/vim.sh",
     ],
     notes: [],
   },
   {
     version: Gem::Version.new("0.8.0"),
     commands: [
-      "./install/common/node.zsh",
+      "./dev-install/common/node.zsh",
     ],
     notes: [
       "To finish nvm and node installation, source `.zshrc`, then run `exec zsh` to fully restart zsh",
@@ -104,14 +104,14 @@ CHANGELOG = [
   {
     version: Gem::Version.new("0.10.0"),
     commands: [
-      "./install/common/ruby.zsh",
+      "./dev-install/common/ruby.zsh",
     ],
     notes: [],
   },
   {
     version: Gem::Version.new("0.11.0"),
     commands: [
-      "./install/common/tmux.zsh",
+      "./dev-install/common/tmux.zsh",
     ],
     notes: [
       "Reload the ssh session and tmux config",
