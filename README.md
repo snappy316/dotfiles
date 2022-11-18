@@ -6,7 +6,7 @@ We're now using [dotbot](https://github.com/anishathalye/dotbot)!
 On a fresh macOS or Ubuntu install, open a terminal, and run the following commands:
 ```
 $ cd ~
-$ git clone git@github.com:snappy316/dotfiles.git .dotfiles
+$ git clone https://github.com/snappy316/dotfiles.git .dotfiles
 $ cd .dotfiles
 $ git checkout dotbot # TEMPORARY until this is merged to `main`
 $ ./install
