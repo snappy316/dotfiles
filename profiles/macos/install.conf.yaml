@@ -46,3 +46,11 @@
 
 - brewfile:
     - Brewfile
+
+- shell:
+    -
+      command: profiles/macos/install/xcode
+      description: Configuring Xcode...
+      quiet: true
+      stdin: true
+      stdout: true
