@@ -60,3 +60,15 @@
       quiet: true
       stdin: true
       stdout: true
+    -
+      command: profiles/macos/install/vim
+      description: Configuring Vim...
+      quiet: true
+      stdin: true
+      stdout: true
+    -
+      command: profiles/macos/install/tmux
+      description: Configuring tmux...
+      quiet: true
+      stdin: true
+      stdout: true
