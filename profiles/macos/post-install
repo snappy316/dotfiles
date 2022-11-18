@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+echo "Reloading ZSH"
+source ~/.zshrc
+
+echo "Updating Vim plugins"
+vim +PluginInstall +qall
