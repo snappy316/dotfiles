@@ -13,28 +13,28 @@
       mode: 0700
 
 - link:
-  ~/.gitconfig:
-    path: ~/.dotfiles/git/.gitconfig
-  ~/.gitignore_global:
-    path: ~/.dotfiles/git/.gitignore_global
-  ~/.zshrc:
-    path: ~/.dotfiles/zsh/.zshrc
-  ~/.p10k.zsh:
-    path: ~/.dotfiles/zsh/.p10k.zsh
-  ~/.fzf.zsh:
-    path: ~/.dotfiles/zsh/.fzf.zsh
-  ~/.vimrc:
-    path: ~/.dotfiles/.vimrc
-  ~/.vim/key_mappings.vim:
-    create: true
-    path: ~/.dotfiles/.vim/key_mappings.vim
-  ~/.vim/plugins.vim:
-    create: true
-    path: ~/.dotfiles/.vim/plugins.vim
-  ~/.tmux.conf:
-    path: ~/.dotfiles/.tmux.conf
-  ~/.rubocop.yml:
-    path: ~/.dotfiles/.rubocop.yml
+    ~/.gitconfig:
+      path: ~/.dotfiles/git/.gitconfig
+    ~/.gitignore_global:
+      path: ~/.dotfiles/git/.gitignore_global
+    ~/.zshrc:
+      path: ~/.dotfiles/zsh/.zshrc
+    ~/.p10k.zsh:
+      path: ~/.dotfiles/zsh/.p10k.zsh
+    ~/.fzf.zsh:
+      path: ~/.dotfiles/zsh/.fzf.zsh
+    ~/.vimrc:
+      path: ~/.dotfiles/.vimrc
+    ~/.vim/key_mappings.vim:
+      create: true
+      path: ~/.dotfiles/.vim/key_mappings.vim
+    ~/.vim/plugins.vim:
+      create: true
+      path: ~/.dotfiles/.vim/plugins.vim
+    ~/.tmux.conf:
+      path: ~/.dotfiles/.tmux.conf
+    ~/.rubocop.yml:
+      path: ~/.dotfiles/.rubocop.yml
 
 - brewfile:
     - Brewfile
