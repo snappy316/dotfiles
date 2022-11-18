@@ -36,5 +36,12 @@
     ~/.rubocop.yml:
       path: ~/.dotfiles/.rubocop.yml
 
+- shell:
+    -
+      command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      description: Installing Homebrew...
+      stdin: true
+      stdout: true
+
 - brewfile:
     - Brewfile
