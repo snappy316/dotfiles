@@ -40,6 +40,7 @@ brew "thoughtbot/formulae/gitsh" if OS.mac?
 # `brew install --cask ...`
 cask "asana" if OS.mac?
 cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-victor-mono"
 cask "iterm2" if OS.mac?
 cask "raycast" if OS.mac?
