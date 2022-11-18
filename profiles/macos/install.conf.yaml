@@ -54,3 +54,9 @@
       quiet: true
       stdin: true
       stdout: true
+    -
+      command: profiles/macos/install/oh-my-zsh
+      description: Installing Oh My Zsh...
+      quiet: true
+      stdin: true
+      stdout: true
