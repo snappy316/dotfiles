@@ -134,6 +134,9 @@ export FZF_DEFAULT_COMMAND="find -L"
 ## Add ~/.dotfiles/bin to path
 path+=("$HOME/.dotfiles/bin")
 
+## Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 source ~/.dotfiles/zsh/zshrc.local
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
