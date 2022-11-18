@@ -19,11 +19,10 @@ brew "gpg"
 brew "imagemagick@6", link: true
 brew "jq"
 brew "lame"
-brew "libav"
 brew "logrotate", restart_service: true
 brew "luajit"
 brew "mysql-client"
-brew "postgresql", restart_service: true
+brew "postgresql@15", restart_service: true
 brew "rbenv"
 brew "sox"
 brew "the_silver_searcher"
