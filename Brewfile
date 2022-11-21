@@ -44,6 +44,7 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-victor-mono"
 cask "iterm2" if OS.mac?
 cask "raycast" if OS.mac?
+cask "rectangle" if OS.mac?
 cask "warp" if OS.mac?
 
 # `mas install ...`

@@ -30,6 +30,8 @@
       path: ~/.dotfiles/.tmux.conf
     ~/.rubocop.yml:
       path: ~/.dotfiles/.rubocop.yml
+    ~/Library/Application\ Support:
+      path: ~/.dotfiles/appconfigs/RectangleConfig.json
 
 - shell:
     -
