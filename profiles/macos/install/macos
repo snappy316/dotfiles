@@ -2,6 +2,13 @@
 
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -49,3 +56,14 @@ defaults write com.apple.dock persistent-apps -array
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
+
+for app in "Dock" \
+	"Finder" \
+  "SystemUIServer"; do
+	killall "${app}" &> /dev/null
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."
