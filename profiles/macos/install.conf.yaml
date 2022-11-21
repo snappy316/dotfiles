@@ -11,6 +11,7 @@
 - create:
     ~/.ssh:
       mode: 0700
+    ~/Screenshots:
 
 - link:
     ~/.gitconfig:
@@ -57,6 +58,12 @@
     -
       command: profiles/macos/install/tmux
       description: Configuring tmux...
+      quiet: true
+      stdin: true
+      stdout: true
+    -
+      command: profiles/macos/install/macos
+      description: Configuring macOS-specific settings...
       quiet: true
       stdin: true
       stdout: true
