@@ -11,4 +11,3 @@ Brewfile.lock.json
 # Editor
 .vim/.netrwhist
 .vim/bundle/
-.vim/pack/
