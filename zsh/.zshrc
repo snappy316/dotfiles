@@ -135,7 +135,10 @@ export FZF_DEFAULT_COMMAND="find -L"
 path+=("$HOME/.dotfiles/bin")
 
 ## Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# M1 specific
+if [[ $(uname -m) == "arm64" ]] ; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 source ~/.dotfiles/zsh/zshrc.local
 
