@@ -25,12 +25,8 @@
       path: ~/.dotfiles/zsh/.fzf.zsh
     ~/.vimrc:
       path: ~/.dotfiles/.vimrc
-    ~/.vim/key_mappings.vim:
-      create: true
-      path: ~/.dotfiles/.vim/key_mappings.vim
-    ~/.vim/plugins.vim:
-      create: true
-      path: ~/.dotfiles/.vim/plugins.vim
+    ~/.vim:
+      path: ~/.dotfiles/.vim
     ~/.tmux.conf:
       path: ~/.dotfiles/.tmux.conf
     ~/.rubocop.yml:
@@ -57,12 +53,6 @@
     -
       command: profiles/macos/install/oh-my-zsh
       description: Installing Oh My Zsh...
-      quiet: true
-      stdin: true
-      stdout: true
-    -
-      command: profiles/macos/install/vim
-      description: Configuring Vim...
       quiet: true
       stdin: true
       stdout: true
