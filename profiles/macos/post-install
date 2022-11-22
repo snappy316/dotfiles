@@ -8,6 +8,3 @@ profiles/macos/install/ssh
 
 echo "Reloading ZSH"
 source ~/.zshrc
-
-echo "Updating Vim plugins"
-vim +PluginInstall +qall
