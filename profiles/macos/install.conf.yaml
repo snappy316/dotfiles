@@ -3,6 +3,11 @@
       create: true
       relink: true
       force: true
+    shell:
+      quiet: true
+      stdin: true
+      stdout: true
+      stderr: true
 
 - clean:
     ~/:
@@ -41,9 +46,6 @@
     -
       command: profiles/macos/install/homebrew
       description: Installing Homebrew...
-      quiet: true
-      stdin: true
-      stdout: true
 
 - brewfile:
     - Brewfile
@@ -52,24 +54,12 @@
     -
       command: profiles/macos/install/xcode
       description: Configuring Xcode...
-      quiet: true
-      stdin: true
-      stdout: true
     -
       command: profiles/macos/install/oh-my-zsh
       description: Installing Oh My Zsh...
-      quiet: true
-      stdin: true
-      stdout: true
     -
       command: profiles/macos/install/tmux
       description: Configuring tmux...
-      quiet: true
-      stdin: true
-      stdout: true
     -
       command: profiles/macos/install/macos
       description: Configuring macOS-specific settings...
-      quiet: true
-      stdin: true
-      stdout: true
