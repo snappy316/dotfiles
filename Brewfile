@@ -40,13 +40,25 @@ brew "thoughtbot/formulae/gitsh" if OS.mac?
 
 # `brew install --cask ...`
 cask "asana" if OS.mac?
+cask "fantastical" if OS.mac?
+cask "firefox" if OS.mac?
 cask "font-hack-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-victor-mono"
 cask "iterm2" if OS.mac?
+cask "keybase" if OS.mac?
+cask "nordvpn" if OS.mac?
+cask "notion" if OS.mac?
+cask "obsidian" if OS.mac?
 cask "raycast" if OS.mac?
 cask "rectangle" if OS.mac?
+cask "setapp" if OS.mac?
+cask "slack" if OS.mac?
+cask "spotify" if OS.mac?
+cask "tuple" if OS.mac?
 cask "warp" if OS.mac?
+cask "zoom" if OS.mac?
+cask "1password" if OS.mac?
 
 # `mas install ...`
 mas "Apple Configurator", id: 1037126344
