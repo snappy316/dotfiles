@@ -1,0 +1,39 @@
+#!/bin/zsh
+
+if read -q "choice?Do you want to generate a new GPG key? (y/N): "; then
+  # https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+
+  # generate the key
+  gpg --full-generate-key
+  gpg --list-secret-keys --keyid-format=long
+
+  # get the public key
+  vared -p "What is the key ID in the above list? (After \`sec ed25519/\`) " -c keyID
+  if [ -z "$keyID" ]; then
+    echo "Aborting"
+    return 1
+  fi
+  echo "\nHere is the public key:\n"
+  gpg --armor --export ${keyID}
+
+  # tell git about this machine's public key
+  cat <<EOT >> ~/.dotfiles/.gitconfig.local
+[user]
+  signingkey = ${keyID}
+EOT
+  echo "\nAdded the key to \`~/.dotfiles/.gitconfig.local\`"
+
+  # setup gpg-agent to use the public key
+  cat <<EOT >> ~/.gnupg/gpg-agent.conf
+pinentry-program $(brew --prefix)/bin/pinentry-mac
+EOT
+  echo "\nAdded config to \`~/.gnupg/gpg-agent.conf\`"
+  killall gpg-agent
+
+  # test the config
+  echo "\nTesting GPG config:"
+  echo "test" | gpg --clearsign
+
+  echo "\nDone."
+  echo "- Add the key to GitHub: https://github.com/settings/keys"
+fi

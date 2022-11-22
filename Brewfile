@@ -22,6 +22,7 @@ brew "lame"
 brew "logrotate", restart_service: true
 brew "luajit"
 brew "mysql-client"
+brew "pinentry-mac" if OS.mac?
 brew "postgresql@15", restart_service: true
 brew "rbenv"
 brew "sox"

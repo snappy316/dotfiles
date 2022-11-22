@@ -113,6 +113,9 @@ fi
 ## git
 path+=("$HOME/.git/scripts")
 
+## gpg
+export GPG_TTY=$(tty)
+
 ## nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

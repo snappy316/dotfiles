@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+echo "Configuring GPG..."
+profiles/macos/install/gpg
+
 echo "Reloading ZSH"
 source ~/.zshrc
 
