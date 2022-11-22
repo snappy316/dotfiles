@@ -116,6 +116,9 @@ path+=("$HOME/.git/scripts")
 ## gpg
 export GPG_TTY=$(tty)
 
+## ssh
+eval $(ssh-agent -s) >/dev/null
+
 ## nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
