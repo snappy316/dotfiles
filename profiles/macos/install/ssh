@@ -1,0 +1,44 @@
+#!/bin/zsh
+
+if read -q "choice?Do you want to generate a new SSH key? (y/N): "; then
+  # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+  # ask for the email address
+  vared -p "What email address? " -c email
+  if [ -z "$email" ]; then
+    echo "Aborting"
+    return 1
+  fi
+
+  # generate the key
+  ssh-keygen -t ed25519 -C "${email}"
+
+  echo "Adding key to the ssh-agent"
+  eval "$(ssh-agent -s)"
+
+  # tell git to use the key
+  cat <<EOT >> ~/.ssh/config
+Host *.github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+EOT
+
+  # tell keychain to use the key
+  ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
+  echo "\nHere is the public key:\n"
+  cat  ~/.ssh/id_ed25519.pub
+
+  echo "\nDone. A few post-config steps:"
+  echo "- Add the public key to GitHub: https://github.com/settings/keys"
+  echo "- Run \`ssh git@github.com\` to confirm it works"
+fi
+
+# Gracefully handle SSH Agent Forwarding
+if read -q "choice?Is this a remote machine you'll be SSHing to? (y/N): "; then
+  echo
+  echo "Setting up tmux / SSH Agent Forwarding"
+  cp ~/.dotfiles/ssh/rc ~/.ssh/rc
+  cat ~/.dotfiles/ssh/tmux.conf.local >> ~/.dotfiles/.tmux.conf.local
+fi
