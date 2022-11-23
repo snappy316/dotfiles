@@ -14,6 +14,15 @@ else
   echo "rbenv already installed"
 fi
 
+if [ ! -d "$(rbenv root)/plugins" ] ; then
+  echo "Installing rbenv-aliases"
+  mkdir -p "$(rbenv root)/plugins"
+  git clone https://github.com/tpope/rbenv-aliases.git \
+    "$(rbenv root)/plugins/rbenv-aliases"
+  echo "Aliasing rbenv versions"
+  rbenv alias --auto
+fi
+
 # ruby
 echo "Versions of ruby already installed:"
 rbenv versions
@@ -41,6 +50,7 @@ if read -q "choice?Would you like to install a new version of ruby?? (y/N): "; t
 
   echo "Installing ${ans}..."
   rbenv install ${ans}
+  rbenv alias --auto
 
   # Set as global
   if read -q "choice?Set ${ans} as global default? (y/N): "; then
