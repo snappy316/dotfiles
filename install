@@ -2,6 +2,15 @@
 
 set -e
 
+# Clone and set up the repo
+
+cd ~
+git clone https://github.com/snappy316/dotfiles.git .dotfiles
+cd .dotfiles
+git checkout dotbot # TEMPORARY until this is merged to `main`
+
+# Run the dotbot install
+
 PROFILES_DIR="profiles"
 PROFILE=${1:-macos}
 CONFIG="${PROFILES_DIR}/${PROFILE}/install.conf.yaml"
