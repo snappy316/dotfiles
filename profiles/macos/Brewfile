@@ -1,0 +1,42 @@
+# macos-specific
+
+# `brew tap ...`
+# tap "heroku/brew" # personal-only
+tap "thoughtbot/formulae"
+
+# `brew install ...`
+brew "cairo"
+brew "cocoapods"
+brew "mas"
+brew "pinentry-mac"
+# brew "heroku/brew/heroku" # personal-only
+brew "thoughtbot/formulae/gitsh"
+
+# `brew install --cask ...`
+cask "asana" if OS.mac? # work-only
+cask "fantastical" if OS.mac?
+cask "firefox" if OS.mac?
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-victor-mono"
+cask "iterm2" if OS.mac?
+cask "keybase" if OS.mac? # work-only
+cask "nordvpn" if OS.mac? # work-only
+cask "notion" if OS.mac? # work-only
+cask "obsidian" if OS.mac?
+cask "raycast" if OS.mac?
+cask "rectangle" if OS.mac?
+cask "setapp" if OS.mac?
+cask "slack" if OS.mac?
+cask "spotify" if OS.mac?
+cask "tuple" if OS.mac? # work-only
+cask "visual-studio-code" if OS.mac?
+cask "warp" if OS.mac?
+cask "zoom" if OS.mac? # work-only
+cask "1password" if OS.mac?
+
+# `mas install ...`
+mas "Apple Configurator", id: 1037126344
+mas "Bear", id: 1091189122
+mas "Day One", id: 1055511498 # personal-only
+mas "Xcode", id: 497799835

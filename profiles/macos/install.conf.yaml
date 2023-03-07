@@ -51,6 +51,7 @@
 
 - brewfile:
     - Brewfile
+    - profiles/macos/Brewfile
 
 - shell:
     -
