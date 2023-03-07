@@ -42,7 +42,8 @@
 	untracked = cyan bold
 	branch = yellow
 [push]
-	default = simple
+  default = simple
+  autoSetupRemote = true
 [credential]
 	helper = osxkeychain
 [core]
