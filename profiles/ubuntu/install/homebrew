@@ -2,9 +2,10 @@
 
 which brew > /dev/null
 if [[ $? != 0 ]] ; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  source ~/.zshrc
+  (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/ubuntu/.profile
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
   echo "Brew already installed"
 fi
