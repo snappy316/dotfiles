@@ -1,8 +1,16 @@
 #!/bin/bash
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  echo "Running Linux install"
-  ./dev-install/linux
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "MacOS"
-fi
+PROFILES_DIR="profiles"
+PROFILE=${1:-macos}
+CONFIG="${PROFILES_DIR}/${PROFILE}/install.conf.yaml"
+
+DOTBOT_DIR="dotbot"
+DOTBOT_BIN="bin/dotbot"
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git submodule sync --quiet --recursive
+git submodule update --init --recursive
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir dotbot-brew -c "${CONFIG}" "${@:2}"
