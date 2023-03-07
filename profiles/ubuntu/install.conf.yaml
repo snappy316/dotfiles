@@ -13,11 +13,6 @@
     ~/:
       force: true
 
-- create:
-    ~/.ssh:
-      mode: 0700
-    ~/Code:
-    ~/Screenshots:
 - link:
     ~/.gitconfig:
       path: ~/.dotfiles/git/.gitconfig
@@ -39,8 +34,18 @@
       path: ~/.dotfiles/.asdfrc
 
 - shell:
+  -
+    command: sudo apt install zsh
+    description: Installing zsh...
+
+- shell:
   - command: touch ~/.dotfiles/.tmux.conf.local
   - command: touch ~/.dotfiles/zsh/zshrc.local
+
+- shell:
+    -
+      command: profiles/ubuntu/install/homebrew
+      description: Installing Homebrew...
 
 - brewfile:
     - Brewfile

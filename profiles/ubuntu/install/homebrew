@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+which brew > /dev/null
+if [[ $? != 0 ]] ; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  source ~/.zshrc
+else
+  echo "Brew already installed"
+fi
