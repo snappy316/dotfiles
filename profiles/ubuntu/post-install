@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+# echo "Configuring GPG..."
+# profiles/macos/install/gpg
+
+echo "Configuring SSH..."
+profiles/ubuntu/install/ssh
+
+
+echo "Setting up work stuff"
+
+cat <<EOT >> ~/.dotfiles/zsh/zshrc.local
+## PCO-specific
+eval "\$(\$HOME/Code/pco/bin/pco init -)"
+export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
+export MYSQL_SLAVE_PORT_3306_TCP_ADDR=127.0.0.1
+export MYSQL_SLAVE_PORT_3306_TCP_PORT=3307
+export PATH=/Users/davidker/pco-box/bin:/usr/local/bin:\$PATH
+EOT
+
+source ~/.zshrc
+
+echo "\nDone. A few post-config steps:"
+echo "- Make sure the GPG key is added to cloud box"
+echo "- Make sure SSH public key is added to cloud box's \`~/.ssh/authorized_hosts\` file"
