@@ -58,10 +58,10 @@
       command: profiles/macos/install/xcode
       description: Configuring Xcode...
     -
-      command: profiles/macos/install/oh-my-zsh
+      command: profiles/common/install/oh-my-zsh
       description: Installing Oh My Zsh...
     -
-      command: profiles/macos/install/tmux
+      command: profiles/common/install/tmux
       description: Configuring tmux...
     -
       command: profiles/macos/install/ruby
