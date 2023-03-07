@@ -2,7 +2,6 @@
 [user]
 	name = David Ker
 	email = snappy316@gmail.com
-	signingkey = 7D64752A67823FEA
 [alias]
 	c = commit -m
 	st = status --short --branch
@@ -73,4 +72,6 @@
 [rebase]
   autosquash = true
 [blame]
-	ignoreRevsFile = .git-blame-ignore-revs
+  ignoreRevsFile = .git-blame-ignore-revs
+[include]
+  path = ~/.gitconfig_company
