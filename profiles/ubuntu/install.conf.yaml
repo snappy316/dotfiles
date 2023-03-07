@@ -37,6 +37,9 @@
   -
     command: sudo apt install zsh
     description: Installing zsh...
+  -
+    command: sudo chsh -s $(which zsh) ubuntu
+    description: Setting zsh as default shell...
 
 - shell:
   - command: touch ~/.dotfiles/.tmux.conf.local
