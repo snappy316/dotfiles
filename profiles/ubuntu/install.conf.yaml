@@ -34,30 +34,24 @@
       path: ~/.dotfiles/.asdfrc
 
 - shell:
+  - command: touch ~/.dotfiles/.tmux.conf.local
+  - command: touch ~/.dotfiles/zsh/zshrc.local
   -
     command: sudo apt install zsh
     description: Installing zsh...
   -
     command: sudo chsh -s $(which zsh) ubuntu
     description: Setting zsh as default shell...
-
-- shell:
-  - command: touch ~/.dotfiles/.tmux.conf.local
-  - command: touch ~/.dotfiles/zsh/zshrc.local
-
-- shell:
-    -
-      command: profiles/ubuntu/install/homebrew
-      description: Installing Homebrew...
+  -
+    command: profiles/ubuntu/install/homebrew
+    description: Installing Homebrew...
+  -
+    command: profiles/common/install/oh-my-zsh
+    description: Installing Oh My Zsh...
+  -
+    command: profiles/common/install/tmux
+    description: Configuring tmux...
 
 - brewfile:
     - Brewfile
     - profiles/ubuntu/Brewfile
-
-- shell:
-    -
-      command: profiles/common/install/oh-my-zsh
-      description: Installing Oh My Zsh...
-    -
-      command: profiles/common/install/tmux
-      description: Configuring tmux...
