@@ -32,6 +32,8 @@
       path: ~/.dotfiles/.rubocop.yml
     ~/.asdfrc:
       path: ~/.dotfiles/.asdfrc
+    ~/.ssh/rc:
+      path: ~/.dotfiles/ssh/rc
 
 - shell:
   - command: touch ~/.dotfiles/.tmux.conf.local
