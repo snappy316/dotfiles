@@ -13,4 +13,7 @@ if read -q "choice?Do you need to send this GPG key to your cloud box? (y/N): ";
 
   echo "\nCopied to your cloud box. Run the following command on the cloud box to import and use the GPG key:"
   echo "\n\`gpg --import my-public-key.asc && rm my-public-key.asc\`"
+  echo "\n\nThen, configure the SSH server: \`sudo vim /etc/ssh/sshd_config`\"
+  echo "\nAdd the following line to the bottom: \`StreamLocalBindUnlink yes\`"
+  echo "\nThen restart the SSH server: \`sudo /etc/init.d/ssh restart\`"
 fi
