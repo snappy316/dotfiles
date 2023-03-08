@@ -150,6 +150,10 @@ path+=("$HOME/.dotfiles/bin")
 if [[ $(uname -m) == "arm64" ]] ; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+# linuxbrew
+if [[ -f "//home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 source ~/.dotfiles/zsh/zshrc.local
 
