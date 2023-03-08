@@ -16,4 +16,5 @@ if read -q "choice?Do you need to send this GPG key to your cloud box? (y/N): ";
   echo "\n\nThen, configure the SSH server: \`sudo vim /etc/ssh/sshd_config`\"
   echo "\nAdd the following line to the bottom: \`StreamLocalBindUnlink yes\`"
   echo "\nThen restart the SSH server: \`sudo /etc/init.d/ssh restart\`"
+  echo "\n\nAlso, be sure to update the \`~/.ssh/config\` file with the new IP!"
 fi
