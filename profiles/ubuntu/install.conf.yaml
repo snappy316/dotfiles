@@ -51,6 +51,9 @@
   -
     command: profiles/common/install/tmux
     description: Configuring tmux...
+  -
+    command: profiles/ubuntu/install/gitsh
+    description: Installing gitsh...
 
 - brewfile:
     - Brewfile
