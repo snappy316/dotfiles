@@ -56,6 +56,9 @@
   -
     command: profiles/ubuntu/install/gitsh
     description: Installing gitsh...
+  -
+    command: git remote set-url origin git@github.com:snappy316/dotfiles.git
+    description: Changing remote URL to ssh...
 
 - brewfile:
     - Brewfile
