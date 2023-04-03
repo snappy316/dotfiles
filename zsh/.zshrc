@@ -121,7 +121,7 @@ case "$OSTYPE" in
 esac
 
 ## ssh
-eval $(ssh-agent -s) >/dev/null
+# eval $(ssh-agent -s) >/dev/null
 
 ## nvm
 export NVM_DIR="$HOME/.nvm"

@@ -45,7 +45,7 @@
     command: sudo chsh -s $(which zsh) ubuntu
     description: Setting zsh as default shell...
   -
-    command: profiles/ubuntu/install/homebrew
+    command: profiles/ubuntu/install/homebrew # CHECK FOR INSTALLED
     description: Installing Homebrew...
   -
     command: profiles/common/install/oh-my-zsh
@@ -54,7 +54,7 @@
     command: profiles/common/install/tmux
     description: Configuring tmux...
   -
-    command: profiles/ubuntu/install/gitsh
+    command: profiles/ubuntu/install/gitsh # CHECK FOR INSTALLED
     description: Installing gitsh...
   -
     command: git remote set-url origin git@github.com:snappy316/dotfiles.git
