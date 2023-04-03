@@ -17,7 +17,6 @@ cask "asana" if OS.mac? # work-only
 cask "fantastical" if OS.mac?
 cask "firefox" if OS.mac?
 cask "font-hack-nerd-font"
-cask "font-jetbrains-mono-nerd-font"
 cask "font-victor-mono"
 cask "iterm2" if OS.mac?
 cask "keybase" if OS.mac? # work-only

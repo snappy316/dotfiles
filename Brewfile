@@ -28,3 +28,6 @@ brew "tmux"
 brew "vim"
 brew "watchman"
 brew "wget"
+
+# `brew install --cask ...`
+cask "font-jetbrains-mono-nerd-font"
