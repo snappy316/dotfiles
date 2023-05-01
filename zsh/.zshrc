@@ -103,6 +103,16 @@ tabtitle_preexec() {
 [[ -z $preexec_functions ]] && preexec_functions=()
 preexec_functions=($preexec_functions tabtitle_preexec)
 
+## Homebrew
+# M1 specific
+if [[ $(uname -m) == "arm64" ]] ; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+# linuxbrew
+if [[ -f "//home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 ## rbenv
 which rbenv > /dev/null
 if [[ $? = 0 ]] ; then
@@ -144,16 +154,6 @@ export FZF_DEFAULT_COMMAND="find -L"
 
 ## Add ~/.dotfiles/bin to path
 path+=("$HOME/.dotfiles/bin")
-
-## Homebrew
-# M1 specific
-if [[ $(uname -m) == "arm64" ]] ; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-# linuxbrew
-if [[ -f "//home/linuxbrew/.linuxbrew/bin/brew" ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
 
 source ~/.dotfiles/zsh/zshrc.local
 
