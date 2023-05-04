@@ -1,12 +1,5 @@
 #!/bin/zsh
 
-# echo "Configuring GPG..."
-# profiles/macos/install/gpg
-
-echo "Configuring SSH..."
-profiles/ubuntu/install/ssh
-
-
 echo "Setting up work stuff"
 
 cat <<EOT >> ~/.dotfiles/zsh/zshrc.local
@@ -20,21 +13,4 @@ EOT
 
 source ~/.zshrc
 
-echo "\nDone. A few post-config steps:"
-echo "- Make sure the GPG key is added to cloud box - run \`./profiles/macos/install/cloud-box\` from the local mac"
-echo "- Then run \`gpg --import my-public-key.asc && rm my-public-key.asc\` to import the key"
-echo "- Then run \`sudo reboot\` to reboot the cloud box, then test"
-echo "- Then read the rest of the comments in this file..."
-
-# Configure the SSH server:
-# `sudo vim /etc/ssh/sshd_config`
-
-# Add this new line to the bottom:
-# `StreamLocalBindUnlink yes`
-
-# Restart the SSH server:
-# `sudo /etc/init.d/ssh restart`
-
-# Close and reopen the SSH session, then test a commit:
-# `git commit --allow-empty -m 'test'`
-# `git uncommit`
+echo "\nDone!"
