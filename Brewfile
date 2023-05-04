@@ -20,6 +20,7 @@ brew "lame"
 brew "logrotate", restart_service: true
 brew "luajit"
 # brew "mysql-client" # personal-only
+brew "neovim"
 # brew "postgresql@15", restart_service: true # personal-only
 brew "rbenv"
 brew "sox"

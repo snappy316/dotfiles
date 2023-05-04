@@ -20,7 +20,7 @@ cask "font-hack-nerd-font"
 cask "font-victor-mono"
 cask "iterm2" if OS.mac?
 cask "keybase" if OS.mac? # work-only
-cask "nordvpn" if OS.mac? # work-only
+cask "nordlayer" if OS.mac? # work-only
 cask "notion" if OS.mac? # work-only
 cask "obsidian" if OS.mac?
 cask "raycast" if OS.mac?
