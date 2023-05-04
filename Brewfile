@@ -26,7 +26,6 @@ brew "neovim"
 # brew "sox"
 brew "the_silver_searcher"
 brew "tmux"
-brew "vim"
 # brew "watchman"
 # brew "wget"
 
