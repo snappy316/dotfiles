@@ -10,6 +10,7 @@ if read -q "choice?Do you need to send this GPG key to your cloud box? (y/N): ";
   gpg --export --armor --output my-public-key.asc ${email}
   scp my-public-key.asc $(pco cloud-box ip):~/ && rm my-public-key.asc
   scp ~/.dotfiles/.gitconfig.local $(pco cloud-box ip):~/.dotfiles/.gitconfig.local
+  scp ~/.dotfiles/zsh/zshrc.local $(pco cloud-box ip):~/.dotfiles/zsh/zshrc.local
 
   echo "\nCopied to your cloud box. Run the following command on the cloud box to import and use the GPG key:"
   echo "\n\`gpg --import my-public-key.asc && rm my-public-key.asc\`"
