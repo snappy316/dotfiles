@@ -32,3 +32,6 @@ nnoremap \ :Ack!<space>
 " vim-oscyank
 vnoremap <leader>c :OSCYankVisual<CR>
 nmap <leader>o <Plug>OSCYankVisual
+
+" ALE
+nnoremap gd :ALEGoToDefinition<CR>

@@ -66,6 +66,8 @@ let g:ale_linters = {
   \   'javascript': ['eslint'],
   \   'javascriptreact': ['eslint'],
   \   'ruby': ['rubocop'],
+  \   'typescript': ['eslint', 'tsserver'],
+  \   'typescriptreact': ['eslint', 'tsserver'],
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
 
@@ -74,6 +76,8 @@ let g:ale_fixers = {
   \   'javascript': ['eslint'],
   \   'javascriptreact': ['eslint'],
   \   'ruby': ['rubocop'],
+  \   'typescript': ['eslint', 'prettier'],
+  \   'typescriptreact': ['eslint', 'prettier'],
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
 
