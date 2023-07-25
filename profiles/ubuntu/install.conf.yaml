@@ -26,6 +26,8 @@
       path: ~/.dotfiles/.vimrc
     ~/.vim:
       path: ~/.dotfiles/.vim
+    ~/.config/nvim:
+      path: ~/.dotfiles/nvim
     ~/.tmux.conf:
       path: ~/.dotfiles/.tmux.conf
     ~/.rubocop.yml:
