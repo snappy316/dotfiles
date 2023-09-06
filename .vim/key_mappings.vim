@@ -30,5 +30,8 @@ noremap <Leader>w :TrimWhitespace<CR>
 nnoremap \ :Ack!<space>
 
 " vim-oscyank
-vnoremap <leader>c :OSCYank<CR>
-nmap <leader>o <Plug>OSCYank
+vnoremap <leader>c :OSCYankVisual<CR>
+nmap <leader>o <Plug>OSCYankVisual
+
+" ALE
+nnoremap gd :ALEGoToDefinition<CR>
