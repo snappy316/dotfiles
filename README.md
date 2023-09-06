@@ -8,9 +8,10 @@ On a fresh macOS or Ubuntu install, open a terminal, and run the following comma
 $ cd ~
 $ git clone https://github.com/snappy316/dotfiles.git .dotfiles
 $ cd .dotfiles
-$ git checkout dotbot # TEMPORARY until this is merged to `main`
-$ ./install
+$ ./dev-install [macos|ubuntu]
 ```
+
+(I'm still working on a single-command clone-and-install path, which uses the `./install` script...meaning `./dev-install` after manually cloning is the way to go for now.)
 
 ## Configuration Inspirations
 - Originally heavily inspired by [Ryan's config files](https://github.com/ryansobol/config/) and the [Ruby Foundations class setup files](https://github.com/codefellows/sea-c21-ruby/tree/master/lib/class1/osx)
