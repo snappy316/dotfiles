@@ -1,4 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env zsh
+
+set -e
+
+# xcode-select --install
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Clone and set up the repo
+
+cd ~
+git clone https://github.com/snappy316/dotfiles.git .dotfiles
+cd .dotfiles
+git checkout dotbot # TEMPORARY until this is merged to `main`
+
+# Run the dotbot install
 
 PROFILES_DIR="profiles"
 PROFILE=${1:-macos}

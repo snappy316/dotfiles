@@ -1,8 +1,6 @@
-# This is Git's per-user configuration file.
 [user]
 	name = David Ker
 	email = snappy316@gmail.com
-	signingkey = 7D64752A67823FEA
 [alias]
 	c = commit -m
 	st = status --short --branch
@@ -12,7 +10,7 @@
 	df = diff HEAD
 	pub = push origin -u HEAD
 	pub-sf = push --force staging HEAD:main
-  l = log --oneline --decorate
+  l = log --oneline --decorate main..
 	ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
   la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
 	ir = !sh -c 'git rebase --interactive ${1-main}' -
@@ -26,7 +24,9 @@
 	cherry-pit = !sh -c 'git rebase -p --onto $1^ $1' -
 	unadd = reset HEAD --
 	uncommit = reset HEAD^
-	oops = commit --amend --reuse-message=HEAD
+  oops = commit --amend --reuse-message=HEAD
+  # ATTENTION: All aliases prefixed with ! run in /bin/sh make sure you use sh syntax, not bash/zsh or whatever
+  recentb = "!r() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); ahead=$(git rev-list --count \"${refbranch:-origin/main}..${branch}\"); behind=$(git rev-list --count \"${branch}..${refbranch:-origin/main}\"); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$ahead|$behind|$colorline\" | awk -F'|' -vOFS='|' '{$5=substr($5,1,70)}1' ; done | ( echo \"ahead|behind||branch|lastcommit|message|author\\n\" && cat) | column -ts'|';}; r"
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -44,7 +44,8 @@
 	untracked = cyan bold
 	branch = yellow
 [push]
-	default = simple
+  default = simple
+  autoSetupRemote = true
 [credential]
 	helper = osxkeychain
 [core]
@@ -69,3 +70,9 @@
   defaultBranch = main
 [rebase]
   autosquash = true
+[include]
+  path = ~/.dotfiles/.gitconfig.local
+[blame]
+  ignoreRevsFile = .git-blame-ignore-revs
+[include]
+  path = ~/.gitconfig_company

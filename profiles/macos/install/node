@@ -1,0 +1,59 @@
+#!/bin/zsh
+
+# asdf
+if [ ! -d ~/.asdf ] ; then
+  echo "Installing asdf"
+
+  if [ -d ~/.nvm ] ; then
+    echo "!! nvm is installed - please uninstall it to prevent conflicts with asdf !!"
+    echo "   (it should be as simple as `rm -rf ~/.nvm`)"
+  fi
+
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
+
+  source ~/.zshrc
+
+  echo "Installing asdf plugin nodejs"
+  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  echo "Installing asdf plugin alias"
+  asdf plugin add alias https://github.com/andrewthauer/asdf-alias.git
+
+else
+  echo "asdf already installed, updating instead"
+
+  source ~/.zshrc
+
+  asdf update
+  asdf plugin update nodejs
+  asdf plugin update alias
+fi
+
+# node
+echo "Versions of node already installed:"
+asdf list nodejs
+echo
+
+if read -q "choice?Would you like to install a new version of node?? (y/N): "; then
+  echo
+
+  echo "Available versions:"
+  asdf list all nodejs
+  echo
+  vared -p "Which version to install? " -c ans
+
+  if [ -z "$ans" ]; then
+    echo "Aborting"
+    return 1
+  fi
+
+  echo "Installing ${ans}..."
+  asdf install nodejs ${ans}
+  asdf alias nodejs --auto
+
+  # Set as global
+  if read -q "choice?Set ${ans} as global default? (y/N): "; then
+    asdf global nodejs ${ans}
+    echo
+    echo "Set ${ans} as global default"
+  fi
+fi

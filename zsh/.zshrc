@@ -13,6 +13,7 @@ esac
 DISABLE_AUTO_TITLE="true"
 
 plugins=(
+  asdf
   bundler
   git
   heroku
@@ -102,6 +103,16 @@ tabtitle_preexec() {
 [[ -z $preexec_functions ]] && preexec_functions=()
 preexec_functions=($preexec_functions tabtitle_preexec)
 
+## Homebrew
+# M1 specific
+if [[ $(uname -m) == "arm64" ]] ; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+# linuxbrew
+if [[ -f "//home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 ## rbenv
 which rbenv > /dev/null
 if [[ $? = 0 ]] ; then
@@ -113,9 +124,19 @@ fi
 ## git
 path+=("$HOME/.git/scripts")
 
+## gpg
+export GPG_TTY=$(tty)
+case "$OSTYPE" in
+  darwin*) gpg-agent --daemon --use-standard-socket &>/dev/null ;;
+esac
+
+## ssh
+# eval $(ssh-agent -s) >/dev/null
+
 ## nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ## code
 export EDITOR='code -w'
