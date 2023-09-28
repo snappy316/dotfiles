@@ -3,6 +3,7 @@
 # `brew tap ...`
 # tap "heroku/brew" # personal-only
 tap "thoughtbot/formulae"
+tap "xcodesorg/made"
 
 # `brew install ...`
 brew "cairo"
@@ -11,6 +12,7 @@ brew "mas"
 brew "pinentry-mac"
 # brew "heroku/brew/heroku" # personal-only
 brew "thoughtbot/formulae/gitsh"
+brew "xcodesorg/made/xcodes"
 
 # `brew install --cask ...`
 cask "asana" if OS.mac? # work-only
@@ -38,4 +40,3 @@ cask "1password" if OS.mac?
 mas "Apple Configurator", id: 1037126344
 mas "Bear", id: 1091189122
 mas "Day One", id: 1055511498 # personal-only
-mas "Xcode", id: 497799835
