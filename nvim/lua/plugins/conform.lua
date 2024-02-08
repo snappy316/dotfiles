@@ -13,15 +13,17 @@ return {
     formatters = {
       --injected = { options = { ignore_errors = true } },
       eslint_d = {
-        condition = function(ctx)
+        condition = function(self, ctx)
           local b = vim.b[vim.api.nvim_get_current_buf()]
           if b.eslint_has_prettier ~= nil then
             return b.eslint_has_prettier
           end
 
           b.eslint_has_prettier = false
-          local path =
-            vim.fs.find({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" }, { path = ctx.filename, upward = true })[1]
+          local path = vim.fs.find(
+            { ".eslintrc", ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs" },
+            { path = ctx.filename, upward = true }
+          )[1]
           if path then
             local file = io.open(path, "r")
             if file then

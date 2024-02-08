@@ -13,6 +13,15 @@ return {
     },
   },
   config = function()
+    require("mason-lspconfig").setup()
+
+    require("mason-lspconfig").setup_handlers({
+      -- Automatically set up LSP servers installed via Mason
+      function(server_name) -- default handler (optional)
+        require("lspconfig")[server_name].setup({})
+      end,
+    })
+
     -- This config sets up ruby-lsp properly
     -- https://github.com/Shopify/ruby-lsp/blob/main/EDITORS.md#Neovim-LSP
     -- --
@@ -64,5 +73,9 @@ return {
         setup_diagnostics(client, buffer)
       end,
     })
-  end
+
+    require("lspconfig").syntax_tree.setup({
+      cmd = { "bundle", "exec", "stree", "lsp" },
+    })
+  end,
 }
