@@ -80,6 +80,24 @@ return {
       require("lspconfig").syntax_tree.setup({
         cmd = { "bundle", "exec", "stree", "lsp" },
       })
+
+      vim.opt.signcolumn = "yes"
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "ruby",
+        callback = function()
+          vim.lsp.start({
+            name = "rubocop",
+            cmd = { "bundle", "exec", "rubocop", "--lsp" },
+          })
+        end,
+      })
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.rb",
+        callback = function()
+          vim.lsp.buf.format()
+        end,
+      })
     end,
   },
 }
