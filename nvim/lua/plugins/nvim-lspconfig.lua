@@ -71,7 +71,7 @@ return {
         })
       end
 
-      require("lspconfig").ruby_ls.setup({
+      require("lspconfig").ruby_lsp.setup({
         on_attach = function(client, buffer)
           setup_diagnostics(client, buffer)
         end,
