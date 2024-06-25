@@ -6,7 +6,8 @@
 	st = status --short --branch
 	co = checkout
 	cob = checkout -b
-	br = branch
+  br = branch
+  sw = !git_sw
 	df = diff HEAD
 	pub = push origin -u HEAD
 	pub-sf = push --force staging HEAD:main
