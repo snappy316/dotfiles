@@ -16,6 +16,7 @@
 - create:
     ~/.ssh:
       mode: 0700
+    ~/Code:
     ~/Screenshots:
 
 - link:
