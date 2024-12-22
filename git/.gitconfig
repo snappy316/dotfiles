@@ -78,5 +78,5 @@
   path = ~/.dotfiles/.gitconfig.local
 [blame]
   ignoreRevsFile = .git-blame-ignore-revs
-[include]
-  path = ~/.gitconfig_company
+[includeIf "gitdir:~/Code/"]
+  path = ~/.dotfiles/git/.gitconfig_company
