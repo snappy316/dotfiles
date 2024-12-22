@@ -48,6 +48,11 @@
   - command: touch ~/.dotfiles/zsh/zshrc.local
 
 - shell:
+  -
+    command: profiles/macos/install/devbox
+    description: Installing Devbox...
+
+- shell:
     -
       command: profiles/macos/install/homebrew
       description: Installing Homebrew...

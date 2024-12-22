@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+which devbox > /dev/null
+if [[ $? != 0 ]] ; then
+  curl -fsSL https://get.jetify.com/devbox | bash
+else
+  echo "Devbox already installed"
+fi
