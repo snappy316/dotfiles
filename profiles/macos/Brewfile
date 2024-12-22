@@ -36,6 +36,7 @@ cask "visual-studio-code" if OS.mac?
 cask "warp" if OS.mac?
 cask "zoom" if OS.mac? # work-only
 cask "1password" if OS.mac?
+cask "1password-cli" if OS.mac?
 
 # `mas install ...`
 mas "Amphetamine", id: 937984704
