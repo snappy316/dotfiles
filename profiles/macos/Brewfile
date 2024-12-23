@@ -8,6 +8,7 @@ tap "xcodesorg/made"
 # `brew install ...`
 brew "cairo"
 brew "cocoapods"
+brew "direnv"
 brew "mas"
 brew "pinentry-mac"
 # brew "heroku/brew/heroku" # personal-only
