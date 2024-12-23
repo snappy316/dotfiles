@@ -1,7 +1,18 @@
 #!/bin/zsh
 
+which nix > /dev/null
+if [[ $? != 0 ]] ; then
+  echo "Installing Nix"
+  # https://nixos.org/download/
+  sh <(curl -L https://nixos.org/nix/install)
+else
+  echo "Nix already installed"
+fi
+
 which devbox > /dev/null
 if [[ $? != 0 ]] ; then
+  echo "Installing Devbox"
+  # https://www.jetify.com/docs/devbox/installing_devbox/?install-method=macos
   curl -fsSL https://get.jetify.com/devbox | bash
 else
   echo "Devbox already installed"
