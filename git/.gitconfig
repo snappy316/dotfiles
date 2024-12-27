@@ -49,7 +49,7 @@
   default = simple
   autoSetupRemote = true
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore_global
   pager = less -FRX
 	hooksPath = ~/.dotfiles/git/hooks
