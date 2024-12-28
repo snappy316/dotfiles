@@ -42,6 +42,8 @@
       path: ~/.dotfiles/.asdfrc
     ~/Library/Application\ Support:
       path: ~/.dotfiles/appconfigs/RectangleConfig.json
+    ~/.config/ghostty:
+      path: ~/.dotfiles/ghostty
 
 - shell:
   - command: touch ~/.dotfiles/.tmux.conf.local

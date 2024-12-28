@@ -23,6 +23,7 @@ cask "fantastical" if OS.mac?
 cask "firefox" if OS.mac?
 cask "font-hack-nerd-font"
 cask "font-victor-mono"
+cask "ghostty" if OS.mac?
 cask "iterm2" if OS.mac?
 cask "keybase" if OS.mac? # work-only
 cask "nordlayer" if OS.mac? # work-only
