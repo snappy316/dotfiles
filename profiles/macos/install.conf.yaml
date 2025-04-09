@@ -38,8 +38,6 @@
       path: ~/.dotfiles/.tmux.conf
     ~/.rubocop.yml:
       path: ~/.dotfiles/.rubocop.yml
-    ~/.asdfrc:
-      path: ~/.dotfiles/.asdfrc
     ~/Library/Application\ Support:
       path: ~/.dotfiles/appconfigs/RectangleConfig.json
     ~/.config/ghostty:

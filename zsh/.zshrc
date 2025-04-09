@@ -13,7 +13,6 @@ esac
 DISABLE_AUTO_TITLE="true"
 
 plugins=(
-  asdf
   bundler
   direnv
   git
