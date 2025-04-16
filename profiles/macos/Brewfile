@@ -19,6 +19,7 @@ brew "xcodesorg/made/xcodes"
 cask "asana" if OS.mac? # work-only
 cask "betterdisplay" if OS.mac?
 cask "cleanshot" if OS.mac?
+cask "cursor" if OS.mac?
 cask "fantastical" if OS.mac?
 cask "firefox" if OS.mac?
 cask "font-hack-nerd-font"
