@@ -103,6 +103,12 @@ tabtitle_preexec() {
 [[ -z $preexec_functions ]] && preexec_functions=()
 preexec_functions=($preexec_functions tabtitle_preexec)
 
+## devbox global
+which devbox > /dev/null
+if [[ $? = 0 ]] ; then
+  eval "$(devbox global shellenv)"
+fi
+
 ## Homebrew
 # M1 specific
 if [[ $(uname -m) == "arm64" ]] ; then
