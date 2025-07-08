@@ -103,12 +103,6 @@ tabtitle_preexec() {
 [[ -z $preexec_functions ]] && preexec_functions=()
 preexec_functions=($preexec_functions tabtitle_preexec)
 
-## devbox global
-which devbox > /dev/null
-if [[ $? = 0 ]] ; then
-  eval "$(devbox global shellenv)"
-fi
-
 ## Homebrew
 # M1 specific
 if [[ $(uname -m) == "arm64" ]] ; then
@@ -172,3 +166,10 @@ export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
 
 # Export path at the very end
 export PATH
+
+# Set devbox global at the very very end, so all the changes
+# to PATH are up-to-date in a devbox shell
+which devbox > /dev/null
+if [[ $? = 0 ]] ; then
+  eval "$(devbox global shellenv)"
+fi
