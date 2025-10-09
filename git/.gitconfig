@@ -1,65 +1,66 @@
 [user]
-	name = David Ker
-	email = snappy316@gmail.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkrZurt9aCrEtNYlobNc4mrBWkWPLA4vfXw53zw9OfZ
+  name = David Ker
+  email = snappy316@gmail.com
+  # Personal
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkrZurt9aCrEtNYlobNc4mrBWkWPLA4vfXw53zw9OfZ
 [alias]
-	c = commit -m
-	st = status --short --branch
-	co = checkout
-	cob = checkout -b
+  c = commit -m
+  st = status --short --branch
+  co = checkout
+  cob = checkout -b
   br = branch
   sw = !git_sw
-	df = diff HEAD
-	pub = push origin -u HEAD
-	pub-sf = push --force staging HEAD:main
-  l = log --oneline --decorate main..
-	ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
+  df = diff HEAD
+  pub = push origin -u HEAD
+  pub-sf = push --force staging HEAD:main
+  l = !sh -c 'git log --oneline --decorate ${1-main}..' -
+  ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
   la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
-	ir = !sh -c 'git rebase --interactive ${1-main}' -
-	dfs = diff --staged
-	ign = ls-files --others --ignored --exclude-standard
-	unc = reset HEAD^
-	who = shortlog --numbered --summary --no-merges
-	done = !sh -c 'git checkout ${2-main} && git merge @{-1} && git push ${1-origin} ${2-main}' -
-	sync = !sh -c 'git checkout ${2-main} && git pull ${1-origin} ${2-main} && git checkout @{-1} && git rebase ${2-main}' -
-	cleanup = !git remote prune ${1-origin} && git gc && git stash clear
-	cherry-pit = !sh -c 'git rebase -p --onto $1^ $1' -
-	unadd = reset HEAD --
-	uncommit = reset HEAD^
+  ir = !sh -c 'git rebase --interactive ${1-main}' -
+  dfs = diff --staged
+  ign = ls-files --others --ignored --exclude-standard
+  unc = reset HEAD^
+  who = shortlog --numbered --summary --no-merges
+  done = !sh -c 'git checkout ${2-main} && git merge @{-1} && git push ${1-origin} ${2-main}' -
+  sync = !sh -c 'git checkout ${2-main} && git pull ${1-origin} ${2-main} && git checkout @{-1} && git rebase ${2-main}' -
+  cleanup = !git remote prune ${1-origin} && git gc && git stash clear
+  cherry-pit = !sh -c 'git rebase -p --onto $1^ $1' -
+  unadd = reset HEAD --
+  uncommit = reset HEAD^
   oops = commit --amend --reuse-message=HEAD
   # ATTENTION: All aliases prefixed with ! run in /bin/sh make sure you use sh syntax, not bash/zsh or whatever
   recentb = "!r() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); ahead=$(git rev-list --count \"${refbranch:-origin/main}..${branch}\"); behind=$(git rev-list --count \"${branch}..${refbranch:-origin/main}\"); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$ahead|$behind|$colorline\" | awk -F'|' -vOFS='|' '{$5=substr($5,1,70)}1' ; done | ( echo \"ahead|behind||branch|lastcommit|message|author\\n\" && cat) | column -ts'|';}; r"
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-	upstream = cyan
+  current = yellow reverse
+  local = yellow
+  remote = green
+  upstream = cyan
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	func = normal bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  func = normal bold
 [color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = cyan bold
-	branch = yellow
+  added = green bold
+  changed = yellow bold
+  untracked = cyan bold
+  branch = yellow
 [push]
   default = simple
   autoSetupRemote = true
 [core]
-	editor = nvim
-	excludesfile = ~/.gitignore_global
+  editor = nvim
+  excludesfile = ~/.gitignore_global
   pager = less -FRX
-	hooksPath = ~/.dotfiles/git/hooks
+  hooksPath = ~/.dotfiles/git/hooks
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [pager]
-	branch = false
+  branch = false
   stash = false
 [commit]
   verbose = true
@@ -69,7 +70,7 @@
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [pull]
-	rebase = false
+  rebase = false
 [init]
   defaultBranch = main
 [rebase]

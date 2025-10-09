@@ -8,3 +8,39 @@ profiles/macos/install/ssh
 
 echo "Reloading ZSH"
 source ~/.zshrc
+
+echo "Setting up work stuff"
+cd ~/Code
+git clone git@github.com:planningcenter/pco.git
+
+cat <<EOT >> ~/.dotfiles/zsh/zshrc.local
+## PCO-specific
+eval "\$(\$HOME/Code/pco/bin/pco init -)"
+export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
+export MYSQL_SLAVE_PORT_3306_TCP_ADDR=127.0.0.1
+export MYSQL_SLAVE_PORT_3306_TCP_PORT=3307
+export PATH=/Users/davidker/pco-box/bin:/usr/local/bin:\$PATH
+
+## Android Studio - https://reactnative.dev/docs/environment-setup
+export ANDROID_HOME=\$HOME/Library/Android/sdk
+export PATH=\$PATH:\$ANDROID_HOME/emulator
+export PATH=\$PATH:\$ANDROID_HOME/tools
+export PATH=\$PATH:\$ANDROID_HOME/tools/bin
+export PATH=\$PATH:\$ANDROID_HOME/platform-tools
+EOT
+
+source ~/.zshrc
+
+# install the CLI
+pco aws-config
+# yes, twice - now actually configure
+pco aws-config
+
+# configure Church Center App
+cd ~/Code
+git clone git@github.com:planningcenter/ChurchCenterApp.git
+cd ChurchCenterApp
+bin/setup
+echo "\nBoot the simulator
+
+echo "\nDone."
