@@ -173,3 +173,5 @@ which devbox > /dev/null
 if [[ $? = 0 ]] ; then
   eval "$(devbox global shellenv)"
 fi
+
+. "$HOME/.local/bin/env"
