@@ -13,6 +13,7 @@ return {
       json = { "prettier" },
       yaml = { "prettier" },
       markdown = { "prettier" },
+      astro = { "prettier" },
       -- graphql = { "prettier" },
       lua = { "stylua" },
       -- python = { "isort", "black" },
