@@ -57,7 +57,7 @@
       description: Installing Homebrew...
 
 - brewfile:
-    - Brewfile
+    - profiles/common/Brewfile
     - profiles/work/Brewfile
 
 - shell:
