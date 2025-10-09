@@ -62,6 +62,9 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Set the icon size of Dock items to 48 pixels
+defaults write com.apple.dock tilesize -int 48
+
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
@@ -69,6 +72,9 @@ defaults write com.apple.dock persistent-apps -array
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
 
 ###############################################################################
 # Kill affected applications                                                  #

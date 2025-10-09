@@ -36,6 +36,8 @@
       path: ~/.dotfiles/.asdfrc
     ~/.ssh/rc:
       path: ~/.dotfiles/ssh/rc
+    ~/.config/direnv/direnv.toml:
+      path: ~/.dotfiles/direnv/direnv.toml
 
 - shell:
   - command: touch ~/.dotfiles/.tmux.conf.local

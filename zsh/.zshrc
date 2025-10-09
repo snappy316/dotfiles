@@ -13,8 +13,8 @@ esac
 DISABLE_AUTO_TITLE="true"
 
 plugins=(
-  asdf
   bundler
+  direnv
   git
   heroku
   macos
@@ -166,3 +166,10 @@ export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
 
 # Export path at the very end
 export PATH
+
+# Set devbox global at the very very end, so all the changes
+# to PATH are up-to-date in a devbox shell
+which devbox > /dev/null
+if [[ $? = 0 ]] ; then
+  eval "$(devbox global shellenv)"
+fi

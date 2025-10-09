@@ -1,6 +1,7 @@
 [user]
 	name = David Ker
 	email = snappy316@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkrZurt9aCrEtNYlobNc4mrBWkWPLA4vfXw53zw9OfZ
 [alias]
 	c = commit -m
 	st = status --short --branch
@@ -47,10 +48,8 @@
 [push]
   default = simple
   autoSetupRemote = true
-[credential]
-	helper = osxkeychain
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore_global
   pager = less -FRX
 	hooksPath = ~/.dotfiles/git/hooks
@@ -64,7 +63,11 @@
   stash = false
 [commit]
   verbose = true
-	gpgsign = true
+  gpgsign = true
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [pull]
 	rebase = false
 [init]
@@ -75,5 +78,5 @@
   path = ~/.dotfiles/.gitconfig.local
 [blame]
   ignoreRevsFile = .git-blame-ignore-revs
-[include]
-  path = ~/.gitconfig_company
+[includeIf "gitdir:~/Code/"]
+  path = ~/.dotfiles/git/.gitconfig_company

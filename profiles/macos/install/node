@@ -2,21 +2,26 @@
 
 # asdf
 if [ ! -d ~/.asdf ] ; then
-  echo "Installing asdf"
+  if read -q "choice?Would you like to install rbenv? (y/N): "; then
+    echo
+    echo "Installing asdf"
 
-  if [ -d ~/.nvm ] ; then
-    echo "!! nvm is installed - please uninstall it to prevent conflicts with asdf !!"
-    echo "   (it should be as simple as `rm -rf ~/.nvm`)"
+    if [ -d ~/.nvm ] ; then
+      echo "!! nvm is installed - please uninstall it to prevent conflicts with asdf !!"
+      echo "   (it should be as simple as `rm -rf ~/.nvm`)"
+    fi
+
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
+
+    source ~/.zshrc
+
+    echo "Installing asdf plugin nodejs"
+    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    echo "Installing asdf plugin alias"
+    asdf plugin add alias https://github.com/andrewthauer/asdf-alias.git
+  else
+    echo "Skipping rbenv install"
   fi
-
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
-
-  source ~/.zshrc
-
-  echo "Installing asdf plugin nodejs"
-  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  echo "Installing asdf plugin alias"
-  asdf plugin add alias https://github.com/andrewthauer/asdf-alias.git
 
 else
   echo "asdf already installed, updating instead"
