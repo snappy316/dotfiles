@@ -13,7 +13,7 @@
   df = diff HEAD
   pub = push origin -u HEAD
   pub-sf = push --force staging HEAD:main
-  l = log --oneline --decorate main..
+  l = !sh -c 'git log --oneline --decorate ${1-main}..' -
   ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
   la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
   ir = !sh -c 'git rebase --interactive ${1-main}' -
