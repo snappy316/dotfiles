@@ -2,7 +2,7 @@
 
 # asdf
 if [ ! -d ~/.asdf ] ; then
-  if read -q "choice?Would you like to install rbenv? (y/N): "; then
+  if read -q "choice?Would you like to install asdf? (y/N): "; then
     echo
     echo "Installing asdf"
 
@@ -20,7 +20,7 @@ if [ ! -d ~/.asdf ] ; then
     echo "Installing asdf plugin alias"
     asdf plugin add alias https://github.com/andrewthauer/asdf-alias.git
   else
-    echo "Skipping rbenv install"
+    echo "Skipping asdf install"
   fi
 
 else
