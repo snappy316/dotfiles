@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+echo "Configuring GPG..."
+profiles/common/install/gpg
+
+echo "Configuring SSH..."
+profiles/common/install/ssh
+
+echo "Reloading ZSH"
+source ~/.zshrc
