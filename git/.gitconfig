@@ -1,6 +1,7 @@
 [user]
   name = David Ker
   email = snappy316@gmail.com
+  # Personal
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkrZurt9aCrEtNYlobNc4mrBWkWPLA4vfXw53zw9OfZ
 [alias]
   c = commit -m
