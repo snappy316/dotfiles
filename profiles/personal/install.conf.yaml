@@ -16,7 +16,7 @@
 - create:
     ~/.ssh:
       mode: 0700
-    ~/Code:
+    ~/Projects:
     ~/Screenshots:
 
 - link:
@@ -57,7 +57,7 @@
 
 - brewfile:
     - profiles/common/Brewfile
-    - profiles/work/Brewfile
+    - profiles/personal/Brewfile
 
 - shell:
     - command: profiles/common/install/xcode
