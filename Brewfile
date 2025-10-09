@@ -6,31 +6,44 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
+tap "thoughtbot/formulae"
 
 # `brew install ...`
+brew "direnv"
 brew "fd"
 brew "fzf"
-# brew "gh"
+brew "gh"
 brew "git"
 brew "git-lfs"
 brew "go"
 brew "gpg"
-# brew "imagemagick@6", link: true
-# brew "jq"
-# brew "lame"
 brew "lazygit"
-# brew "logrotate", restart_service: true
-# brew "luajit"
-# brew "mysql-client" # personal-only
+brew "mas"
 brew "neovim"
-# brew "postgresql@15", restart_service: true # personal-only
-# brew "rbenv"
+brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "ripgrep"
-# brew "sox"
 brew "the_silver_searcher"
+brew "thoughtbot/formulae/gitsh"
 brew "tmux"
-# brew "watchman"
-# brew "wget"
 
 # `brew install --cask ...`
+cask "claude"
+cask "cleanshot"
+cask "fantastical"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-victor-mono"
+cask "ghostty"
+cask "obsidian"
+cask "raycast"
+cask "rapidapi"
+cask "spotify"
+cask "visual-studio-code"
+cask "1password"
+cask "1password-cli"
+
+# `mas install ...`
+mas "Amphetamine", id: 937984704
+mas "Apple Configurator", id: 1037126344
+mas "Bear", id: 1091189122
+mas "Day One", id: 1055511498 # personal-only

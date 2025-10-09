@@ -1,44 +1,19 @@
 # macos-specific
 
 # `brew tap ...`
-# tap "heroku/brew" # personal-only
-tap "thoughtbot/formulae"
 tap "xcodesorg/made"
 
 # `brew install ...`
-brew "cairo"
-brew "cocoapods"
-brew "direnv"
-brew "mas"
-brew "pinentry-mac"
-# brew "heroku/brew/heroku" # personal-only
-brew "thoughtbot/formulae/gitsh"
-brew "xcodesorg/made/xcodes"
+brew "cairo" # Vector graphics library with cross-device output support - apparently needed for Prince Serverless
+brew "cocoapods" # Dependency manager for for Cocoa projects - CCA
+brew "pinentry-mac" # Pinentry for GPG on Mac
+brew "xcodes" # Best command-line tool to install and switch between multiple versions of Xcode
 
 # `brew install --cask ...`
-cask "asana" if OS.mac? # work-only
-cask "betterdisplay" if OS.mac?
-cask "claude"
-cask "cleanshot" if OS.mac?
-cask "fantastical" if OS.mac?
-cask "font-hack-nerd-font"
-cask "font-victor-mono"
-cask "ghostty" if OS.mac?
-cask "nordlayer" if OS.mac? # work-only
-cask "notion" if OS.mac? # work-only
-cask "obsidian" if OS.mac?
-cask "raycast" if OS.mac?
-cask "rapidapi" if OS.mac?
-cask "slack" if OS.mac?
-cask "spotify" if OS.mac?
-cask "tuple" if OS.mac? # work-only
-cask "visual-studio-code" if OS.mac?
-cask "zoom" if OS.mac? # work-only
-cask "1password" if OS.mac?
-cask "1password-cli" if OS.mac?
-
-# `mas install ...`
-mas "Amphetamine", id: 937984704
-mas "Apple Configurator", id: 1037126344
-mas "Bear", id: 1091189122
-mas "Day One", id: 1055511498 # personal-only
+cask "asana"
+cask "betterdisplay"
+cask "nordlayer"
+cask "notion"
+cask "slack"
+cask "tuple"
+cask "zoom"
