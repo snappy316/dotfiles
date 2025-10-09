@@ -17,6 +17,7 @@
     ~/.ssh:
       mode: 0700
     ~/Code:
+    ~/Projects:
     ~/Screenshots:
 
 - link:

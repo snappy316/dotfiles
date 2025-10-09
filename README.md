@@ -13,7 +13,3 @@ $ ./dev-install macos
 
 (I'm still working on a single-command clone-and-install path, which uses the `./install` script...meaning `./dev-install` after manually cloning is the way to go for now.)
 
-## Configuration Inspirations
-- Originally heavily inspired by [Ryan's config files](https://github.com/ryansobol/config/) and the [Ruby Foundations class setup files](https://github.com/codefellows/sea-c21-ruby/tree/master/lib/class1/osx)
-- [`bweave/dotfiles`](https://github.com/bweave/dotfiles)
-- [`cmoel/dotfiles`](https://github.com/cmoel/dotfiles)
