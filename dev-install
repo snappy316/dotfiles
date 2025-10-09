@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROFILES_DIR="profiles"
-PROFILE=${1:-macos}
+PROFILE=${1:-work}
 CONFIG="${PROFILES_DIR}/${PROFILE}/install.conf.yaml"
 
 DOTBOT_DIR="dotbot"

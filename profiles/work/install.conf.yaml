@@ -58,7 +58,7 @@
 
 - brewfile:
     - Brewfile
-    - profiles/macos/Brewfile
+    - profiles/work/Brewfile
 
 - shell:
     - command: profiles/common/install/xcode

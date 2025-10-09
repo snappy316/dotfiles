@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 echo "Configuring GPG..."
-profiles/macos/install/gpg
+profiles/common/install/gpg
 
 echo "Configuring SSH..."
-profiles/macos/install/ssh
+profiles/common/install/ssh
 
 echo "Reloading ZSH"
 source ~/.zshrc
