@@ -38,8 +38,6 @@
       path: ~/.dotfiles/.tmux.conf
     ~/.rubocop.yml:
       path: ~/.dotfiles/.rubocop.yml
-    ~/Library/Application\ Support:
-      path: ~/.dotfiles/appconfigs/RectangleConfig.json
     ~/.config/ghostty:
       path: ~/.dotfiles/ghostty
     ~/.config/direnv/direnv.toml:
