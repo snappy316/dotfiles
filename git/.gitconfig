@@ -23,7 +23,7 @@
   who = shortlog --numbered --summary --no-merges
   done = !sh -c 'git checkout ${2-main} && git merge @{-1} && git push ${1-origin} ${2-main}' -
   sync = !sh -c 'git checkout ${2-main} && git pull ${1-origin} ${2-main} && git checkout @{-1} && git rebase ${2-main}' -
-  cleanup = !git remote prune ${1-origin} && git gc && git stash clear
+  cleanup = !git branch --merged | grep -Ev \"(^\\*|^\\+|master|main|dev)\" | xargs -n 1 -r git branch -d
   cherry-pit = !sh -c 'git rebase -p --onto $1^ $1' -
   unadd = reset HEAD --
   uncommit = reset HEAD^
