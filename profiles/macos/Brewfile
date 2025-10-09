@@ -21,11 +21,9 @@ cask "betterdisplay" if OS.mac?
 cask "claude"
 cask "cleanshot" if OS.mac?
 cask "fantastical" if OS.mac?
-cask "firefox" if OS.mac?
 cask "font-hack-nerd-font"
 cask "font-victor-mono"
 cask "ghostty" if OS.mac?
-cask "keybase" if OS.mac? # work-only
 cask "nordlayer" if OS.mac? # work-only
 cask "notion" if OS.mac? # work-only
 cask "obsidian" if OS.mac?
@@ -35,7 +33,6 @@ cask "slack" if OS.mac?
 cask "spotify" if OS.mac?
 cask "tuple" if OS.mac? # work-only
 cask "visual-studio-code" if OS.mac?
-cask "warp" if OS.mac?
 cask "zoom" if OS.mac? # work-only
 cask "1password" if OS.mac?
 cask "1password-cli" if OS.mac?
