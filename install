@@ -15,7 +15,7 @@ git checkout dotbot # TEMPORARY until this is merged to `main`
 # Run the dotbot install
 
 PROFILES_DIR="profiles"
-PROFILE=${1:-macos}
+PROFILE=${1:-work}
 CONFIG="${PROFILES_DIR}/${PROFILE}/install.conf.yaml"
 
 DOTBOT_DIR="dotbot"
