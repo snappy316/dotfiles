@@ -42,6 +42,8 @@
       path: ~/.dotfiles/ghostty
     ~/.config/direnv/direnv.toml:
       path: ~/.dotfiles/direnv/direnv.toml
+    ~/.config/opencode:
+      path: ~/.dotfiles/opencode
 
 - shell:
     - command: touch ~/.dotfiles/.tmux.conf.local

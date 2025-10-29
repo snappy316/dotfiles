@@ -20,6 +20,7 @@ brew "gpg"
 brew "lazygit"
 brew "mas"
 brew "neovim"
+brew "opencode"
 brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "ripgrep"
 brew "the_silver_searcher"
