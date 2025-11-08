@@ -1,7 +1,6 @@
 # `brew tap ...`
 tap "github/gh"
 tap "jesseduffield/lazygit"
-tap "thoughtbot/formulae"
 
 # `brew install ...`
 brew "direnv"
@@ -18,7 +17,6 @@ brew "neovim"
 brew "opencode"
 brew "ripgrep"
 brew "the_silver_searcher"
-brew "thoughtbot/formulae/gitsh"
 brew "tmux"
 
 # `brew install --cask ...`
