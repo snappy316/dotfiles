@@ -36,7 +36,7 @@ cask "1password"
 cask "1password-cli"
 
 # `mas install ...`
-mas "Amphetamine", id: 937984704
-mas "Apple Configurator", id: 1037126344
-mas "Bear", id: 1091189122
-mas "Day One", id: 1055511498 # personal-only
+# mas "Amphetamine", id: 937984704
+# mas "Apple Configurator", id: 1037126344
+# mas "Bear", id: 1091189122
+# mas "Day One", id: 1055511498 # personal-only
