@@ -1,8 +1,7 @@
 [user]
   name = David Ker
   email = snappy316@gmail.com
-  # Personal
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkrZurt9aCrEtNYlobNc4mrBWkWPLA4vfXw53zw9OfZ
+  # Since `signingkey` is machine-specific, put it in either `.gitconfig.local`, or `.gitconfig_company`
 [alias]
   c = commit -m
   st = status --short --branch
@@ -76,7 +75,7 @@
 [rebase]
   autosquash = true
 [include]
-  path = ~/.dotfiles/.gitconfig.local
+  path = ~/.dotfiles/git/.gitconfig.local
 [blame]
   ignoreRevsFile = .git-blame-ignore-revs
 [includeIf "gitdir:~/Code/"]
