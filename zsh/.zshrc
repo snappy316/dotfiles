@@ -174,4 +174,5 @@ if [[ $? = 0 ]] ; then
   eval "$(devbox global shellenv)"
 fi
 
-. "$HOME/.local/bin/env"
+# Nix devbox env - will be created after Nix installation
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
