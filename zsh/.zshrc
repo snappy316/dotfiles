@@ -164,6 +164,10 @@ source ~/.dotfiles/zsh/zshrc.local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
 
+# Set config directory
+# (specifically for lazygit, but just in general too)
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Export path at the very end
 export PATH
 
