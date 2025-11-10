@@ -44,6 +44,8 @@
       path: ~/.dotfiles/direnv/direnv.toml
     ~/.config/opencode:
       path: ~/.dotfiles/opencode
+    ~/.config/lazygit/config.yml:
+      path: ~/.dotfiles/lazygit/config.yml
 
 - shell:
     - command: touch ~/.dotfiles/.tmux.conf.local
