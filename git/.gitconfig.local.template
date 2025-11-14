@@ -1,0 +1,3 @@
+[user]
+  email = email@example.com
+  signingkey = ssh-ed25519 ...
