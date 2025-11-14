@@ -12,6 +12,10 @@ The config script gets a bunch of stuff, but it doesn't do everything.
   - Turn display off on battery when inactive - 0:30
   - Turn display off on power adapter when inactive - 3:00
   - Require password after screen saver begins or display is turned off - 0:05
+- Change privacy settings
+  - System Settings > Privacy & Security
+  - Full Disk Access - add Ghostty (primarily for Homebrew)
+  - Local Network - add Arc (so it can access devices on the local network)
 
 ## 1Password
 
