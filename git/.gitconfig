@@ -74,6 +74,8 @@
   defaultBranch = main
 [rebase]
   autosquash = true
+[fetch]
+	prune = true
 [include]
   path = ~/.dotfiles/git/.gitconfig.local
 [blame]
