@@ -6,3 +6,5 @@
 
 # `brew install --cask ...`
 cask "bambu-studio"
+cask "discord"
+cask "tailscale" # the cask version includes the CLI; the regular `brew` version does not
