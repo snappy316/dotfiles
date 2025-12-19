@@ -3,5 +3,12 @@
   "theme": "tokyonight-moon",
   "model": "anthropic/claude-sonnet-4-5",
   "small_model": "anthropic/claude-haiku-4-5",
-  "instructions": ["CLAUDE.md"]
+  "instructions": ["CLAUDE.md"],
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "@playwright/mcp@latest"],
+      "enabled": true
+    }
+  }
 }
