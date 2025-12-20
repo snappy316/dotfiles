@@ -28,7 +28,8 @@ require("config.keymaps")
 -- Set up plugins
 require("lazy").setup({
   spec = {
-    -- Start with empty spec, we'll add plugins gradually
+    -- Import plugins from lua/plugins/
+    { import = "plugins" },
   },
   defaults = {
     lazy = false, -- Don't lazy load by default
