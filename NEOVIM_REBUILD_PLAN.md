@@ -142,12 +142,21 @@ From current config (`/Users/davidker/.dotfiles/nvim/lua/config/keymaps.lua`):
 
 **Key Learning:** nvim-treesitter `main` branch is unstable - stick with `master` branch for reliability
 
+### ✅ Phase 4 Complete: Telescope
+- [x] Added telescope.nvim with stable treesitter integration
+- [x] Configured proper telescope keymaps within plugin config (not global keymaps)
+- [x] Verified file finder works with preview window and syntax highlighting
+- [x] Confirmed no ft_to_lang errors with stable treesitter master branch
+- [x] All telescope commands working: `<leader>ff`, `<leader>fg`, `<leader>fb`, `<leader>fh`
+- [x] Cleaned up keymaps.lua to avoid confusion
+
+**Key Learning:** Load plugin keymaps within plugin config to avoid load order issues
+
 ### 🔄 Next Steps
-- Add telescope with treesitter support (should work without ft_to_lang errors now)
 - Add tmux navigation
 - Add LSP configuration
 
 ---
 Created: 2025-12-19
 Updated: 2025-12-19  
-Status: Phase 2 Complete - Theme Working ✅
+Status: Phase 4 Complete - Telescope Working ✅
