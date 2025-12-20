@@ -131,8 +131,19 @@ From current config (`/Users/davidker/.dotfiles/nvim/lua/config/keymaps.lua`):
 - [x] Verified theme loads correctly without errors
 - [x] Re-enabled plugin importing in init.lua
 
+### ✅ Phase 3 Complete: Treesitter
+- [x] Discovered nvim-treesitter `main` branch has breaking changes
+- [x] Temporarily installed `tree-sitter-cli` via `devbox global add tree-sitter` (needed for main branch)
+- [x] Switched to stable `master` branch to avoid API issues
+- [x] Removed `tree-sitter-cli` with `devbox global rm tree-sitter` (not needed for master branch)
+- [x] Cleaned plugin cache and reinstalled from scratch
+- [x] Verified `:TSInstallInfo`, `:TSBufToggle highlight` commands work
+- [x] Confirmed rich syntax highlighting works for Ruby and Lua
+
+**Key Learning:** nvim-treesitter `main` branch is unstable - stick with `master` branch for reliability
+
 ### 🔄 Next Steps
-- Add telescope + treesitter
+- Add telescope with treesitter support (should work without ft_to_lang errors now)
 - Add tmux navigation
 - Add LSP configuration
 
