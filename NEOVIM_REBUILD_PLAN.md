@@ -50,16 +50,17 @@ Moving from LazyVim to a custom Neovim configuration to resolve plugin conflicts
 
 ## LSP & Tooling Strategy
 
-### Language Server Approach
-- **No Mason** - Use devbox for language tools
-- **Per-project Gemfiles** - Add ruby-lsp, rubocop, syntax_tree to each Rails project
-- **Bundle exec commands** - LSP servers run via `bundle exec` for consistency
+### Updated Language Server Approach
+- **Mason for LSP servers** - Automatic installation and management of language servers
+- **Devbox for language runtimes** - Project-specific language versions (Ruby, Node, Python)
+- **Clean separation** - Mason handles LSP tools, devbox handles language runtimes
+- **Simple configuration** - Direct mason + mason-lspconfig + lspconfig (no LazyVim complexity)
 
-### Example LSP Commands
-```lua
-ruby_lsp = { cmd = { "bundle", "exec", "ruby-lsp" } }
-rubocop = { cmd = { "bundle", "exec", "rubocop", "--lsp" } }
-```
+### Why This Approach Works
+- **Convenience**: Mason auto-installs/updates LSP servers
+- **Consistency**: Same LSP server versions across team members
+- **Flexibility**: Language runtimes still managed per-project via devbox
+- **No conflicts**: Clean setup avoids LazyVim's complex mason integration
 
 ## Keymaps to Preserve
 From current config (`/Users/davidker/.dotfiles/nvim/lua/config/keymaps.lua`):
@@ -158,10 +159,30 @@ From current config (`/Users/davidker/.dotfiles/nvim/lua/config/keymaps.lua`):
 - [x] Verified seamless navigation between Neovim and tmux panes
 - [x] All navigation keys working: `<C-h>`, `<C-j>`, `<C-k>`, `<C-l>`, `<C-\>`
 
-### 🔄 Next Steps
-- Add LSP configuration that works with devbox workflow
+### ✅ Phase 6 Complete: LSP Setup Working
+- [x] Implemented clean mason + mason-lspconfig + lspconfig setup
+- [x] **Lua LSP**: Working with optimized workspace settings (30s load time vs 2min)
+- [x] **TypeScript LSP**: Working via Mason installation
+- [x] **Ruby LSP**: Working via bundle exec + project Gemfile approach
+- [x] Used modern vim.lsp.config API (no deprecation warnings)
+- [x] Verified no LazyVim-style conflicts
+
+**Key Breakthrough**: Ruby LSP success via adding `ruby-lsp` to project Gemfile and using `bundle exec ruby-lsp` command. This resolves all devbox environment issues.
+
+### 🔄 Phase 7 In Progress: Additional Plugins & Polish
+- [ ] Add nvim-cmp completion
+- [ ] Add nvim-lint linting support  
+- [ ] Add conform.nvim formatting
+- [ ] Add neo-tree file explorer
+- [ ] Add whichkey keymap discovery
+- [ ] Add trouble.nvim diagnostics panel
+- [ ] Add bufferline.nvim tab-like buffer display
+- [ ] Add lualine.nvim status line
+- [ ] Add mini.icons icon support
+- [ ] Add mini.pairs auto-close brackets/quotes
+- [ ] Test complete workflow in Rails project
 
 ---
 Created: 2025-12-19
-Updated: 2025-12-19  
-Status: Phase 5 Complete - Tmux Navigation Working ✅
+Updated: 2025-12-22  
+Status: Phase 6 Complete - All Core LSP Working ✅
