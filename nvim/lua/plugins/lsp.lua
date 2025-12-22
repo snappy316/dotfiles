@@ -42,6 +42,10 @@ return {
       -- Use modern vim.lsp.config API (Neovim 0.11+)
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       
+      -- Add completion capabilities
+      local cmp_nvim_lsp = require("cmp_nvim_lsp")
+      capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+      
       -- Lua LSP (optimized for faster loading)
       vim.lsp.config.lua_ls = {
         cmd = { vim.fn.exepath('lua-language-server') },
