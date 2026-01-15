@@ -1,7 +1,7 @@
 [user]
   name = David Ker
   email = snappy316@gmail.com
-  # Since `signingkey` is machine-specific, put it in either `.gitconfig.local`, or `.gitconfig_company`
+  # Since `signingkey` is machine-specific, put it in `.gitconfig.local`
 [alias]
   c = commit -m
   st = status --short --branch
@@ -80,5 +80,3 @@
   path = ~/.dotfiles/git/.gitconfig.local
 [blame]
   ignoreRevsFile = .git-blame-ignore-revs
-[includeIf "gitdir:~/Code/"]
-  path = ~/.dotfiles/git/.gitconfig_company
