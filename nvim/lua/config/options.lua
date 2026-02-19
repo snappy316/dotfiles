@@ -18,7 +18,8 @@ vim.opt.incsearch = true       -- Show search matches as you type
 
 -- UI Settings
 vim.opt.cursorline = true      -- Highlight current line
-vim.opt.wrap = false           -- Don't wrap lines
+vim.opt.wrap = true            -- Wrap lines
+vim.opt.linebreak = true       -- Wrap at word boundaries
 vim.opt.scrolloff = 8          -- Keep 8 lines above/below cursor
 vim.opt.sidescrolloff = 8      -- Keep 8 columns left/right of cursor
 vim.opt.signcolumn = "yes"     -- Always show sign column
