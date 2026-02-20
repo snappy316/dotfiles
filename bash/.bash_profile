@@ -3,8 +3,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export RBENV_ROOT=$HOME/.rbenv
 eval "$(rbenv init -)"
 
-# code
-export EDITOR='code -w'
+# neovim
+export EDITOR='nvim'
 
 # aliases
 alias be='bundle exec'
