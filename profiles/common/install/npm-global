@@ -5,6 +5,8 @@
 
 packages=(
   @playwright/cli
+  opencode-ai
+  @fission-ai/openspec
 )
 
 if [ ${#packages[@]} -eq 0 ]; then
