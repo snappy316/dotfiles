@@ -48,8 +48,6 @@
       path: ~/.dotfiles/opencode
     ~/.claude/settings.json:
       path: ~/.dotfiles/agents/claude/settings.json
-    ~/.local/share/devbox/global/default/devbox.json:
-      path: ~/.dotfiles/devbox-global/devbox.json
 
 - shell:
     - command: touch ~/.dotfiles/.tmux.conf.local
