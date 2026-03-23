@@ -22,6 +22,7 @@ brew "node"
 brew "python"
 brew "ripgrep"
 brew "the_silver_searcher"
+brew "pam-reattach"
 brew "tmux"
 
 # `brew install --cask ...`
