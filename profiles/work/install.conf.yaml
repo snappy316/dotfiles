@@ -57,10 +57,6 @@
     - command: profiles/common/install/devbox
       description: Installing Devbox...
 
-- shell:
-    - command: profiles/common/install/homebrew
-      description: Installing Homebrew...
-
 - brewfile:
     - profiles/common/Brewfile
     - profiles/work/Brewfile
