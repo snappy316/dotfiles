@@ -3,6 +3,7 @@
 # `brew tap ...`
 
 # `brew install ...`
+brew "cloudflared"
 
 # `brew install --cask ...`
 cask "bambu-studio"
