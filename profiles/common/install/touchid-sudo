@@ -1,0 +1,66 @@
+#!/bin/zsh
+
+# touchid-sudo — Enable TouchID for `sudo` authentication
+#
+# Modifies /etc/pam.d/sudo_local to add two PAM modules:
+#
+#   auth  optional    /opt/homebrew/lib/pam/pam_reattach.so
+#   auth  sufficient  pam_tid.so
+#
+# What these do:
+#
+#   pam_tid.so      — macOS built-in module that prompts for TouchID.
+#                     Marked "sufficient" so a successful TouchID scan
+#                     is enough to authorize sudo (no password needed).
+#                     If TouchID fails or is dismissed, PAM falls through
+#                     to the next module (password prompt), so you can
+#                     never lock yourself out with this alone.
+#
+#   pam_reattach.so — Needed for tmux (and other programs that detach from
+#                     the system GUI session). Without it, pam_tid.so can't
+#                     reach the Secure Enclave and silently fails. Marked
+#                     "optional" because if the library is missing or we're
+#                     not in tmux, it simply does nothing.
+#                     Installed via: brew install pam-reattach
+#
+#   IMPORTANT: The pam_reattach.so line is only written if the library
+#   exists on disk. Despite being marked "optional", PAM fails to
+#   initialize entirely if the .so file is missing — which breaks sudo.
+#
+# Why /etc/pam.d/sudo_local?
+#
+#   macOS ships /etc/pam.d/sudo as read-only and overwrites it on OS updates.
+#   Apple provides sudo_local (and a .template) specifically for user
+#   customizations that survive updates. See `man pam.conf` for details.
+#
+# Troubleshooting:
+#
+#   - Password auth always works as a fallback — TouchID alone can't lock
+#     you out. However, referencing a .so file that doesn't exist WILL
+#     break sudo entirely (even if marked "optional").
+#   - To revert: sudo rm /etc/pam.d/sudo_local
+#   - If sudo is completely broken, boot into Recovery Mode (hold power
+#     button on Apple Silicon) and remove the file from Terminal:
+#       rm /Volumes/Data/etc/pam.d/sudo_local
+#   - Verify config: sudo grep pam_tid /etc/pam.d/sudo_local
+
+if grep -q "pam_tid" /etc/pam.d/sudo_local 2>/dev/null; then
+  echo "TouchID for sudo already enabled"
+else
+  echo "Enabling TouchID for sudo (requires admin password)..."
+
+  pam_reattach="/opt/homebrew/lib/pam/pam_reattach.so"
+  config="# sudo_local: local config file which survives system update and is included for sudo\n# Enable TouchID for sudo, including inside tmux sessions\n"
+
+  if [[ -f "$pam_reattach" ]]; then
+    config+="auth       optional       ${pam_reattach}\n"
+  else
+    echo "Warning: pam-reattach not found — TouchID won't work inside tmux."
+    echo "Install it with: brew install pam-reattach, then re-run this script."
+  fi
+
+  config+="auth       sufficient     pam_tid.so"
+
+  echo "$config" | sudo tee /etc/pam.d/sudo_local > /dev/null
+  echo "TouchID for sudo enabled"
+fi
