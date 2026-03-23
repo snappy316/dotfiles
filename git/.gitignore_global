@@ -46,3 +46,4 @@ scratchpad.md
 .scratchpad/*
 .env
 .claude/*
+.playwright-cli/
