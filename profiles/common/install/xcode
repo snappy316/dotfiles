@@ -1,3 +1,9 @@
 #!/usr/bin/env zsh
 
-sudo xcodebuild -license accept
+# Only accept the Xcode license if the full Xcode app is installed.
+# Command Line Tools alone don't need this (and xcodebuild will fail).
+if [ -d /Applications/Xcode.app ]; then
+  sudo xcodebuild -license accept
+else
+  echo "Xcode not installed (CLT only) — skipping license acceptance"
+fi
