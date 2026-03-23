@@ -1,30 +1,81 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
 set -e
 
-# xcode-select --install
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# --- Xcode Command Line Tools ---
 
-# Clone and set up the repo
+if ! xcode-select -p &>/dev/null; then
+  echo "Installing Xcode Command Line Tools..."
+  xcode-select --install
+  echo "Waiting for Xcode CLT installation to complete..."
+  until xcode-select -p &>/dev/null; do
+    sleep 5
+  done
+  echo "Xcode CLT installed."
+fi
 
-cd ~
-git clone https://github.com/snappy316/dotfiles.git .dotfiles
-cd .dotfiles
-git checkout dotbot # TEMPORARY until this is merged to `main`
+# --- Clone dotfiles repo ---
 
-# Run the dotbot install
+DOTFILES_DIR="$HOME/.dotfiles"
+
+if [ ! -d "$DOTFILES_DIR" ]; then
+  echo "Cloning dotfiles repo to $DOTFILES_DIR..."
+  git clone https://github.com/snappy316/dotfiles.git "$DOTFILES_DIR"
+fi
+
+cd "$DOTFILES_DIR"
+
+# --- Select profile ---
 
 PROFILES_DIR="profiles"
-PROFILE=${1:-work}
+
+if [ -n "$1" ]; then
+  PROFILE="$1"
+  shift
+else
+  echo ""
+  echo "Select a profile:"
+  echo "  1) work"
+  echo "  2) personal"
+  echo ""
+  printf "Enter choice [1]: "
+  read -r choice
+  case "$choice" in
+    2) PROFILE="personal" ;;
+    *) PROFILE="work" ;;
+  esac
+fi
+
 CONFIG="${PROFILES_DIR}/${PROFILE}/install.conf.yaml"
+
+if [ ! -f "$CONFIG" ]; then
+  echo "Error: profile '$PROFILE' not found ($CONFIG does not exist)."
+  exit 1
+fi
+
+echo "Using profile: $PROFILE"
+
+# --- Brew upgrade preference ---
+
+printf "Upgrade existing Homebrew packages? [y/N]: "
+read -r upgrade_choice
+case "$upgrade_choice" in
+  [yY]*) ;;
+  *)     export HOMEBREW_BUNDLE_NO_UPGRADE=1 ;;
+esac
+
+# --- Init submodules ---
 
 DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-cd "${BASEDIR}"
 git submodule sync --quiet --recursive
 git submodule update --init --recursive
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir dotbot-brew -c "${CONFIG}" "${@:2}"
+# --- Run dotbot ---
+
+"${DOTFILES_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
+  -d "${DOTFILES_DIR}" \
+  --plugin-dir dotbot-brew \
+  -c "${CONFIG}" \
+  "$@"
