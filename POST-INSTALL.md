@@ -1,21 +1,12 @@
 ## macOS Settings
 
-The config script gets a bunch of stuff, but it doesn't do everything.
+These require manual configuration (can't be scripted):
 
-- Remap `caps lock` to `control`
-  - System Settings > Keyboard > Keyboard Shortcuts > Keyboard > Modifier Keys > Caps Lock: Control
-- It also doesn't get the multiple desktops - manually create them, then enable the shortcuts
-  - System Settings > Keyboard > Keyboard Shortcuts > Keyboard > Mission Control > expand Mission Control > select all the "Switch to Desktop X" selectors
-- Change power and screen saver settings
-  - System Settings > Lock Screen
-  - Start Screen Saver when inactive - 2:30
-  - Turn display off on battery when inactive - 0:30
-  - Turn display off on power adapter when inactive - 3:00
-  - Require password after screen saver begins or display is turned off - 0:05
-- Change privacy settings
+- Privacy & Security
   - System Settings > Privacy & Security
-  - Full Disk Access - add Ghostty (primarily for Homebrew)
-  - Local Network - add Arc (so it can access devices on the local network)
+  - Full Disk Access — add Ghostty (primarily for Homebrew)
+  - Local Network — add Arc (so it can access devices on the local network)
+- Create 5 Mission Control desktops (the keyboard shortcuts are automated, but the desktops themselves must be created manually)
 
 ## 1Password
 
