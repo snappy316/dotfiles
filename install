@@ -47,7 +47,8 @@ PROFILES_DIR="profiles"
 if [ -n "$1" ]; then
   PROFILE="$1"
   shift
-else
+elif [ -t 0 ]; then
+  # Interactive — prompt for profile
   echo ""
   echo "Select a profile:"
   echo "  1) work"
@@ -59,6 +60,9 @@ else
     2) PROFILE="personal" ;;
     *) PROFILE="work" ;;
   esac
+else
+  # Piped (curl | zsh) — default to work
+  PROFILE="work"
 fi
 
 CONFIG="${PROFILES_DIR}/${PROFILE}/install.conf.yaml"
@@ -72,12 +76,17 @@ echo "Using profile: $PROFILE"
 
 # --- Brew upgrade preference ---
 
-printf "Upgrade existing Homebrew packages? [y/N]: "
-read -r upgrade_choice
-case "$upgrade_choice" in
-  [yY]*) ;;
-  *)     export HOMEBREW_BUNDLE_NO_UPGRADE=1 ;;
-esac
+if [ -t 0 ]; then
+  printf "Upgrade existing Homebrew packages? [y/N]: "
+  read -r upgrade_choice
+  case "$upgrade_choice" in
+    [yY]*) ;;
+    *)     export HOMEBREW_BUNDLE_NO_UPGRADE=1 ;;
+  esac
+else
+  # Piped — default to no upgrade
+  export HOMEBREW_BUNDLE_NO_UPGRADE=1
+fi
 
 # --- Init submodules ---
 
