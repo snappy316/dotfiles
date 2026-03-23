@@ -1,0 +1,29 @@
+#!/bin/zsh
+
+target="$HOME/.dotfiles/git/.gitconfig.local"
+
+if [[ -f "$target" ]]; then
+  echo ".gitconfig.local already exists"
+else
+  echo "Setting up git identity for commit signing (via 1Password SSH).\n"
+
+  vared -p "Email address: " -c email
+  if [[ -z "$email" ]]; then
+    echo "Aborting — email is required."
+    return 1
+  fi
+
+  vared -p "SSH signing key (e.g. ssh-ed25519 AAAA...): " -c signingkey
+  if [[ -z "$signingkey" ]]; then
+    echo "Aborting — signing key is required."
+    return 1
+  fi
+
+  cat <<EOF > "$target"
+[user]
+  email = ${email}
+  signingkey = ${signingkey}
+EOF
+
+  echo "\nWrote $target"
+fi
