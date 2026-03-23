@@ -1,3 +1,5 @@
+# brew bundle --no-upgrade --file=./profiles/common/Brewfile
+
 # `brew tap ...`
 tap "github/gh"
 tap "jesseduffield/lazygit"
@@ -13,6 +15,7 @@ brew "go"
 brew "gpg"
 brew "lazygit"
 brew "mas"
+brew "mdserve"
 brew "neovim"
 brew "opencode"
 brew "ripgrep"
