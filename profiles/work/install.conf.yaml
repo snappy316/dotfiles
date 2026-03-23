@@ -66,6 +66,10 @@
     - profiles/work/Brewfile
 
 - shell:
+    - command: profiles/common/install/gitconfig-local
+      description: Configuring git identity...
+
+- shell:
     - command: profiles/common/install/xcode
       description: Configuring Xcode...
     - command: profiles/common/install/oh-my-zsh
@@ -78,3 +82,5 @@
       description: Installing AI tools...
     - command: profiles/common/install/macos
       description: Configuring macOS-specific settings...
+    - command: profiles/common/install/touchid-sudo
+      description: Enabling TouchID for sudo...

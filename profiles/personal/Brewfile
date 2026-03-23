@@ -9,3 +9,6 @@ brew "cloudflared"
 cask "bambu-studio"
 cask "discord"
 cask "tailscale" # the cask version includes the CLI; the regular `brew` version does not
+
+# `mas install ...`
+mas "Day One", id: 1055511498

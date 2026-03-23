@@ -131,12 +131,6 @@ fi
 ## git
 path+=("$HOME/.git/scripts")
 
-## gpg
-export GPG_TTY=$(tty)
-case "$OSTYPE" in
-  darwin*) gpg-agent --daemon --use-standard-socket &>/dev/null ;;
-esac
-
 ## ssh
 # eval $(ssh-agent -s) >/dev/null
 
