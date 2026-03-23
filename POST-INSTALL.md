@@ -17,8 +17,13 @@ Get 1Password set up, so _things just work_.
   - Set Up SSH Agent > let it "Edit Automatically"
     - Set up a new SSH key, and add the public key to GitHub — both as an "Authentication key" and as a "Signing key"
     - If desired, edit `~/.config/1Password/ssh/agent.toml` to restrict down to the new SSH key
-    - The signing key will be added to `.gitconfig.local` during `./install` — have the public key string ready
+    - Copy the public key string — you'll need it for the next step
   - Set up CLI integration
+- Configure git identity (run from `~/.dotfiles`):
+  ```
+  ./profiles/common/install/gitconfig-local
+  ```
+  This will prompt for your email and the SSH signing key from 1Password.
 
 ## Raycast
 
