@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/davidker/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # oh-my-zsh defaults
 export TERM="xterm-256color"
 
@@ -141,6 +148,9 @@ export NVM_DIR="$HOME/.nvm"
 ## neovim
 export EDITOR='nvim'
 
+## obsidian
+path+=("/Applications/Obsidian.app/Contents/MacOS")
+
 ## aliases
 alias rs='bundle exec rspec'
 alias hrc='heroku run rails c -a'
@@ -154,6 +164,9 @@ export FZF_DEFAULT_COMMAND="find -L"
 
 ## Add ~/.dotfiles/bin to path
 path+=("$HOME/.dotfiles/bin")
+
+## Add ~/.local/bin to path (for Claude Code and other user-installed tools)
+path+=("$HOME/.local/bin")
 
 source ~/.dotfiles/zsh/zshrc.local
 
