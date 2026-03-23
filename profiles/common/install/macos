@@ -77,6 +77,80 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock mru-spaces -bool false
 
 ###############################################################################
+# Keyboard                                                                    #
+###############################################################################
+
+# Remap Caps Lock to Control
+# hidutil takes effect immediately but doesn't persist across reboots,
+# so we also install a LaunchAgent to re-apply it at login.
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}' > /dev/null
+
+mkdir -p ~/Library/LaunchAgents
+cat <<'EOF' > ~/Library/LaunchAgents/com.local.KeyRemapping.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.local.KeyRemapping</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/hidutil</string>
+    <string>property</string>
+    <string>--set</string>
+    <string>{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>
+EOF
+
+###############################################################################
+# Mission Control                                                             #
+###############################################################################
+
+# Enable "Switch to Desktop N" shortcuts (Ctrl+F1 through Ctrl+F5)
+# Keys: 118=Desktop1, 119=Desktop2, 120=Desktop3, 121=Desktop4, 122=Desktop5
+# Parameters: [65535 (no ASCII = fn key), keycode, 262144 (Ctrl modifier)]
+# Key codes: 18=F1, 19=F2, 20=F3, 21=F4, 23=F5
+for pair in "118:18" "119:19" "120:20" "121:21" "122:23"; do
+  id="${pair%%:*}"
+  keycode="${pair##*:}"
+  defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add "$id" "
+    <dict>
+      <key>enabled</key><true/>
+      <key>value</key>
+      <dict>
+        <key>parameters</key>
+        <array>
+          <integer>65535</integer>
+          <integer>${keycode}</integer>
+          <integer>262144</integer>
+        </array>
+        <key>type</key><string>standard</string>
+      </dict>
+    </dict>"
+done
+
+###############################################################################
+# Power and Lock Screen                                                       #
+###############################################################################
+
+# Start screen saver after 2:30 (150 seconds)
+defaults -currentHost write com.apple.screensaver idleTime -int 150
+
+# Require password 5 seconds after screen saver starts
+defaults write com.apple.screensaver askForPassword -bool true
+defaults write com.apple.screensaver askForPasswordDelay -int 5
+
+# Display off on battery after 2 minutes
+sudo pmset -b displaysleep 2
+
+# Display off on power adapter after 3 minutes
+sudo pmset -c displaysleep 3
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
