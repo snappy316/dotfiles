@@ -7,13 +7,13 @@ We're now using [dotbot](https://github.com/anishathalye/dotbot)!
 On a fresh macOS install, open a terminal and run:
 
 ```
-curl -fsSL https://raw.githubusercontent.com/snappy316/dotfiles/main/install | bash
+curl -fsSL https://raw.githubusercontent.com/snappy316/dotfiles/main/install | zsh
 ```
 
 Or, to skip the profile prompt:
 
 ```
-curl -fsSL https://raw.githubusercontent.com/snappy316/dotfiles/main/install | bash -s work
+curl -fsSL https://raw.githubusercontent.com/snappy316/dotfiles/main/install | zsh -s work
 ```
 
 Once it's done, restart the computer, then follow the instructions in [POST-INSTALL](POST-INSTALL.md).
