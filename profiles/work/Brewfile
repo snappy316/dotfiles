@@ -8,7 +8,6 @@ tap "xcodesorg/made"
 brew "cairo" # Vector graphics library with cross-device output support - apparently needed for Prince Serverless
 brew "cocoapods" # Dependency manager for for Cocoa projects - CCA
 brew "datadog-labs/pack/pup" # Go-based command-line wrapper for easy interaction with Datadog APIs
-brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "xcodes" # Best command-line tool to install and switch between multiple versions of Xcode
 
 # `brew install --cask ...`
