@@ -23,3 +23,47 @@ Get 1Password set up, so _things just work_.
 ## Raycast
 
 Open Raycast, and get it configured.
+
+## Claude Code Data Migration
+
+If migrating from another machine, copy over Claude Code's persistent data. Most of `~/.claude/` regenerates automatically — only a few directories contain meaningful state.
+
+### What to copy
+
+| Directory/File | What it is | Size |
+|---|---|---|
+| `projects/` | Per-project CLAUDE.md files, memory, and settings | ~115 MB |
+| `plugins/` | Installed plugins | ~10 MB |
+| `skills/` | Custom user skills | tiny |
+| `history.jsonl` | Command history | ~100 KB |
+
+### What to skip
+
+These regenerate on their own: `debug/`, `cache/`, `image-cache/`, `downloads/`, `statsig/`, `telemetry/`, `stats-cache.json`, `session-env/`, `sessions/`, `shell-snapshots/`, `plans/`, `tasks/`, `todos/`, `file-history/`, `backups/`, `policy-limits.json`.
+
+`settings.json` is already managed by dotfiles (symlinked).
+
+### On the old machine
+
+```bash
+tar czf claude-data.tar.gz -C ~/.claude projects plugins skills history.jsonl
+```
+
+Transfer to the new machine (both must be on the same network):
+
+```bash
+scp claude-data.tar.gz <user>@<new-machine>.local:~/
+```
+
+### On the new machine
+
+```bash
+# Make sure Claude Code has been run at least once so ~/.claude exists
+tar xzf claude-data.tar.gz -C ~/.claude
+```
+
+### Verify
+
+- `claude` — history should show previous commands (up arrow)
+- Open a project that had a CLAUDE.md — it should be present
+- `/skills` — custom skills should appear
