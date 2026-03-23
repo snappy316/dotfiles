@@ -66,6 +66,10 @@
     - profiles/personal/Brewfile
 
 - shell:
+    - command: profiles/common/install/gitconfig-local
+      description: Configuring git identity...
+
+- shell:
     - command: profiles/common/install/xcode
       description: Configuring Xcode...
     - command: profiles/common/install/oh-my-zsh
