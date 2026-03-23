@@ -42,10 +42,12 @@
       path: ~/.dotfiles/ghostty
     ~/.config/direnv/direnv.toml:
       path: ~/.dotfiles/direnv/direnv.toml
-    ~/.config/opencode:
-      path: ~/.dotfiles/opencode
     ~/.config/lazygit/config.yml:
       path: ~/.dotfiles/lazygit/config.yml
+    ~/.config/opencode:
+      path: ~/.dotfiles/opencode
+    ~/.claude/settings.json:
+      path: ~/.dotfiles/agents/claude/settings.json
 
 - shell:
     - command: touch ~/.dotfiles/.tmux.conf.local

@@ -78,7 +78,7 @@ return {
       })
 
       require("lspconfig").syntax_tree.setup({
-        cmd = { "bundle", "exec", "stree", "lsp" },
+        cmd = { "devbox", "run", "bundle", "exec", "stree", "lsp" },
       })
 
       vim.opt.signcolumn = "yes"
@@ -87,7 +87,7 @@ return {
         callback = function()
           vim.lsp.start({
             name = "rubocop",
-            cmd = { "bundle", "exec", "rubocop", "--lsp" },
+            cmd = { "devbox", "run", "bundle", "exec", "rubocop", "--lsp" },
           })
         end,
       })

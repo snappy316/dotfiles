@@ -1,0 +1,7 @@
+{
+  "cleanupPeriodDays": 365,
+  "model": "opus",
+  "enabledPlugins": {
+    "ruby-lsp@claude-plugins-official": true
+  }
+}
