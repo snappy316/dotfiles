@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+# AI coding tools
+
+# Claude Code
+echo "Installing Claude Code..."
+curl -fsSL https://claude.ai/install.sh | bash
+
+# OpenCode (installed via npm-global)
+# opencode-ai is in profiles/common/install/npm-global

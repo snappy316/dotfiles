@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# Global npm packages not available via devbox
+# Add packages here as needed
+
+packages=(
+  @playwright/cli
+  opencode-ai
+  @fission-ai/openspec
+)
+
+if [ ${#packages[@]} -eq 0 ]; then
+  echo "No global npm packages to install"
+  exit 0
+fi
+
+echo "Installing global npm packages..."
+npm install -g "${packages[@]}"
