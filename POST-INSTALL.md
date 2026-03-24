@@ -27,7 +27,35 @@ Get 1Password set up, so _things just work_.
 
 ## Raycast
 
-Open Raycast, and get it configured.
+Export settings from the old machine and transfer to the new one:
+
+1. Old machine: Set an export password in Raycast > Settings > Extensions > Export Settings & Data, then export from Raycast > Settings > Advanced > Export
+2. Transfer the `.rayconfig` file:
+   ```bash
+   scp <user>@<old-machine>.local:~/Desktop/Raycast*.rayconfig ~/Desktop/
+   ```
+3. New machine: Raycast > Settings > Advanced > Import Settings & Data
+
+## App Logins
+
+Open and sign in to each:
+
+- Arc
+- Asana
+- Bartender
+- Fantastical
+- Granola
+- iA Presenter
+- iA Writer
+- Notion
+- Obsidian
+- RadarScope
+- Slack
+- Spotify
+- Things 3
+- Tuple
+- WeatherWise (direct download — not in Homebrew or App Store)
+- Zoom
 
 ## Work Environment
 
@@ -38,6 +66,12 @@ scp <user>@<old-machine>.local:~/.dotfiles/zsh/zshrc.local ~/.dotfiles/zsh/zshrc
 ```
 
 This contains work-specific shell config (env vars, aliases, paths) that isn't checked into the repo.
+
+After repos are cloned (e.g. via pco-box), migrate local git state (branches, stashes) from specific repos:
+
+```bash
+rsync -a <user>@<old-machine>.local:~/Code/<repo>/.git/ ~/Code/<repo>/.git/
+```
 
 ## Claude Code Data Migration
 
