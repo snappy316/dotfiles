@@ -61,7 +61,13 @@ add_package() {
     echo "Added to $file: $line"
   fi
 
-  bundle "$file"
+  # Install just this package, not the entire Brewfile
+  case "$type" in
+    brew) brew install "$name" ;;
+    cask) brew install --cask "$name" ;;
+    tap)  brew tap "$name" ;;
+    mas)  mas install "$id" ;;
+  esac
 }
 
 # --- Parse arguments ---
