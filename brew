@@ -1,0 +1,114 @@
+#!/bin/zsh
+
+set -e
+
+DOTFILES_DIR="$HOME/.dotfiles"
+PROFILES_DIR="$DOTFILES_DIR/profiles"
+DEFAULT_PROFILE="work"
+
+usage() {
+  echo "Usage:"
+  echo "  ./brew [profile]                          Install common + profile Brewfiles"
+  echo "  ./brew [profile] add <type> <name> [id]   Add a package and install it"
+  echo ""
+  echo "Profiles: common, work, personal (default: $DEFAULT_PROFILE)"
+  echo "Types: brew, cask, tap, mas"
+  echo ""
+  echo "Examples:"
+  echo "  ./brew                          # install common + work"
+  echo "  ./brew personal                 # install common + personal"
+  echo "  ./brew work add cask discord    # add cask to work Brewfile"
+  echo "  ./brew common add brew jq       # add formula to common Brewfile"
+  echo "  ./brew add mas \"App\" 123456     # add mas app (defaults to work)"
+}
+
+brewfile_for() {
+  local profile="$1"
+  if [[ "$profile" == "common" ]]; then
+    echo "$PROFILES_DIR/common/Brewfile"
+  else
+    echo "$PROFILES_DIR/$profile/Brewfile"
+  fi
+}
+
+bundle() {
+  local file="$1"
+  echo "Installing from $file..."
+  brew bundle --no-upgrade --file="$file"
+}
+
+add_package() {
+  local profile="$1"
+  local type="$2"
+  local name="$3"
+  local id="$4"
+  local file=$(brewfile_for "$profile")
+
+  local line
+  case "$type" in
+    brew) line="brew \"$name\"" ;;
+    cask) line="cask \"$name\"" ;;
+    tap)  line="tap \"$name\"" ;;
+    mas)  line="mas \"$name\", id: $id" ;;
+    *)    echo "Unknown type: $type"; usage; exit 1 ;;
+  esac
+
+  # Check if already in the Brewfile
+  if grep -qF "$line" "$file" 2>/dev/null; then
+    echo "Already in $file: $line"
+  else
+    echo "$line" >> "$file"
+    echo "Added to $file: $line"
+  fi
+
+  bundle "$file"
+}
+
+# --- Parse arguments ---
+
+# Handle help flag
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+  usage
+  exit 0
+fi
+
+# Determine if first arg is a profile or a subcommand
+profile=""
+if [[ "$1" == "common" || "$1" == "work" || "$1" == "personal" ]]; then
+  profile="$1"
+  shift
+fi
+profile="${profile:-$DEFAULT_PROFILE}"
+
+if [[ "$1" == "add" ]]; then
+  shift
+  type="$1"; shift
+  name="$1"; shift
+  id="$1"
+
+  if [[ -z "$type" || -z "$name" ]]; then
+    echo "Error: add requires a type and name"
+    usage
+    exit 1
+  fi
+
+  if [[ "$type" == "mas" && -z "$id" ]]; then
+    echo "Error: mas requires an app ID"
+    usage
+    exit 1
+  fi
+
+  add_package "$profile" "$type" "$name" "$id"
+
+elif [[ -z "$1" ]]; then
+  # No subcommand — run bundle for common + profile
+  bundle "$(brewfile_for common)"
+  if [[ "$profile" != "common" ]]; then
+    bundle "$(brewfile_for "$profile")"
+  fi
+
+else
+  echo "Unknown command: $1"
+  usage
+  exit 1
+fi

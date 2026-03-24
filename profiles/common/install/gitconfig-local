@@ -92,3 +92,14 @@ EOF
 
   echo "Wrote $agent_toml"
 fi
+
+# --- Switch dotfiles remote to SSH ---
+# The install script clones via HTTPS (no auth needed for a fresh machine),
+# but once 1Password SSH is configured we want SSH for pushes.
+
+dotfiles_remote=$(git -C "$HOME/.dotfiles" remote get-url origin 2>/dev/null)
+if [[ "$dotfiles_remote" == https://* ]]; then
+  ssh_url=$(echo "$dotfiles_remote" | sed 's|https://github.com/|git@github.com:|')
+  git -C "$HOME/.dotfiles" remote set-url origin "$ssh_url"
+  echo "Switched dotfiles remote to SSH: $ssh_url"
+fi

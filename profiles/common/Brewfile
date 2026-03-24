@@ -3,6 +3,7 @@
 # `brew tap ...`
 tap "github/gh"
 tap "jesseduffield/lazygit"
+tap "manaflow-ai/cmux"
 
 # `brew install ...`
 brew "direnv"
@@ -40,6 +41,7 @@ cask "spotify"
 cask "bartender"
 cask "1password"
 cask "1password-cli"
+cask "cmux"
 
 # `mas install ...`
 mas "Amphetamine", id: 937984704
