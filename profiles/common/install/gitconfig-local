@@ -1,22 +1,72 @@
 #!/bin/zsh
 
 target="$HOME/.dotfiles/git/.gitconfig.local"
+agent_toml="$HOME/.config/1Password/ssh/agent.toml"
+
+if [[ -f "$target" ]] && [[ -f "$agent_toml" ]]; then
+  echo ".gitconfig.local and 1Password SSH agent config already exist"
+  return 0 2>/dev/null || exit 0
+fi
+
+echo "Setting up git identity and SSH agent (via 1Password).\n"
+
+# --- Select SSH key from 1Password ---
+
+if ! command -v op &>/dev/null; then
+  echo "Error: 1Password CLI (op) not found. Install it and sign in first."
+  return 1 2>/dev/null || exit 1
+fi
+
+keys_json=$(op item list --categories "SSH Key" --format=json 2>/dev/null)
+if [[ -z "$keys_json" || "$keys_json" == "[]" ]]; then
+  echo "Error: No SSH keys found in 1Password. Create one first."
+  return 1 2>/dev/null || exit 1
+fi
+
+# Build a numbered list of keys for the user to pick from
+key_count=$(echo "$keys_json" | op item list --categories "SSH Key" --format=json 2>/dev/null | python3 -c "import sys,json; print(len(json.load(sys.stdin)))" 2>/dev/null)
+key_count=$(echo "$keys_json" | python3 -c "import sys,json; print(len(json.load(sys.stdin)))")
+
+echo "SSH keys found in 1Password:\n"
+echo "$keys_json" | python3 -c "
+import sys, json
+keys = json.load(sys.stdin)
+for i, k in enumerate(keys, 1):
+    print(f\"  {i}) {k['title']}  (vault: {k['vault']['name']})\")"
+
+echo ""
+vared -p "Select a key [1]: " -c key_choice
+key_choice=${key_choice:-1}
+
+selected=$(echo "$keys_json" | python3 -c "
+import sys, json
+keys = json.load(sys.stdin)
+idx = int(${key_choice}) - 1
+k = keys[idx]
+print(k['title'])
+print(k['vault']['name'])")
+
+item=$(echo "$selected" | sed -n '1p')
+vault=$(echo "$selected" | sed -n '2p')
+signingkey=$(op item get "$item" --fields "public_key" 2>/dev/null)
+
+if [[ -z "$signingkey" ]]; then
+  echo "Error: Could not read public key from 1Password."
+  return 1 2>/dev/null || exit 1
+fi
+
+echo "\nUsing: $item (vault: $vault)"
+echo "Key:   $signingkey\n"
+
+# --- Write .gitconfig.local ---
 
 if [[ -f "$target" ]]; then
-  echo ".gitconfig.local already exists"
+  echo ".gitconfig.local already exists — skipping"
 else
-  echo "Setting up git identity for commit signing (via 1Password SSH).\n"
-
   vared -p "Email address: " -c email
   if [[ -z "$email" ]]; then
     echo "Aborting — email is required."
-    return 1
-  fi
-
-  vared -p "SSH signing key (e.g. ssh-ed25519 AAAA...): " -c signingkey
-  if [[ -z "$signingkey" ]]; then
-    echo "Aborting — signing key is required."
-    return 1
+    return 1 2>/dev/null || exit 1
   fi
 
   cat <<EOF > "$target"
@@ -26,4 +76,19 @@ else
 EOF
 
   echo "\nWrote $target"
+fi
+
+# --- Write 1Password SSH agent config ---
+
+if [[ -f "$agent_toml" ]]; then
+  echo "1Password SSH agent config already exists — skipping"
+else
+  mkdir -p "$(dirname "$agent_toml")"
+  cat <<EOF > "$agent_toml"
+[[ssh-keys]]
+vault = "${vault}"
+item = "${item}"
+EOF
+
+  echo "Wrote $agent_toml"
 fi
