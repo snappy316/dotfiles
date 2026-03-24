@@ -26,18 +26,16 @@ fi
 cd "$DOTFILES_DIR"
 
 # --- Homebrew ---
-# Installed before dotbot so `brew` is on PATH for the brewfile step.
-# (dotbot runs each shell command in a subshell, so installing brew
-# inside dotbot doesn't make it available to subsequent steps.)
+# Installed before dotbot so `brew` is on PATH for the brewfile step
+# and all subsequent shell commands (tmux, npm, etc.).
+# Always eval shellenv so dotbot subprocesses inherit the full PATH.
 
-if ! command -v brew &>/dev/null; then
-  if [ -x /opt/homebrew/bin/brew ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  else
-    echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif ! command -v brew &>/dev/null; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # --- Select profile ---

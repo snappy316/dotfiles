@@ -18,3 +18,9 @@ cask "notion"
 cask "slack"
 cask "tuple"
 cask "zoom"
+cask "elgato-camera-hub"
+cask "granola"
+cask "shureplus-motiv"
+
+# `mas install ...`
+mas "iA Presenter", id: 6746414429

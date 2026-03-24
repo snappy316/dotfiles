@@ -10,6 +10,20 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 ###############################################################################
+# Computer name                                                               #
+###############################################################################
+
+current_name=$(scutil --get ComputerName)
+echo "Current computer name: $current_name"
+vared -p "New computer name (leave blank to keep): " -c new_name
+if [[ -n "$new_name" ]]; then
+  sudo scutil --set ComputerName "$new_name"
+  sudo scutil --set LocalHostName "$new_name"
+  sudo scutil --set HostName "$new_name"
+  echo "Computer name set to $new_name"
+fi
+
+###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
@@ -27,6 +41,13 @@ defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
 # Set tracking speed to "fast"
 defaults write NSGlobalDomain com.apple.mouse.scaling -int 3
 defaults write NSGlobalDomain com.apple.trackpad.scaling -int 3
+
+###############################################################################
+# Menu Bar                                                                    #
+###############################################################################
+
+# Always show Sound in menu bar
+defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true
 
 ###############################################################################
 # Screen                                                                      #
