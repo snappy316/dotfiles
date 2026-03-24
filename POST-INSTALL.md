@@ -29,6 +29,16 @@ Get 1Password set up, so _things just work_.
 
 Open Raycast, and get it configured.
 
+## Work Environment
+
+Copy machine-specific config from the old machine (both must be on the same network):
+
+```bash
+scp <user>@<old-machine>.local:~/.dotfiles/zsh/zshrc.local ~/.dotfiles/zsh/zshrc.local
+```
+
+This contains work-specific shell config (env vars, aliases, paths) that isn't checked into the repo.
+
 ## Claude Code Data Migration
 
 If migrating from another machine, copy over Claude Code's persistent data. Most of `~/.claude/` regenerates automatically — only a few directories contain meaningful state.
