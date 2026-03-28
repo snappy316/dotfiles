@@ -48,6 +48,10 @@
       path: ~/.dotfiles/opencode
     ~/.claude/settings.json:
       path: ~/.dotfiles/agents/claude/settings.json
+    ~/.claude/statusline.sh:
+      path: ~/.dotfiles/agents/claude/statusline.sh
+    ~/.claude/skills:
+      path: ~/.dotfiles/agents/claude/skills
 
 - shell:
     - command: touch ~/.dotfiles/.tmux.conf.local
