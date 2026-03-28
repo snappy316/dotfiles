@@ -45,5 +45,5 @@ Session.vim
 scratchpad.md
 .scratchpad/*
 .env
-.claude/*
+.claude/settings.local.json
 .playwright-cli/
