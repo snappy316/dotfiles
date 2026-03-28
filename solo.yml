@@ -1,0 +1,17 @@
+name: .dotfiles
+icon: null
+processes:
+  lazygit:
+    command: lazygit
+    working_dir: null
+    auto_start: true
+    auto_restart: false
+    restart_when_changed: []
+    env: {}
+  nvim:
+    command: nvim
+    working_dir: null
+    auto_start: true
+    auto_restart: false
+    restart_when_changed: []
+    env: {}
