@@ -1,0 +1,5 @@
+[projects."github.com/planningcenter/groups"]
+approved-commands = [
+    "direnv allow",
+    "wt step copy-ignored",
+]
