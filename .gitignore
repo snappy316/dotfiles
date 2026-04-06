@@ -2,6 +2,7 @@
 zsh/zshrc.local
 .tmux.conf.local
 .gitconfig.local
+agents/claude/settings.local.json
 bash/.fzf.bash
 zsh/.fzf.zsh
 .dot-version
