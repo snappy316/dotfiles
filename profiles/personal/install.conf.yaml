@@ -52,6 +52,8 @@
       path: ~/.dotfiles/agents/claude/statusline.sh
     ~/.claude/skills:
       path: ~/.dotfiles/agents/claude/skills
+    ~/.config/worktrunk:
+      path: ~/.dotfiles/worktrunk
 
 - shell:
     - command: touch ~/.dotfiles/.tmux.conf.local
