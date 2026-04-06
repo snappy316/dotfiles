@@ -2,12 +2,14 @@
 
 # `brew tap ...`
 tap "datadog-labs/pack"
+tap "wassimk/tap"
 tap "xcodesorg/made"
 
 # `brew install ...`
 brew "cairo" # Vector graphics library with cross-device output support - apparently needed for Prince Serverless
 brew "cocoapods" # Dependency manager for for Cocoa projects - CCA
 brew "datadog-labs/pack/pup" # Go-based command-line wrapper for easy interaction with Datadog APIs
+brew "granary" # Granola export tool
 brew "xcodes" # Best command-line tool to install and switch between multiple versions of Xcode
 
 # `brew install --cask ...`
@@ -19,8 +21,8 @@ cask "slack"
 cask "tuple"
 cask "zoom"
 cask "elgato-camera-hub"
+cask "elgato-control-center"
 cask "granola"
-cask "shureplus-motiv"
 
 # `mas install ...`
 mas "iA Presenter", id: 6746414429

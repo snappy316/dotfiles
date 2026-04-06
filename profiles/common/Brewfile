@@ -4,8 +4,10 @@
 tap "github/gh"
 tap "jesseduffield/lazygit"
 tap "manaflow-ai/cmux"
+tap "oven-sh/bun"
 
 # `brew install ...`
+brew "bun"
 brew "direnv"
 brew "fd"
 brew "fzf"
@@ -24,6 +26,7 @@ brew "ripgrep"
 brew "the_silver_searcher"
 brew "pam-reattach"
 brew "tmux"
+brew "worktrunk"
 
 # `brew install --cask ...`
 cask "arc"
