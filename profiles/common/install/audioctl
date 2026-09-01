@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+echo "Compiling audioctl..."
+clang -framework CoreAudio -framework CoreFoundation -o bin/audioctl bin/audioctl.c
