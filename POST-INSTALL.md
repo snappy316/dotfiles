@@ -36,6 +36,9 @@ Export settings from the old machine and transfer to the new one:
    ```
 3. New machine: Raycast > Settings > Advanced > Import Settings & Data
 
+Also point Raycast at this repo's Script Commands: Raycast > Settings >
+Extensions > Script Commands > Add Script Directory > `~/.dotfiles/raycast/`.
+
 ## App Logins
 
 Open and sign in to each:
