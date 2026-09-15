@@ -4,4 +4,5 @@ return {
     lazy = true,
     opts = { style = "moon" },
   },
+  { "LazyVim/LazyVim", opts = { colorscheme = "tokyonight" } },
 }
