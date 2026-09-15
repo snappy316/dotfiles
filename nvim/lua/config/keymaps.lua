@@ -24,6 +24,20 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
+-- gitsigns: toggle inline blame (mirrors LazyVim's <leader>u* UI toggle convention,
+-- since gitsigns.toggle_current_line_blame() doesn't notify on its own)
+local blame_enabled = true
+Snacks.toggle
+  .new({
+    name = "Git Blame",
+    get = function() return blame_enabled end,
+    set = function(state)
+      blame_enabled = state
+      require("gitsigns").toggle_current_line_blame(state)
+    end,
+  })
+  :map("<leader>uB")
+
 -- no-neck-pain: off by default, toggle on when you want centered/capped-width reading
 Snacks.toggle
   .new({
