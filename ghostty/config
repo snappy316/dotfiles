@@ -1,6 +1,7 @@
 theme = dark:TokyoNight Moon,light:TokyoNight Day
 font-family = "JetBrainsMono Nerd Font Mono"
-adjust-cell-height = "20%"
+font-size = 14
+adjust-cell-height = "30%"
 macos-titlebar-style = tabs
 
 window-height=9999
