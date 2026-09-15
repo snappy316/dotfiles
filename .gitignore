@@ -13,3 +13,6 @@ Brewfile.lock.json
 # Editor
 .vim/.netrwhist
 .vim/bundle/
+
+# Compiled binaries (architecture-specific, built by profiles/common/install/audioctl)
+bin/audioctl
