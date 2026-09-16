@@ -9,6 +9,9 @@ zsh/.fzf.zsh
 # core.hooksPath points here, so any `lefthook install` (in this or any other
 # repo) recreates this file locally — never meant to be shared
 git/hooks/pre-commit
+# ~/.claude/skills is symlinked here, so Claude Code's own skill-sync cache
+# (session-bucket-keyed, churns every session) writes directly into the repo
+agents/claude/skills/synced/
 
 # Homebrew
 Brewfile.lock.json
