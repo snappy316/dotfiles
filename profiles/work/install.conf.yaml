@@ -48,6 +48,8 @@
       path: ~/.dotfiles/direnv/direnv.toml
     ~/.config/lazygit/config.yml:
       path: ~/.dotfiles/lazygit/config.yml
+    ~/.config/herdr/config.toml:
+      path: ~/.dotfiles/herdr/config.toml
     ~/.config/opencode:
       path: ~/.dotfiles/opencode
     ~/.agents:
