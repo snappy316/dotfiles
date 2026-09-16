@@ -9,3 +9,5 @@ window-width=9999
 window-padding-x=10
 
 keybind = shift+enter=text:\x1b\r
+
+desktop-notifications = true
