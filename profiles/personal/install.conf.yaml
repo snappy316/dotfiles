@@ -50,6 +50,8 @@
       path: ~/.dotfiles/agents/.agents
     ~/.claude/settings.json:
       path: ~/.dotfiles/agents/claude/settings.json
+    ~/.claude/hooks:
+      path: ~/.dotfiles/agents/claude/hooks
     ~/.claude/statusline.sh:
       path: ~/.dotfiles/agents/claude/statusline.sh
     ~/.claude/skills:
