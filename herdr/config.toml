@@ -1,0 +1,53 @@
+onboarding = false
+
+[theme]
+name = "tokyo-night"
+auto_switch = false
+
+[keys]
+prefix = "ctrl+a"
+detach = ["prefix+q", "prefix+d"]
+
+# Splits
+split_vertical = 'prefix+\'
+split_horizontal = "prefix+minus"
+
+# Pane navigation
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# Resize
+[[keys.command]]
+key = "shift+left"
+type = "shell"
+command = "herdr pane resize --direction left --amount 0.02 --current"
+description = "resize pane left"
+
+[[keys.command]]
+key = "shift+right"
+type = "shell"
+command = "herdr pane resize --direction right --amount 0.02 --current"
+description = "resize pane right"
+
+[[keys.command]]
+key = "shift+down"
+type = "shell"
+command = "herdr pane resize --direction down --amount 0.02 --current"
+description = "resize pane down"
+
+[[keys.command]]
+key = "shift+up"
+type = "shell"
+command = "herdr pane resize --direction up --amount 0.02 --current"
+description = "resize pane up"
+
+# Popups
+[[keys.command]]
+key = "prefix+g"
+type = "popup"
+command = "lazygit"
+width = "80%"
+height = "80%"
+description = "lazygit"
