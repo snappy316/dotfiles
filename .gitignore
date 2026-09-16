@@ -6,6 +6,9 @@ agents/claude/settings.local.json
 bash/.fzf.bash
 zsh/.fzf.zsh
 .dot-version
+# core.hooksPath points here, so any `lefthook install` (in this or any other
+# repo) recreates this file locally — never meant to be shared
+git/hooks/pre-commit
 
 # Homebrew
 Brewfile.lock.json

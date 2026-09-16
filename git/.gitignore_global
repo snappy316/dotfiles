@@ -47,3 +47,4 @@ scratchpad.md
 .env
 .claude/settings.local.json
 .playwright-cli/
+.docs/

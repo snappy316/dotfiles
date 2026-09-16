@@ -23,6 +23,7 @@ cask "zoom"
 cask "elgato-camera-hub"
 cask "elgato-control-center"
 cask "granola"
+cask "linear"
 
 # `mas install ...`
 mas "iA Presenter", id: 6746414429
