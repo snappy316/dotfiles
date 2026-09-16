@@ -4,6 +4,7 @@
 
 # `brew install ...`
 brew "cloudflared"
+brew "uv" # personal-only: work already provisions uv at /usr/local/bin outside Homebrew
 
 # `brew install --cask ...`
 cask "bambu-studio"
