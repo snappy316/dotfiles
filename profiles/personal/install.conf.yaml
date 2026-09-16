@@ -19,6 +19,10 @@
     ~/Projects:
     ~/Screenshots:
 
+- shell:
+    - command: cp -n agents/claude/settings.local.json.example agents/claude/settings.local.json
+      description: Seeding Claude settings.local.json...
+
 - link:
     ~/.gitconfig:
       path: ~/.dotfiles/git/.gitconfig
@@ -50,6 +54,8 @@
       path: ~/.dotfiles/agents/.agents
     ~/.claude/settings.json:
       path: ~/.dotfiles/agents/claude/settings.json
+    ~/.claude/settings.local.json:
+      path: ~/.dotfiles/agents/claude/settings.local.json
     ~/.claude/hooks:
       path: ~/.dotfiles/agents/claude/hooks
     ~/.claude/statusline.sh:
