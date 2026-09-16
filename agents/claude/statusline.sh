@@ -124,3 +124,9 @@ if [ -n "$current_pct" ]; then
   [ -n "$wk_reset_fmt" ] && printf "  %b(resets %s)%b" "$DIM" "$wk_reset_fmt" "$RESET"
   printf "\n"
 fi
+
+# Append machine-local lines if present (never committed to dotfiles)
+local_statusline="${HOME}/.claude/statusline.local.sh"
+if [ -x "$local_statusline" ]; then
+  echo "$input" | "$local_statusline"
+fi

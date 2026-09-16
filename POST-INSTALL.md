@@ -95,6 +95,10 @@ These regenerate on their own: `debug/`, `cache/`, `image-cache/`, `downloads/`,
 
 `settings.json` is already managed by dotfiles (symlinked).
 
+Optionally, create `~/.claude/statusline.local.sh` (executable, never linked or
+committed) to append machine-local lines to the statusline — e.g. anything
+specific to one machine that shouldn't leak into the shared dotfiles.
+
 ### On the old machine
 
 ```bash
