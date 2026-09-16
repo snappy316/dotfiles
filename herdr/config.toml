@@ -42,3 +42,12 @@ key = "shift+up"
 type = "shell"
 command = "herdr pane resize --direction up --amount 0.02 --current"
 description = "resize pane up"
+
+# Popups
+[[keys.command]]
+key = "prefix+g"
+type = "popup"
+command = "lazygit"
+width = "80%"
+height = "80%"
+description = "lazygit"
