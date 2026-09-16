@@ -17,8 +17,7 @@ DIM='\033[2m'
 RESET='\033[0m'
 
 # --- Extract data via jq ---
-model_id=$(echo "$input" | jq -r '.model.id // ""')
-model_name=$(echo "$input" | jq -r '.model.display_name // "Unknown"')
+model_ver=$(echo "$input" | jq -r '.model.display_name // "Unknown"')
 ctx_size=$(echo "$input" | jq -r '.context_window.context_window_size // 200000')
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // 0')
 remain_pct=$(echo "$input" | jq -r '.context_window.remaining_percentage // 100')
@@ -52,14 +51,6 @@ if git -C "$cwd" rev-parse --git-dir > /dev/null 2>&1; then
 fi
 
 # --- Formatting helpers ---
-
-# Model version from ID
-case "$model_id" in
-  *opus-4-6*)   model_ver="Opus 4.6" ;;
-  *sonnet-4-6*) model_ver="Sonnet 4.6" ;;
-  *haiku-4-5*)  model_ver="Haiku 4.5" ;;
-  *)            model_ver="$model_name" ;;
-esac
 
 # Context size label
 if [ "$ctx_size" -ge 1000000 ]; then
@@ -130,3 +121,6 @@ local_statusline="${HOME}/.claude/statusline.local.sh"
 if [ -x "$local_statusline" ]; then
   echo "$input" | "$local_statusline"
 fi
+
+# Blank line as a sacrificial buffer for the "accept edits on" overlay
+echo
