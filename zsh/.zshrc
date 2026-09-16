@@ -145,7 +145,8 @@ export NVM_DIR="$HOME/.nvm"
 ## neovim
 export EDITOR='nvim'
 
-## obsidian
+## App CLIs
+path+=("/Applications/Ghostty.app/Contents/MacOS")
 path+=("/Applications/Obsidian.app/Contents/MacOS")
 
 ## aliases
