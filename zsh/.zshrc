@@ -191,3 +191,6 @@ fi
 
 # Nix devbox env - will be created after Nix installation
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+
+# cloud-agent shell completion
+command -v cloud-agent >/dev/null 2>&1 && eval "$(cloud-agent completion print zsh)"
