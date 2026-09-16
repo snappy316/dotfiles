@@ -1,4 +1,12 @@
 {
+  "cleanupPeriodDays": 365,
+  "permissions": {
+    "allow": [
+      "Edit(/Users/davidker/.claude/skills/*)"
+    ],
+    "defaultMode": "plan"
+  },
+  "model": "sonnet",
   "hooks": {
     "PreToolUse": [
       {
@@ -31,9 +39,19 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
-  "cleanupPeriodDays": 365,
-  "model": "opus",
   "enabledPlugins": {
-    "ruby-lsp@claude-plugins-official": true
-  }
+    "ruby-lsp@claude-plugins-official": true,
+    "sentry-mcp@sentry-mcp": true
+  },
+  "extraKnownMarketplaces": {
+    "sentry-mcp": {
+      "source": {
+        "source": "github",
+        "repo": "getsentry/sentry-mcp"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "skipAutoPermissionPrompt": true
 }
