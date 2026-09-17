@@ -50,6 +50,8 @@
       path: ~/.dotfiles/lazygit/config.yml
     ~/.config/herdr/config.toml:
       path: ~/.dotfiles/herdr/config.toml
+    ~/.config/herdr/scripts:
+      path: ~/.dotfiles/herdr/scripts
     ~/.config/opencode:
       path: ~/.dotfiles/opencode
     ~/.agents:
