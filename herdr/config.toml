@@ -7,6 +7,7 @@ auto_switch = false
 [keys]
 prefix = "ctrl+a"
 detach = ["prefix+q", "prefix+d"]
+new_workspace = ""
 
 # Splits
 split_vertical = 'prefix+\'
@@ -57,3 +58,11 @@ key = "prefix+shift+c"
 type = "shell"
 command = "~/.config/herdr/scripts/new-claude-tab.sh"
 description = "new claude tab"
+
+[[keys.command]]
+key = "prefix+shift+n"
+type = "popup"
+command = "~/.config/herdr/scripts/new-dev-workspace.sh"
+width = "60%"
+height = "60%"
+description = "new dev workspace"
