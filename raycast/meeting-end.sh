@@ -12,4 +12,14 @@ for ip in "${LIGHT_IPS[@]}"; do
 done
 wait
 
-"$HOME/.dotfiles/bin/audioctl" output "MacBook Pro Speakers"
+# Restore audio output. First match wins, so put preferred devices first --
+# the built-in speakers are named per model. Work machine (Pro) first, since
+# that is where this runs almost all of the time.
+OUTPUT_DEVICES=("MacBook Pro Speakers" "MacBook Air Speakers")
+
+for device in "${OUTPUT_DEVICES[@]}"; do
+  "$HOME/.dotfiles/bin/audioctl" output "$device" 2>/dev/null && exit 0
+done
+
+echo "No matching output device found" >&2
+exit 1
