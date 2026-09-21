@@ -6,6 +6,9 @@ These require manual configuration (can't be scripted):
   - System Settings > Privacy & Security
   - Full Disk Access — add Ghostty (primarily for Homebrew)
   - Local Network — add Arc (so it can access devices on the local network)
+  - Accessibility — add **OpenLogi Agent** (button remapping)
+  - Input Monitoring — add **OpenLogi Agent** (per-app profile switching)
+    - The helper lives at `/Applications/OpenLogi.app/Contents/Library/LoginItems/OpenLogi Agent.app` — granting the parent OpenLogi.app is not enough; pairing fails silently with an HID transport error until the Agent itself is added
 - Create 5 Mission Control desktops (the keyboard shortcuts are automated, but the desktops themselves must be created manually)
 
 ## 1Password

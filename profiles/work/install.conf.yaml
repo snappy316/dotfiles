@@ -52,6 +52,8 @@
       path: ~/.dotfiles/herdr/config.toml
     ~/.config/herdr/scripts:
       path: ~/.dotfiles/herdr/scripts
+    ~/.config/openlogi/config.toml:
+      path: ~/.dotfiles/openlogi/config.toml
     ~/.config/opencode:
       path: ~/.dotfiles/opencode
     ~/.agents:
