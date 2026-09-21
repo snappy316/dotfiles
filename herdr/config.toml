@@ -66,3 +66,7 @@ command = "~/.config/herdr/scripts/new-dev-workspace.sh"
 width = "60%"
 height = "60%"
 description = "new dev workspace"
+
+# Sidebar
+[ui.sidebar.agents.rows_by_agent]
+claude = [["state_icon", "machine", "workspace", "tab"], ["terminal_title_stripped"]]
