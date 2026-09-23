@@ -4,7 +4,10 @@
     "allow": [
       "Edit(/Users/davidker/.claude/skills/*)"
     ],
-    "defaultMode": "plan"
+    "defaultMode": "auto"
+  },
+  "env": {
+    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"
   },
   "hooks": {
     "PreToolUse": [
