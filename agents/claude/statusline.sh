@@ -4,9 +4,6 @@
 
 input=$(cat)
 
-# Debug: dump raw JSON to temp file for inspection (remove when done)
-echo "$input" | jq . > /tmp/claude-statusline-debug.json 2>/dev/null
-
 # ANSI colors
 GREEN='\033[32m'
 YELLOW='\033[33m'
@@ -116,7 +113,7 @@ if [ -n "$current_pct" ]; then
   printf "\n"
 fi
 
-# Append machine-local lines if present (never committed to dotfiles)
+# Append profile-specific lines if present
 local_statusline="${HOME}/.claude/statusline.local.sh"
 if [ -x "$local_statusline" ]; then
   echo "$input" | "$local_statusline"

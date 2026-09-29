@@ -66,6 +66,8 @@
       path: ~/.dotfiles/agents/claude/hooks
     ~/.claude/statusline.sh:
       path: ~/.dotfiles/agents/claude/statusline.sh
+    ~/.claude/statusline.local.sh:
+      path: ~/.dotfiles/agents/claude/statusline.work.sh
     ~/.claude/skills:
       path: ~/.dotfiles/agents/claude/skills
     ~/.config/worktrunk:
